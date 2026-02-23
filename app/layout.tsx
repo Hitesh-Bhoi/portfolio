@@ -15,6 +15,7 @@ const geistMono = Geist_Mono({
 import { ThemeProvider } from "@/components/theme-provider";
 import { Header } from "@/components/shared/header";
 import { Footer } from "@/components/shared/footer";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: "Hitesh Portfolio",
@@ -40,6 +41,7 @@ export default function RootLayout({
           <Header />
           <main className="min-h-screen">
             {children}
+            <Analytics />
           </main>
           <Footer />
         </ThemeProvider>
