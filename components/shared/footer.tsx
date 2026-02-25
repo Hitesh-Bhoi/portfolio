@@ -36,7 +36,7 @@ export function Footer() {
                 <div className="flex flex-col md:flex-row justify-between items-start gap-12 mb-20">
                     <div className="space-y-6 max-w-sm">
                         <div className="flex items-center gap-3">
-                            <Logo className="w-10 h-10" />
+                            <Logo className="w-16 h-16" />
                             <span className="text-2xl font-black tracking-tighter uppercase italic">Hitesh.</span>
                         </div>
                         <p className="text-muted-foreground text-lg leading-relaxed font-medium">
