@@ -22,9 +22,9 @@ export const metadata: Metadata = {
   verification: {
     google: "JW3afhQrjbgq-WfdbI-XknS2QBnzuax1vcaM0UJO5hg",
   },
-  title: "Hitesh Bhoi | Full Stack MERN Developer",
+  title: "Hitesh Bhoi | MERN Stack Developer",
   description:
-    "Full Stack MERN Developer specializing in Next.js, React, Node.js, Express & MongoDB. Portfolio, projects, and contact details.",
+    "MERN Stack Developer specializing in Next.js, React, Node.js, Express & MongoDB. Portfolio, projects, and contact details.",
   keywords: [
     "Hitesh Bhoi",
     "MERN Developer",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title: "Hitesh Bhoi | MERN Stack Developer",
     description:
       "Portfolio website of Hitesh Bhoi, a MERN Stack Developer.",
-    url: "https://hiteshdev.vercel.app",
+    url: "https://bhoi-dev.vercel.app/",
     siteName: "Hitesh Portfolio",
     type: "website",
   },

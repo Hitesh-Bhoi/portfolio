@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://hiteshdev.vercel.app
+Host: https://bhoi-dev.vercel.app
 
 # Sitemaps
-Sitemap: https://hiteshdev.vercel.app/sitemap.xml
+Sitemap: https://bhoi-dev.vercel.app/sitemap.xml
