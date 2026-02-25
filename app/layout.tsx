@@ -16,6 +16,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Header } from "@/components/shared/header";
 import { Footer } from "@/components/shared/footer";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   verification: {
@@ -61,6 +62,7 @@ export default function RootLayout({
           <main className="min-h-screen">
             {children}
             <Analytics />
+            <SpeedInsights/>
           </main>
           <Footer />
         </ThemeProvider>
