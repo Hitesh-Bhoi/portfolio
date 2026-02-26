@@ -19,26 +19,41 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://bhoi-dev.vercel.app"),
+  applicationName: "Bhoi Hitesh",
+
   verification: {
     google: "JW3afhQrjbgq-WfdbI-XknS2QBnzuax1vcaM0UJO5hg",
   },
-  title: "Hitesh Bhoi | MERN Stack Developer",
+
+  title: "Bhoi Hitesh | MERN Stack Developer",
   description:
-    "MERN Stack Developer specializing in Next.js, React, Node.js, Express & MongoDB. Portfolio, projects, and contact details.",
+    "MERN Stack Developer specializing in Next.js, React.js, Node.js, Express.js, and MongoDB, focused on building high-performance, scalable, and modern web applications.",
   keywords: [
+    "Bhoi Hitesh",
     "Hitesh Bhoi",
     "MERN Developer",
-    "Next.js Developer",
-    "React Developer",
+    "Frontend Developer",
+    "Backend Developer",
     "Full Stack Developer",
+    "Software Engineer",
   ],
+
   openGraph: {
-    title: "Hitesh Bhoi | MERN Stack Developer",
+    title: "Bhoi Hitesh | MERN Stack Developer",
     description:
-      "Portfolio website of Hitesh Bhoi, a MERN Stack Developer.",
+      "Hi, I’m Bhoi Hitesh — a MERN Stack Developer crafting fast, scalable, and user-friendly web experiences using modern web technologies.",
     url: "https://bhoi-dev.vercel.app/",
-    siteName: "Hitesh Portfolio",
+    siteName: "Bhoi Hitesh",
     type: "website",
+    images: [
+      {
+        url: "https://bhoi-dev.vercel.app/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Bhoi Hitesh Portfolio",
+      },
+    ],
   },
 };
 
@@ -49,6 +64,39 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Hitesh Bhoi",
+              url: "https://bhoi-dev.vercel.app/",
+              jobTitle: "MERN Stack Developer",
+              worksFor: {
+                "@type": "Organization",
+                name: "Freelance / Open Source",
+              },
+              sameAs: [
+                "https://github.com/Hitesh-Bhoi",
+                "https://www.linkedin.com/in/bhoi-hitesh-332a601a8/",
+              ],
+              knowsAbout: [
+                "Next.js",
+                "React.js",
+                "Node.js",
+                "Express.js",
+                "MongoDB",
+                "MERN Stack Development",
+                "Full Stack Development",
+                "Frontend Development",
+                "Backend Development",
+              ],
+            }),
+          }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
@@ -62,7 +110,7 @@ export default function RootLayout({
           <main className="min-h-screen">
             {children}
             <Analytics />
-            <SpeedInsights/>
+            <SpeedInsights />
           </main>
           <Footer />
         </ThemeProvider>
