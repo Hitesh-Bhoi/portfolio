@@ -1,11 +1,10 @@
 import { NextResponse } from 'next/server';
 import dbConnect from '@/lib/db';
 import Contact from '@/lib/models/contact';
-import sgMail from '@sendgrid/mail';
+import { Resend } from 'resend';
 
-if (process.env.SEND_GRID_API_KEY) {
-    sgMail.setApiKey(process.env.SEND_GRID_API_KEY.replace(/^["']|["']$/g, ''));
-}
+// Initialize Resend
+const resend = new Resend(process.env.RESEND_API_KEY?.replace(/^["']|["']$/g, '').trim());
 
 export async function POST(req: Request) {
     try {
@@ -26,35 +25,83 @@ export async function POST(req: Request) {
             await Contact.create({ name, email, subject, message });
         } catch (dbError) {
             console.error("Database Error:", dbError);
-            // We continue even if DB fails, as email is primary
         }
 
-        // 2. Send Email using SendGrid
-        if (process.env.SEND_GRID_API_KEY && process.env.SENDER_EMAIL) {
+        // 2. Consistent Branding Email Template (Black, White & Red Accent)
+        const destinationEmail = process.env.SENDER_EMAIL?.replace(/^["']|["']$/g, '').trim();
+
+        if (process.env.RESEND_API_KEY && destinationEmail) {
             try {
-                const sender = process.env.SENDER_EMAIL.replace(/^["']|["']$/g, '');
-                await sgMail.send({
-                    to: sender, // Send to yourself
-                    from: sender, // Send from your verified sender
+                await resend.emails.send({
+                    from: 'Hitesh Portfolio <onboarding@resend.dev>',
+                    to: destinationEmail,
                     replyTo: email,
-                    subject: `New Contact Form Submission: ${subject}`,
+                    subject: `New Inquiry: ${subject}`,
                     html: `
-                        <div style="font-family: sans-serif; padding: 20px; border: 1px solid #eee; border-radius: 10px;">
-                            <h2 style="color: #333;">New Contact Form Submission</h2>
-                            <p style="margin: 5px 0;"><strong>Name:</strong> ${name}</p>
-                            <p style="margin: 5px 0;"><strong>Email:</strong> ${email}</p>
-                            <p style="margin: 5px 0;"><strong>Subject:</strong> ${subject}</p>
-                            <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
-                            <p><strong>Message:</strong></p>
-                            <p style="white-space: pre-wrap; background: #f9f9f9; padding: 15px; border-radius: 5px;">${message}</p>
-                        </div>
+                        <!DOCTYPE html>
+                        <html>
+                        <head>
+                            <meta charset="utf-8">
+                            <style>
+                                body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #111111; margin: 0; padding: 0; background-color: #fafafa; }
+                                .wrapper { padding: 40px 20px; }
+                                .container { max-width: 600px; margin: 0 auto; background: #ffffff; border: 1px solid #e5e5e5; border-radius: 16px; overflow: hidden; }
+                                .header { background-color: #111111; color: #ffffff; padding: 40px 20px; text-align: center; }
+                                .logo-box { display: inline-block; width: 44px; height: 44px; border: 2px solid #FF3B3B; line-height: 44px; font-size: 24px; font-weight: 800; color: #FF3B3B; border-radius: 6px; margin-bottom: 16px; }
+                                .header h1 { margin: 0; font-size: 14px; letter-spacing: 3px; font-weight: 700; color: #eeeeee; text-transform: uppercase; }
+                                .content { padding: 40px 30px; }
+                                .label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #777; margin-bottom: 8px; }
+                                .info-grid { margin-bottom: 30px; }
+                                .info-item { margin-bottom: 20px; }
+                                .info-value { font-size: 16px; font-weight: 500; color: #111111; }
+                                .message-box { background: #f9f9f9; border-left: 2px solid #FF3B3B; padding: 20px; border-radius: 0 8px 8px 0; font-size: 16px; color: #333; white-space: pre-wrap; margin-top: 10px; }
+                                .footer { padding: 30px; text-align: center; background: #ffffff; border-top: 1px solid #eeeeee; font-size: 12px; color: #999; }
+                                .accent-link { color: #FF3B3B; text-decoration: none; font-weight: 600; }
+                                .cta-button { display: inline-block; padding: 14px 28px; background-color: #111111; color: #ffffff !important; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 14px; margin-top: 30px; border: 1px solid #333; }
+                            </style>
+                        </head>
+                        <body>
+                            <div class="wrapper">
+                                <div class="container">
+                                    <div class="header">
+                                        <div class="logo-box">H</div>
+                                        <h1>Portfolio Inquiry</h1>
+                                    </div>
+                                    <div class="content">
+                                        <div class="info-grid">
+                                            <div class="info-item">
+                                                <div class="label">From</div>
+                                                <div class="info-value">${name} <span style="font-weight: 400; color: #777;">&bull; ${email}</span></div>
+                                            </div>
+                                            <div class="info-item">
+                                                <div class="label">Subject</div>
+                                                <div class="info-value">${subject}</div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="label">Message</div>
+                                        <div class="message-box">${message}</div>
+                                        
+                                        <div style="text-align: center;">
+                                            <a href="mailto:${email}" class="cta-button">Direct Reply</a>
+                                        </div>
+                                    </div>
+                                    <div class="footer">
+                                        This email was sent from your portfolio contact form.<br>
+                                        <br>
+                                        &copy; ${new Date().getFullYear()} <span style="color: #111;">Hitesh Bhoi</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </body>
+                        </html>
                     `
                 });
-            } catch (emailError) {
-                console.error("Email Error:", emailError);
+            } catch (err) {
+                console.error("Resend delivery failed:", err);
             }
         } else {
-            console.warn("SendGrid environment variables are not set properly.");
+            console.warn("Resend configuration missing.");
         }
 
         return NextResponse.json({
@@ -65,7 +112,7 @@ export async function POST(req: Request) {
     } catch (error) {
         console.error("Contact API Error:", error);
         return NextResponse.json(
-            { success: false, message: "Failed to process your request. Please try again later." },
+            { success: false, message: "Failed to process your request." },
             { status: 500 }
         );
     }
