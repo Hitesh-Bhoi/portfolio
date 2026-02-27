@@ -19,13 +19,12 @@ export function Footer() {
             { name: "Contact", href: "#contact" },
         ],
         socials: [
-            { name: "GitHub", href: "https://github.com/hitesh", icon: Github },
-            { name: "LinkedIn", href: "https://linkedin.com/in/hitesh", icon: Linkedin },
-            { name: "Twitter", href: "https://twitter.com/hitesh", icon: Twitter },
+            { name: "GitHub", href: process.env.NEXT_PUBLIC_GITHUB, icon: Github },
+            { name: "LinkedIn", href: process.env.NEXT_PUBLIC_LINKED_IN, icon: Linkedin },
         ],
         contact: [
-            { label: "Email", value: "hitesh@example.com", icon: Mail },
-            { label: "Location", value: "Gujarat, India", icon: MapPin },
+            { label: "Email", value: process.env.NEXT_PUBLIC_EMAIL, icon: Mail },
+            { label: "Location", value: "Ahmedabad, Gujarat, India", icon: MapPin },
         ]
     }
 

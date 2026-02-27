@@ -67,19 +67,19 @@ export default function ResumePage() {
                                     <div className="p-2 rounded-md bg-primary/10 text-primary">
                                         <Mail className="w-4 h-4" />
                                     </div>
-                                    <span>hitesh@example.com</span>
+                                    <span>{process.env.NEXT_PUBLIC_EMAIL}</span>
                                 </div>
                                 <div className="flex items-center gap-3 text-muted-foreground">
                                     <div className="p-2 rounded-md bg-primary/10 text-primary">
                                         <Phone className="w-4 h-4" />
                                     </div>
-                                    <span>+1 (555) 123-4567</span>
+                                    <span>+91 {process.env.NEXT_PUBLIC_PHONE}</span>
                                 </div>
                                 <div className="flex items-center gap-3 text-muted-foreground">
                                     <div className="p-2 rounded-md bg-primary/10 text-primary">
                                         <MapPin className="w-4 h-4" />
                                     </div>
-                                    <span>India</span>
+                                    <span>Ahmedabad, Gujarat, India</span>
                                 </div>
                             </div>
 

@@ -13,13 +13,13 @@ const socialLinks = [
     {
         name: "GitHub",
         icon: <GitHub className="w-5 h-5" />,
-        href: "https://github.com",
+        href: process.env.NEXT_PUBLIC_GITHUB || "https://github.com",
         color: "hover:text-[#333] hover:border-[#333]/30 hover:bg-[#333]/5"
     },
     {
         name: "LinkedIn",
         icon: <LinkedIn className="w-5 h-5" />,
-        href: "https://linkedin.com",
+        href: process.env.NEXT_PUBLIC_LINKED_IN || "https://linkedin.com",
         color: "hover:text-[#0077b5] hover:border-[#0077b5]/30 hover:bg-[#0077b5]/5"
     },
     {
@@ -34,13 +34,13 @@ const contactInfo = [
     {
         icon: <Mail className="w-5 h-5 text-primary" />,
         label: "Email",
-        value: "hitesh@example.com",
-        href: "mailto:hitesh@example.com"
+        value: process.env.NEXT_PUBLIC_EMAIL,
+        href: `mailto: ${process.env.NEXT_PUBLIC_EMAIL}`
     },
     {
         icon: <MapPin className="w-5 h-5 text-purple-500" />,
         label: "Location",
-        value: "Gujarat, India",
+        value: "Ahmedabad, Gujarat, India",
     },
     {
         icon: <MessageSquare className="w-5 h-5 text-blue-500" />,
@@ -51,12 +51,15 @@ const contactInfo = [
 
 export function ContactSection() {
     const [sending, setSending] = useState(false)
+    const [success, setSuccess] = useState(false)
 
     async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault()
         setSending(true)
+        setSuccess(false)
 
-        const formData = new FormData(e.currentTarget)
+        const form = e.currentTarget
+        const formData = new FormData(form)
         const data = {
             name: formData.get('name'),
             email: formData.get('email'),
@@ -76,8 +79,10 @@ export function ContactSection() {
             const result = await response.json()
 
             if (result.success) {
-                alert(result.message || "Message sent successfully!")
-                if (e.currentTarget) e.currentTarget.reset()
+                setSuccess(true)
+                form.reset()
+                // Reset success message after 5 seconds
+                setTimeout(() => setSuccess(false), 5000)
             } else {
                 alert(result.message || "Something went wrong. Please try again.")
             }
@@ -239,17 +244,24 @@ export function ContactSection() {
                         <Button
                             type="submit"
                             size="lg"
-                            className="w-full h-12 rounded-xl text-base font-bold shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all duration-300 active:scale-[0.98]"
-                            disabled={sending}
+                            className={`w-full h-12 rounded-xl text-base font-bold shadow-lg transition-all duration-300 active:scale-[0.98] ${success
+                                    ? "bg-green-500 hover:bg-green-600 shadow-green-500/20"
+                                    : "shadow-primary/20 hover:shadow-primary/30"
+                                }`}
+                            disabled={sending || success}
                         >
                             {sending ? (
                                 <span className="flex items-center gap-2">
                                     <span className="w-4 h-4 border-2 border-background/30 border-t-background rounded-full animate-spin" />
                                     Sending...
                                 </span>
+                            ) : success ? (
+                                <span className="flex items-center gap-2">
+                                    Mail Sent Successfully!
+                                </span>
                             ) : (
                                 <span className="flex items-center gap-2">
-                                    <Send className="w-4 h-4" /> Send Message
+                                    <Send className="w-4 h-4" /> Send Mail
                                 </span>
                             )}
                         </Button>
