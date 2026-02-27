@@ -70,6 +70,12 @@ function TypingEffect({ roles }: { roles: string[] }) {
 
 export function HeroSection() {
     const res = useResponsive()
+    const [mounted, setMounted] = React.useState(false)
+
+    React.useEffect(() => {
+        setMounted(true)
+    }, [])
+
     const socialLinks = [
         { icon: <GitHub className="w-5 h-5" />, href: "https://github.com", label: "GitHub" },
         { icon: <LinkedIn className="w-5 h-5" />, href: "https://linkedin.com", label: "LinkedIn" },
@@ -214,27 +220,27 @@ export function HeroSection() {
                         <div className="absolute inset-0 rounded-full bg-primary/5 pointer-events-none" />
                     </div>
 
-                    {/* Outer Ring */}
-                    <Ring
-                        icons={techStack.outer}
-                        radius={getRadius(320, 260, 190)}
-                        duration={40}
-                    />
-
-                    {/* Middle Ring */}
-                    <Ring
-                        icons={techStack.middle}
-                        radius={getRadius(235, 190, 125)}
-                        duration={30}
-                        reverse
-                    />
-
-                    {/* Inner Ring */}
-                    <Ring
-                        icons={techStack.inner}
-                        radius={getRadius(150, 120, 65)}
-                        duration={20}
-                    />
+                    {/* Rings - Only render after mount to prevent hydration mismatch */}
+                    {mounted && (
+                        <>
+                            <Ring
+                                icons={techStack.outer}
+                                radius={getRadius(320, 260, 190)}
+                                duration={40}
+                            />
+                            <Ring
+                                icons={techStack.middle}
+                                radius={getRadius(235, 190, 125)}
+                                duration={30}
+                                reverse
+                            />
+                            <Ring
+                                icons={techStack.inner}
+                                radius={getRadius(150, 120, 65)}
+                                duration={20}
+                            />
+                        </>
+                    )}
 
                     {/* Concentric Design Rings — diameters = radius × 2 */}
                     <div className="absolute h-[640px] w-[640px] rounded-full border border-primary/10 pointer-events-none hidden lg:block" />
@@ -326,8 +332,8 @@ function Ring({
                         key={i}
                         className="absolute group pointer-events-auto"
                         style={{
-                            left: `calc(50% + ${x}px)`,
-                            top: `calc(50% + ${y}px)`,
+                            left: `calc(50% + ${x.toFixed(3)}px)`,
+                            top: `calc(50% + ${y.toFixed(3)}px)`,
                             transform: 'translate(-50%, -50%)',
                         }}
                     >
