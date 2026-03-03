@@ -32,21 +32,18 @@ const experience = [
 
 export function ExperienceSection() {
     return (
-        <section id="experience" className="container py-24 mx-auto px-6 relative">
-            {/* Decorative Background */}
-            <div className="absolute top-0 right-0 -z-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl opacity-50" />
-
+        <section id="experience" className="container py-16 md:py-20 mx-auto px-6 relative">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="mb-16 text-center"
+                className="mb-12 text-center"
             >
-                <h2 className="text-4xl font-bold tracking-tight sm:text-5xl text-primary inline-block">
+                <h2 className="text-4xl font-bold tracking-tight sm:text-5xl text-primary inline-block mb-3">
                     Professional Journey
                 </h2>
-                <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                     A timeline of my professional growth, technical evolution, and contributions to various engineering teams.
                 </p>
             </motion.div>
@@ -66,12 +63,12 @@ export function ExperienceSection() {
                             }`}
                     >
                         {/* Timeline Dot */}
-                        <div className="absolute left-0 md:left-1/2 -top-2 md:top-4 w-4 h-4 rounded-full bg-primary border-4 border-background shadow-lg shadow-primary/20 -translate-x-1/2 z-10" />
+                        <div className="absolute left-0 md:left-1/2 md:top-4 w-4 h-4 rounded-full bg-primary border-4 border-background shadow-lg shadow-primary/20 -translate-x-1/2 z-10" />
 
                         <div className="w-full md:w-1/2">
                             <motion.div
                                 whileHover={{ y: -5 }}
-                                className="p-8 rounded-3xl bg-card border border-border/50 shadow-xl backdrop-blur-xl relative group overflow-hidden"
+                                className="p-8 rounded-2xl bg-card border border-border/50 shadow-sm backdrop-blur-xl relative group overflow-hidden hover:shadow-md transition-all duration-300"
                             >
                                 {/* Glow Effect */}
                                 <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

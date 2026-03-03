@@ -33,28 +33,18 @@ function Counter({ value, direction = "up" }: { value: number; direction?: "up" 
 
 export function AboutSection() {
     return (
-        <section id="about" className="container py-24 mx-auto px-6 relative overflow-hidden">
-            {/* Background Decorations */}
-            <div className="absolute top-0 left-0 -z-10 w-full h-full opacity-10 pointer-events-none">
-                <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse" />
-                <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse delay-1000" />
-            </div>
-
+        <section id="about" className="container py-16 md:py-20 mx-auto px-6 relative overflow-hidden">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="mb-16 text-center"
+                className="mb-12 text-center"
             >
-                <div className="flex items-center justify-center gap-2 mb-4">
-                    <Brain className="w-5 h-5 text-primary" />
-                    <span className="text-sm font-bold uppercase tracking-widest text-primary">About Me</span>
-                </div>
-                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-primary inline-block">
+                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-primary inline-block mb-3">
                     Engineering Intelligence
                 </h2>
-                <p className="mt-4 text-base text-muted-foreground max-w-2xl mx-auto">
+                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                     Bridging the gap between complex logic and human-centric experiences.
                 </p>
             </motion.div>
@@ -80,16 +70,16 @@ export function AboutSection() {
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-2 gap-6 pt-4">
+                    <div className="grid grid-cols-2 gap-6 pt-0">
                         <motion.div
                             whileHover={{ y: -5 }}
-                            className="flex flex-col space-y-2 p-8 rounded-[2rem] bg-card border border-border/50 shadow-xl backdrop-blur-xl relative group overflow-hidden"
+                            className="flex flex-col space-y-2 p-8 rounded-2xl bg-card border border-border/50 shadow-sm relative group hover:shadow-md transition-shadow duration-300"
                         >
-                            <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                            <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl pointer-events-none" />
                             <div className="relative z-10 flex flex-col">
-                                <span className="text-4xl font-black text-primary mb-2 flex items-baseline">
+                                <span className="text-4xl font-black text-primary flex items-baseline">
                                     <Counter value={3} />
-                                    <span className="text-xl ml-1 group-hover:translate-x-1 transition-transform">+</span>
+                                    <span className="text-xl ml-1">+</span>
                                 </span>
                                 <span className="text-sm font-bold uppercase tracking-widest text-muted-foreground">Years Experience</span>
                             </div>
@@ -97,13 +87,13 @@ export function AboutSection() {
 
                         <motion.div
                             whileHover={{ y: -5 }}
-                            className="flex flex-col space-y-2 p-8 rounded-[2rem] bg-card border border-border/50 shadow-xl backdrop-blur-xl relative group overflow-hidden"
+                            className="flex flex-col space-y-2 p-8 rounded-2xl bg-card border border-border/50 shadow-sm relative group hover:shadow-md transition-shadow duration-300"
                         >
-                            <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                            <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl pointer-events-none" />
                             <div className="relative z-10 flex flex-col">
-                                <span className="text-4xl font-black text-purple-500 mb-2 flex items-baseline">
+                                <span className="text-4xl font-black text-purple-500 flex items-baseline">
                                     <Counter value={10} />
-                                    <span className="text-xl ml-1 group-hover:translate-x-1 transition-transform">+</span>
+                                    <span className="text-xl ml-1">+</span>
                                 </span>
                                 <span className="text-sm font-bold uppercase tracking-widest text-muted-foreground">Projects Delivered</span>
                             </div>
@@ -128,9 +118,7 @@ export function AboutSection() {
                     transition={{ duration: 0.6, delay: 0.4 }}
                     className="relative lg:mt-12"
                 >
-                    <div className="absolute inset-0 bg-primary/10 rounded-[3rem] blur-3xl -z-10 animate-pulse" />
-
-                    <Card className="bg-card/40 backdrop-blur-2xl border-border/50 rounded-[3rem] shadow-2xl overflow-hidden relative group">
+                    <Card className="bg-card/40 backdrop-blur-2xl border-border/50 rounded-2xl shadow-sm overflow-hidden relative group hover:shadow-md transition-all duration-300">
                         <div className="absolute inset-0 bg-grid-white/5 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] -z-10" />
 
                         <CardContent className="p-10 space-y-10">
@@ -159,11 +147,6 @@ export function AboutSection() {
                             ))}
                         </CardContent>
                     </Card>
-
-                    {/* Decorative Sparkle */}
-                    <div className="absolute -top-6 -right-6 p-4 rounded-2xl bg-background border border-border shadow-2xl animate-bounce">
-                        <Sparkles className="w-6 h-6 text-primary" />
-                    </div>
                 </motion.div>
             </div>
         </section>

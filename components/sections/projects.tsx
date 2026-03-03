@@ -33,26 +33,22 @@ const projects = [
 
 export function ProjectsSection() {
     return (
-        <section id="projects" className="container py-24 mx-auto px-6 relative overflow-hidden">
-            {/* Background Decorations */}
-            <div className="absolute -top-24 -left-24 w-96 h-96 bg-primary/10 rounded-full blur-3xl opacity-50 pointer-events-none" />
-            <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-primary/5 rounded-full blur-3xl opacity-50 pointer-events-none" />
-
+        <section id="projects" className="container py-16 md:py-20 mx-auto px-6 relative overflow-hidden">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="mb-16 text-center"
+                className="mb-12 text-center"
             >
-                <div className="flex items-center justify-center gap-2 mb-4">
+                {/* <div className="flex items-center justify-center gap-2 mb-4">
                     <Sparkles className="w-5 h-5 text-primary animate-pulse" />
                     <span className="text-sm font-bold uppercase tracking-widest text-primary">Portfolio</span>
-                </div>
-                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-primary inline-block">
+                </div> */}
+                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-primary inline-block mb-3">
                     Featured Work
                 </h2>
-                <p className="mt-4 text-base text-muted-foreground max-w-2xl mx-auto">
+                <p className="text-base text-muted-foreground max-w-2xl mx-auto">
                     A selection of my recent projects, demonstrating expertise in full-stack development and creative problem-solving.
                 </p>
             </motion.div>
@@ -68,13 +64,11 @@ export function ProjectsSection() {
                         whileHover={{ y: -10 }}
                         className="relative group h-full"
                     >
-                        <div className="absolute inset-0 bg-primary/5 rounded-[2rem] blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                        <div className="relative h-full flex flex-col p-8 rounded-[2rem] bg-card border border-border/50 shadow-xl backdrop-blur-xl overflow-hidden">
+                        <div className="relative h-full flex flex-col p-8 rounded-2xl bg-card border border-border/50 shadow-sm backdrop-blur-xl overflow-hidden hover:shadow-md transition-all duration-300">
                             {/* Card Content */}
                             <div className="flex-1">
                                 <div className="flex items-center gap-3 mb-6">
-                                    <div className="p-3 rounded-2xl bg-background border border-border shadow-sm group-hover:bg-primary/5 transition-colors">
+                                    <div className="p-3 rounded-lg bg-background border border-border shadow-sm group-hover:bg-primary/5 transition-colors">
                                         <Code2 className="w-6 h-6 text-primary" />
                                     </div>
                                     <h3 className="text-lg font-bold group-hover:text-primary transition-colors">{project.title}</h3>
@@ -101,14 +95,14 @@ export function ProjectsSection() {
                                 <Link
                                     href={project.repoUrl}
                                     target="_blank"
-                                    className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-secondary/50 border border-border text-sm font-bold hover:bg-secondary transition-colors"
+                                    className="flex-1 flex items-center justify-center gap-2 py-3 rounded-lg bg-secondary/50 border border-border text-sm font-bold hover:bg-secondary transition-colors"
                                 >
                                     <Github className="w-4 h-4" /> Code
                                 </Link>
                                 <Link
                                     href={project.demoUrl}
                                     target="_blank"
-                                    className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-primary text-primary-foreground text-sm font-bold shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-shadow"
+                                    className="flex-1 flex items-center justify-center gap-2 py-3 rounded-lg bg-primary text-primary-foreground text-sm font-bold shadow-sm shadow-primary/10 hover:shadow-md hover:shadow-primary/20 transition-all"
                                 >
                                     <ExternalLink className="w-4 h-4" /> Live Demo
                                 </Link>
@@ -117,6 +111,6 @@ export function ProjectsSection() {
                     </motion.div>
                 ))}
             </div>
-        </section>
+        </section >
     )
 }

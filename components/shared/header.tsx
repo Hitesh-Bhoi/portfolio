@@ -16,8 +16,8 @@ import { Logo } from "@/components/shared/logo"
 
 export function Header() {
     return (
-        <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-            <div className="container flex h-14 max-w-screen-2xl items-center mx-auto px-4 md:px-8">
+        <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
+            <div className="flex justify-between h-14 w-full items-center">
                 <div className="mr-4 hidden md:flex">
                     <Link className="mr-6 flex items-center space-x-2" href="/">
                         <Logo className="h-14 w-14" />
@@ -28,6 +28,12 @@ export function Header() {
                             className="transition-colors hover:text-foreground/80 text-foreground/60"
                         >
                             About
+                        </Link>
+                        <Link
+                            href="#experience"
+                            className="transition-colors hover:text-foreground/80 text-foreground/60"
+                        >
+                            Experience
                         </Link>
                         <Link
                             href="#skills"
@@ -48,10 +54,10 @@ export function Header() {
                             Resume
                         </Link>
                         <Link
-                            href="#experience"
+                            href="#faq"
                             className="transition-colors hover:text-foreground/80 text-foreground/60"
                         >
-                            Experience
+                            FAQ
                         </Link>
                         <Link
                             href="#contact"
@@ -89,6 +95,12 @@ export function Header() {
                                 About
                             </Link>
                             <Link
+                                href="#experience"
+                                className="text-muted-foreground hover:text-foreground"
+                            >
+                                Experience
+                            </Link>
+                            <Link
                                 href="#skills"
                                 className="text-muted-foreground hover:text-foreground"
                             >
@@ -107,10 +119,10 @@ export function Header() {
                                 Resume
                             </Link>
                             <Link
-                                href="#experience"
+                                href="#faq"
                                 className="text-muted-foreground hover:text-foreground"
                             >
-                                Experience
+                                FAQ
                             </Link>
                             <Link
                                 href="#contact"

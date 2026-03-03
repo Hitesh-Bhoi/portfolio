@@ -95,24 +95,18 @@ export function ContactSection() {
     }
 
     return (
-        <section id="contact" className="container py-24 mx-auto px-6 relative overflow-hidden">
-            {/* Background Decorations */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 w-full h-full opacity-20 dark:opacity-10 pointer-events-none">
-                <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-3xl animate-pulse" />
-                <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl animate-pulse delay-700" />
-            </div>
-
+        <section id="contact" className="container py-16 md:py-20 mx-auto px-6 relative overflow-hidden">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="mb-16 text-center"
+                className="mb-12 text-center"
             >
-                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-primary inline-block">
+                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-primary inline-block mb-3">
                     Get In Touch
                 </h2>
-                <p className="mt-4 text-base text-muted-foreground max-w-2xl mx-auto">
+                <p className="text-base text-muted-foreground max-w-2xl mx-auto">
                     Have a specific project in mind or just want to explore potential collaborations? I'm always excited to hear new ideas.
                 </p>
             </motion.div>
@@ -142,9 +136,9 @@ export function ContactSection() {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.4, delay: idx * 0.1 }}
-                                    className="p-4 rounded-2xl bg-card border border-border/50 shadow-sm flex items-center gap-4 group hover:border-primary/30 transition-colors duration-300"
+                                    className="p-4 rounded-xl bg-card border border-border/50 shadow-sm flex items-center gap-4 group hover:border-primary/30 hover:shadow-md transition-all duration-300"
                                 >
-                                    <div className="p-2.5 rounded-xl bg-background border border-border group-hover:scale-110 transition-transform duration-300">
+                                    <div className="p-2.5 rounded-lg bg-background border border-border group-hover:scale-110 transition-transform duration-300">
                                         {item.icon}
                                     </div>
                                     <div>
@@ -176,7 +170,7 @@ export function ContactSection() {
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.3, delay: idx * 0.1 }}
                                     whileHover={{ y: -3 }}
-                                    className={`flex items-center gap-2 px-4 py-2 rounded-xl bg-card border border-border/50 shadow-sm transition-all duration-300 ${link.color}`}
+                                    className={`flex items-center gap-2 px-4 py-2 rounded-lg bg-card border border-border/50 shadow-sm transition-all duration-300 hover:shadow-md ${link.color}`}
                                 >
                                     {link.icon}
                                     <span className="text-sm font-medium">{link.name}</span>
@@ -192,11 +186,8 @@ export function ContactSection() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
-                    className="p-8 rounded-3xl bg-card border border-border/50 shadow-2xl backdrop-blur-xl relative overflow-hidden group"
+                    className="p-8 rounded-2xl bg-card border border-border/50 shadow-sm backdrop-blur-xl relative overflow-hidden group hover:shadow-md transition-all duration-300"
                 >
-                    {/* Interior Glow */}
-                    <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-48 h-48 bg-primary/10 rounded-full blur-3xl group-hover:bg-primary/20 transition-colors duration-500" />
-
                     <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
                         <div className="grid gap-6 sm:grid-cols-2">
                             <div className="space-y-2">
@@ -205,7 +196,7 @@ export function ContactSection() {
                                     id="name"
                                     name="name"
                                     placeholder="Jane Doe"
-                                    className="bg-background/50 border-border/50 h-12 rounded-xl focus:ring-primary/20"
+                                    className="bg-background/50 border-border/50 h-11 rounded-lg focus:ring-primary/20"
                                     required
                                 />
                             </div>
@@ -216,7 +207,7 @@ export function ContactSection() {
                                     name="email"
                                     type="email"
                                     placeholder="jane@example.com"
-                                    className="bg-background/50 border-border/50 h-12 rounded-xl focus:ring-primary/20"
+                                    className="bg-background/50 border-border/50 h-11 rounded-lg focus:ring-primary/20"
                                     required
                                 />
                             </div>
@@ -227,7 +218,7 @@ export function ContactSection() {
                                 id="subject"
                                 name="subject"
                                 placeholder="Project Discussion"
-                                className="bg-background/50 border-border/50 h-12 rounded-xl focus:ring-primary/20"
+                                className="bg-background/50 border-border/50 h-11 rounded-lg focus:ring-primary/20"
                                 required
                             />
                         </div>
@@ -237,16 +228,16 @@ export function ContactSection() {
                                 id="message"
                                 name="message"
                                 placeholder="Tell me about your project..."
-                                className="min-h-[150px] bg-background/50 border-border/50 rounded-xl focus:ring-primary/20 resize-none"
+                                className="min-h-[120px] bg-background/50 border-border/50 rounded-lg focus:ring-primary/20 resize-none"
                                 required
                             />
                         </div>
                         <Button
                             type="submit"
                             size="lg"
-                            className={`w-full h-12 rounded-xl text-base font-bold shadow-lg transition-all duration-300 active:scale-[0.98] ${success
-                                    ? "bg-green-500 hover:bg-green-600 shadow-green-500/20"
-                                    : "shadow-primary/20 hover:shadow-primary/30"
+                            className={`w-full h-11 rounded-lg text-base font-bold shadow-sm transition-all duration-300 active:scale-[0.98] ${success
+                                ? "bg-green-500 hover:bg-green-600 shadow-green-500/20"
+                                : "shadow-primary/20 hover:shadow-primary/30"
                                 }`}
                             disabled={sending || success}
                         >

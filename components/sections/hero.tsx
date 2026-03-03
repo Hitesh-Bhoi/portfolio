@@ -26,10 +26,9 @@ import {
 } from "@/components/shared/icons"
 
 const roles = [
+    "Mern Stack Developer",
     "Full Stack Developer",
-    "React Developer",
-    "Node.js Developer",
-    "Next.js Expert",
+    "Frontend Developer",
     "Backend Developer"
 ]
 
@@ -113,18 +112,18 @@ export function HeroSection() {
     }
 
     return (
-        <section id="hero" className="relative w-full flex min-h-[calc(100vh-3.5rem)] flex-col items-center justify-center gap-10 py-12 lg:py-20 text-center lg:text-left lg:flex-row lg:gap-20 mx-auto px-4 sm:px-6 overflow-hidden">
+        <section id="hero" className="relative w-full flex flex-col items-center justify-center gap-10 py-16 md:py-24 lg:py-28 text-center lg:text-left lg:flex-row lg:gap-20 mx-auto px-4 sm:px-6 overflow-hidden">
             <div className="flex-1 space-y-6 z-10 w-full max-w-2xl px-4 lg:px-0">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="flex flex-wrap items-center justify-center lg:justify-start gap-3"
+                    className="flex flex-wrap items-center justify-center lg:justify-start"
                 >
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium border border-primary/20">
+                    <span className="inline-flex items-center gap-1.5 px-3 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium border border-primary/20">
                         <span className="relative flex h-2 w-2">
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                            <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                            <span className="relative inline-flex rounded-full h-4 w-0 outline-green-500"></span>
                         </span>
                         Open to Work
                     </span>
@@ -143,7 +142,7 @@ export function HeroSection() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
-                    className="text-2xl font-bold text-muted-foreground lg:text-3xl min-h-[3rem] flex items-center justify-center lg:justify-start"
+                    className="text-2xl font-bold text-muted-foreground lg:text-3xl flex items-center justify-center lg:justify-start"
                 >
                     <TypingEffect roles={roles} />
                 </motion.h2>
@@ -162,16 +161,16 @@ export function HeroSection() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.4 }}
-                    className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 justify-center lg:justify-start"
+                    className="flex flex-col sm:flex-row sm:space-y-0 sm:space-x-4 justify-center lg:justify-start"
                 >
-                    <Button asChild size="lg" className="h-12 px-8 text-lg rounded-xl">
+                    <Button asChild size="lg" className="h-12 px-8 text-lg rounded-lg">
                         <Link href="#contact">
-                            Contact Me <ArrowRight className="ml-2 h-5 w-5" />
+                            Contact Me <ArrowRight className="h-5 w-5" />
                         </Link>
                     </Button>
-                    <Button variant="outline" size="lg" asChild className="h-12 px-8 text-lg rounded-xl border-primary/20 hover:bg-primary/5">
+                    <Button variant="outline" size="lg" asChild className="h-12 px-8 text-lg rounded-lg border-primary/20 hover:bg-primary/5">
                         <Link href="/resume.pdf" target="_blank">
-                            Download Resume <Download className="ml-2 h-5 w-5" />
+                            Download Resume <Download className="h-5 w-5" />
                         </Link>
                     </Button>
                 </motion.div>
@@ -181,7 +180,7 @@ export function HeroSection() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.5 }}
-                    className="flex items-center justify-center lg:justify-start gap-4 pt-4"
+                    className="flex items-center justify-center lg:justify-start gap-2"
                 >
                     {socialLinks.map((social, index) => (
                         <motion.a
@@ -190,7 +189,7 @@ export function HeroSection() {
                             whileHover={{ y: -5, scale: 1.1 }}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center justify-center w-12 h-12 rounded-2xl bg-muted border border-border hover:border-primary/50 hover:text-primary transition-colors duration-300"
+                            className="flex items-center justify-center w-12 h-12 rounded-2xl bg-muted border border-border hover:border-primary/50 hover:text-primary transition-colors duration-300 shadow-sm hover:shadow-md"
                             aria-label={social.label}
                         >
                             {social.icon}
@@ -203,11 +202,8 @@ export function HeroSection() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.7, delay: 0.2, type: "spring" }}
-                className="flex-1 flex justify-center items-center relative w-full h-[380px] sm:h-[550px] lg:h-[600px] mt-10 lg:mt-0"
+                className="flex-1 flex justify-center items-center relative w-full h-[380px] sm:h-[550px] lg:h-[600px] lg:mt-0"
             >
-                {/* Background Glows — flat indigo, no gradient */}
-                <div className="absolute h-64 w-64 lg:h-96 lg:w-96 rounded-full bg-primary/10 blur-[120px] animate-pulse" />
-                <div className="absolute h-48 w-48 lg:h-72 lg:w-72 rounded-full bg-primary/5 blur-[100px] -bottom-20 -right-20 animate-pulse delay-700" />
 
                 {/* Tech Stack Orbit Container */}
                 <div className="relative w-full max-w-[680px] aspect-square flex items-center justify-center scale-[0.85] sm:scale-100 lg:scale-100">
@@ -243,9 +239,9 @@ export function HeroSection() {
                     )}
 
                     {/* Concentric Design Rings — diameters = radius × 2 */}
-                    <div className="absolute h-[640px] w-[640px] rounded-full border border-primary/10 pointer-events-none hidden lg:block" />
-                    <div className="absolute h-[470px] w-[470px] rounded-full border border-purple-500/10 pointer-events-none hidden lg:block" />
-                    <div className="absolute h-[300px] w-[300px] rounded-full border border-primary/10 pointer-events-none hidden lg:block" />
+                    <div className="absolute h-[640px] w-[640px] rounded-full border border-primary/15 pointer-events-none hidden lg:block" />
+                    <div className="absolute h-[470px] w-[470px] rounded-full border border-primary/15 pointer-events-none hidden lg:block" />
+                    <div className="absolute h-[300px] w-[300px] rounded-full border border-primary/15 pointer-events-none hidden lg:block" />
                 </div>
             </motion.div>
         </section>

@@ -69,24 +69,18 @@ const skillCategories = [
 
 export function SkillsSection() {
     return (
-        <section id="skills" className="container py-24 mx-auto px-6 relative overflow-hidden">
-            {/* Background Decorations */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 w-full h-full opacity-20 dark:opacity-10 pointer-events-none">
-                <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse" />
-                <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse delay-700" />
-            </div>
-
+        <section id="skills" className="container py-16 md:py-20 mx-auto px-6 relative overflow-hidden">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="mb-16 text-center"
+                className="mb-12 text-center"
             >
-                <h2 className="text-4xl font-bold tracking-tight sm:text-5xl text-primary inline-block">
+                <h2 className="text-4xl font-bold tracking-tight sm:text-5xl text-primary inline-block mb-3">
                     Technical Expertise
                 </h2>
-                <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                     A comprehensive overview of the technologies and tools I use to build high-performance, scalable web applications.
                 </p>
             </motion.div>
@@ -100,7 +94,7 @@ export function SkillsSection() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.4, delay: idx * 0.1 }}
                         whileHover={{ y: -5 }}
-                        className="p-6 rounded-3xl bg-card border border-border/50 shadow-xl backdrop-blur-sm relative group overflow-hidden"
+                        className="p-6 rounded-2xl bg-card border border-border/50 backdrop-blur-sm relative group overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
                     >
                         {/* Hover Overlay */}
                         <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
