@@ -23,106 +23,71 @@ export function Logo({ className = "w-10 h-10" }: { className?: string }) {
                 xmlns="http://www.w3.org/2000/svg"
                 className="w-full h-full"
             >
-                <defs>
-                    <linearGradient id="scan-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stopColor="currentColor" stopOpacity="0" />
-                        <stop offset="50%" stopColor="currentColor" stopOpacity="0.3" />
-                        <stop offset="100%" stopColor="currentColor" stopOpacity="0" />
-                    </linearGradient>
-                    <clipPath id="logo-clip">
-                        <rect x="20" y="20" width="60" height="60" rx="2" />
-                    </clipPath>
-                </defs>
-
-                {/* Geometric Chassis (Static Base) */}
+                {/* Faint Base Frame */}
                 <rect
-                    x="20" y="20" width="60" height="60"
+                    x="16" y="16" width="68" height="68"
+                    fill="none"
                     stroke="currentColor"
-                    strokeWidth="3"
+                    strokeWidth="1.5"
                     className="text-foreground/10"
+                    rx="4"
                 />
 
-                {/* Main Scanning Glow - Clipped within the frame */}
-                <g clipPath="url(#logo-clip)">
+                {/* Tech Bracket Corners */}
+                {/* Top Left */}
+                <path d="M 32 16 H 20 A 4 4 0 0 0 16 20 V 32" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" className="text-foreground" />
+
+                {/* Bottom Left */}
+                <path d="M 16 68 V 80 A 4 4 0 0 0 20 84 H 32" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" className="text-foreground" />
+
+                {/* Top Right */}
+                <path d="M 68 16 H 80 A 4 4 0 0 1 84 20 V 32" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" className="text-foreground" />
+
+                {/* Bottom Right Bracket (Red Tech Accent) */}
+                <motion.path
+                    d="M 84 68 V 80 A 4 4 0 0 1 80 84 H 68"
+                    fill="none"
+                    stroke="#FF3B3B"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                    animate={{ opacity: [1, 0.4, 1] }}
+                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                />
+
+                {/* Red Glow Effect */}
+                <motion.path
+                    d="M 84 68 V 80 A 4 4 0 0 1 80 84 H 68"
+                    fill="none"
+                    stroke="#FF3B3B"
+                    strokeWidth="8"
+                    strokeLinecap="round"
+                    className="opacity-20 blur-sm mix-blend-screen"
+                    animate={{ opacity: [0.1, 0.4, 0.1] }}
+                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                />
+
+                {/* The Modular 'H' Monogram */}
+                <g className="text-foreground">
+                    {/* Left Pillar */}
+                    <rect x="33" y="28" width="8" height="44" fill="currentColor" rx="1.5" />
+
+                    {/* Right Pillar */}
+                    <rect x="59" y="28" width="8" height="44" fill="currentColor" rx="1.5" />
+
+                    {/* Pulsing Crossbar */}
                     <motion.rect
-                        x="-40" y="0" width="40" height="100"
-                        fill="url(#scan-gradient)"
-                        className="text-primary/40"
-                        style={{ skewX: -20 }}
+                        x="44" y="46" width="12" height="8"
+                        fill="currentColor"
+                        rx="1.5"
                         animate={{
-                            x: [-40, 140],
+                            opacity: [0.4, 1, 0.4]
                         }}
-                        transition={{
-                            duration: 2.5,
-                            repeat: Infinity,
-                            ease: "easeInOut",
-                            repeatDelay: 1.5
-                        }}
+                        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                     />
                 </g>
 
-                {/* Tech Accent Corners - Subtle Pulsing */}
-                <motion.rect
-                    x="15" y="15" width="12" height="12" fill="#FF3B3B"
-                    animate={{
-                        scale: [1, 1.15, 1],
-                        opacity: [0.9, 1, 0.9]
-                    }}
-                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                />
-                <motion.rect
-                    x="73" y="73" width="12" height="12" fill="#FF3B3B"
-                    animate={{
-                        scale: [1, 1.15, 1],
-                        opacity: [0.9, 1, 0.9]
-                    }}
-                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                />
-
-                {/* Kinetic 'H' Monogram */}
-                <motion.g className="text-foreground">
-                    {/* Left Bracket */}
-                    <motion.path
-                        d="M36 34 V66 M36 34 H43"
-                        stroke="currentColor"
-                        strokeWidth="9"
-                        strokeLinecap="round"
-                        animate={{ y: [-1, 1, -1] }}
-                        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                    />
-                    {/* Right Bracket */}
-                    <motion.path
-                        d="M64 34 V66 M64 66 H57"
-                        stroke="currentColor"
-                        strokeWidth="9"
-                        strokeLinecap="round"
-                        animate={{ y: [1, -1, 1] }}
-                        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                    />
-                    {/* Digital Jitter Middle Connection */}
-                    <motion.path
-                        d="M36 50 H64"
-                        stroke="currentColor"
-                        strokeWidth="9"
-                        strokeLinecap="round"
-                        animate={{
-                            opacity: [0.6, 1, 0.6],
-                        }}
-                        transition={{
-                            duration: 0.15,
-                            repeat: Infinity,
-                            repeatType: "mirror"
-                        }}
-                    />
-                </motion.g>
-
-                {/* Heartbeat Center Point */}
-                <motion.circle
-                    cx="50" cy="50" r="2.5"
-                    fill="#FF3B3B"
-                    animate={{ scale: [1, 1.5, 1], opacity: [0.5, 1, 0.5] }}
-                    transition={{ duration: 1, repeat: Infinity }}
-                />
+                {/* Inner Tech Dot (Subtle detail) */}
+                <circle cx="24" cy="24" r="1.5" fill="currentColor" className="text-foreground/30" />
             </svg>
         </motion.div>
     )
