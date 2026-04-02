@@ -24,25 +24,25 @@ export function Header() {
                     </Link>
                     <nav className="flex items-center gap-6 text-sm font-medium">
                         <Link
-                            href="#about"
+                            href="/#about"
                             className="transition-colors hover:text-foreground/80 text-foreground/60"
                         >
                             About
                         </Link>
                         <Link
-                            href="#experience"
+                            href="/#experience"
                             className="transition-colors hover:text-foreground/80 text-foreground/60"
                         >
                             Experience
                         </Link>
                         <Link
-                            href="#skills"
+                            href="/#skills"
                             className="transition-colors hover:text-foreground/80 text-foreground/60"
                         >
                             Skills
                         </Link>
                         <Link
-                            href="#projects"
+                            href="/#projects"
                             className="transition-colors hover:text-foreground/80 text-foreground/60"
                         >
                             Projects
@@ -54,13 +54,13 @@ export function Header() {
                             Resume
                         </Link>
                         <Link
-                            href="#faq"
+                            href="/#faq"
                             className="transition-colors hover:text-foreground/80 text-foreground/60"
                         >
                             FAQ
                         </Link>
                         <Link
-                            href="#contact"
+                            href="/#contact"
                             className="transition-colors hover:text-foreground/80 text-foreground/60"
                         >
                             Contact
@@ -89,25 +89,25 @@ export function Header() {
                                 <span className="sr-only">Hitesh Portfolio</span>
                             </Link>
                             <Link
-                                href="#about"
+                                href="/#about"
                                 className="text-muted-foreground hover:text-foreground"
                             >
                                 About
                             </Link>
                             <Link
-                                href="#experience"
+                                href="/#experience"
                                 className="text-muted-foreground hover:text-foreground"
                             >
                                 Experience
                             </Link>
                             <Link
-                                href="#skills"
+                                href="/#skills"
                                 className="text-muted-foreground hover:text-foreground"
                             >
                                 Skills
                             </Link>
                             <Link
-                                href="#projects"
+                                href="/#projects"
                                 className="text-muted-foreground hover:text-foreground"
                             >
                                 Projects
@@ -119,13 +119,13 @@ export function Header() {
                                 Resume
                             </Link>
                             <Link
-                                href="#faq"
+                                href="/#faq"
                                 className="text-muted-foreground hover:text-foreground"
                             >
                                 FAQ
                             </Link>
                             <Link
-                                href="#contact"
+                                href="/#contact"
                                 className="text-muted-foreground hover:text-foreground"
                             >
                                 Contact
