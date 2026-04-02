@@ -1,33 +1,43 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ExternalLink, Github, Code2, Sparkles } from "lucide-react"
+import { ExternalLink, Github, Code2, AlertTriangle, Sparkles } from "lucide-react"
 import Link from "next/link"
+import { Logo } from "@/components/shared/logo"
+import { EcobazarLogo } from "@/components/shared/ecobazar-logo"
 
 const projects = [
     {
-        title: "E-commerce Platform",
-        description: "A full-featured online shopping platform with cart, checkout, and payment integration.",
-        tags: ["Next.js", "MongoDB", "Stripe", "Tailwind"],
-        demoUrl: "#",
-        repoUrl: "#",
+        title: "Portfolio Website",
+        icon: <Logo />,
+        description: "A modern personal portfolio website built to showcase web development skills, highlight featured projects, and provide professional contact information.",
+        notice: "Currently under maintenance, but completely functional and works well.",
+        tags: ["Next.js", "React", "Framer Motion", "Shadcn UI"],
+        demoUrl: "https://bhoi-dev.vercel.app/",
+        repoUrl: "https://github.com/Hitesh-Bhoi/portfolio",
+        gradient: "from-orange-500/20 to-yellow-500/20"
+    },
+    {
+        title: "Grocery E-commerce Platform",
+        icon: <EcobazarLogo className="w-auto max-w-[120px]" />,
+        description: "A full-featured grocery shopping website allowing users to browse fresh produce, manage their cart, and experience a modern, responsive user interface.",
+        notice: "Currently under development. Some features may not work and more are coming soon.",
+        tags: ["Next.js", "React", "Tailwind", "Framer Motion"],
+        demoUrl: "https://grocery-app-phi-snowy.vercel.app/",
+        repoUrl: "https://github.com/Hitesh-Bhoi/food-cart",
         gradient: "from-blue-500/20 to-cyan-500/20"
     },
     {
-        title: "Task Management App",
-        description: "Collaborative task manager with real-time updates and team workspace features.",
-        tags: ["React", "Node.js", "Socket.io", "Express"],
+        title: "Grocery Admin Panel",
+        icon: <EcobazarLogo className="w-auto max-w-[120px]" />,
+        description: "A dedicated administrative dashboard for managing grocery products, categories, customer orders, and shop analytics.",
+        notice: "Coming soon.",
+        tags: ["Next.js", "Tailwind", "Redux Toolkit", "Framer Motion", "SCSS", "Shadcn UI"],
         demoUrl: "#",
         repoUrl: "#",
-        gradient: "from-purple-500/20 to-pink-500/20"
-    },
-    {
-        title: "Portfolio Website",
-        description: "Personal portfolio website showcasing skills and projects (This website!).",
-        tags: ["Next.js", "Framer Motion", "Shadcn UI"],
-        demoUrl: "#",
-        repoUrl: "#",
-        gradient: "from-orange-500/20 to-yellow-500/20"
+        gradient: "from-green-500/20 to-emerald-500/20",
+        className: "opacity-60",
+        isDisabled: true
     },
 ]
 
@@ -61,15 +71,15 @@ export function ProjectsSection() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: index * 0.1 }}
-                        whileHover={{ y: -10 }}
-                        className="relative group h-full"
+                        whileHover={project.isDisabled ? undefined : { y: -10 }}
+                        className={`relative group h-full ${project.isDisabled ? 'pointer-events-none' : ''}`}
                     >
-                        <div className="relative h-full flex flex-col p-8 rounded-2xl bg-card border border-border/50 shadow-sm backdrop-blur-xl overflow-hidden hover:shadow-md transition-all duration-300">
+                        <div className={`relative h-full flex flex-col p-8 rounded-2xl bg-card border border-border/50 shadow-sm backdrop-blur-xl overflow-hidden hover:shadow-md transition-all duration-300 ${project.className || ""}`}>
                             {/* Card Content */}
                             <div className="flex-1">
                                 <div className="flex items-center gap-3 mb-6">
-                                    <div className="p-3 rounded-lg bg-background border border-border shadow-sm group-hover:bg-primary/5 transition-colors">
-                                        <Code2 className="w-6 h-6 text-primary" />
+                                    <div className="p-3 rounded-lg bg-background border border-border shadow-sm group-hover:bg-primary/5 transition-colors flex items-center justify-center">
+                                        {project.icon ? project.icon : <Code2 className="w-6 h-6 text-primary" />}
                                     </div>
                                     <h3 className="text-lg font-bold group-hover:text-primary transition-colors">{project.title}</h3>
                                 </div>
@@ -77,6 +87,13 @@ export function ProjectsSection() {
                                 <p className="text-muted-foreground leading-relaxed mb-6">
                                     {project.description}
                                 </p>
+
+                                {project.notice && (
+                                    <div className="mb-6 flex items-start gap-2 p-3 text-sm rounded-lg bg-yellow-500/10 border border-yellow-500/20 text-yellow-600 dark:text-yellow-500">
+                                        <AlertTriangle className="w-5 h-5 shrink-0 mt-0.5" />
+                                        <p>{project.notice}</p>
+                                    </div>
+                                )}
 
                                 <div className="flex flex-wrap gap-2 mb-8">
                                     {project.tags.map((tag) => (
