@@ -34,17 +34,17 @@ export function ExperienceSection() {
     return (
         <section id="experience" className="container py-16 md:py-20 mx-auto px-6 relative">
             <motion.div
+                className="text-center mb-16"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="mb-12 text-center"
             >
-                <h2 className="text-4xl font-bold tracking-tight sm:text-5xl text-primary inline-block mb-3">
+                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-primary inline-block mb-4">
                     Professional Journey
                 </h2>
                 <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                    A timeline of my professional growth, technical evolution, and contributions to various engineering teams.
+                    A timeline of the companies I've worked for, the roles I've taken on, and the technical value I've delivered.
                 </p>
             </motion.div>
 

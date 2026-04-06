@@ -39,16 +39,14 @@ export function AboutSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="mb-16 text-center lg:text-center lg:mb-10"
+                className="mb-16 text-center"
             >
-                <div className="flex flex-col items-center lg:items-center max-w-7xl mx-auto">
-                    <h2 className="text-3xl font-black tracking-tight sm:text-5xl text-foreground inline-block mb-2">
-                        Engineering Intelligence
-                    </h2>
-                    <p className="text-lg md:text-xl font-medium text-muted-foreground max-w-2xl">
-                        Bridging the gap between complex logic and human-centric experiences.
-                    </p>
-                </div>
+                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-primary inline-block mb-4">
+                    Engineering Intelligence
+                </h2>
+                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    Bridging the gap between complex logic and human-centric experiences.
+                </p>
             </motion.div>
 
             <div className="grid gap-12 lg:gap-16 lg:grid-cols-2 items-start max-w-7xl mx-auto">

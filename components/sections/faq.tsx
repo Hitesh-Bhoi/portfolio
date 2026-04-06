@@ -101,18 +101,16 @@ export function FaqSection() {
             <div className="container mx-auto px-6 relative z-10 flex flex-col items-center">
                 
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                    className="w-full max-w-3xl mb-8 md:mb-12 flex flex-col items-center text-center mx-auto"
+                    className="text-center mb-16"
                 >
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-foreground uppercase mb-6">
-                        FAQ
+                    <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-primary inline-block mb-4">
+                        Frequently Asked Questions
                     </h2>
-                    
-                    <p className="text-muted-foreground text-base max-w-lg mx-auto">
-                        Addressing your most common questions to streamline our collaboration.
+                    <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                        Everything you need to know about my workflow, pricing, and how we can work together.
                     </p>
                 </motion.div>
 

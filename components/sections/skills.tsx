@@ -94,7 +94,7 @@ export function SkillsSection() {
                 transition={{ duration: 0.6 }}
                 className="mb-16 text-center"
             >
-                <h2 className="text-4xl font-bold tracking-tight sm:text-5xl text-primary inline-block mb-4">
+                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-primary inline-block mb-4">
                     Technical Expertise
                 </h2>
                 <p className="text-lg text-muted-foreground max-w-2xl mx-auto">

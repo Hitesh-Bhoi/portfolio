@@ -101,13 +101,13 @@ export function ContactSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="mb-12 text-center"
+                className="mb-16 text-center"
             >
-                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-primary inline-block mb-3">
+                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-primary inline-block mb-4">
                     Get In Touch
                 </h2>
-                <p className="text-base text-muted-foreground max-w-2xl mx-auto">
-                    Have a specific project in mind or just want to explore potential collaborations? I'm always excited to hear new ideas.
+                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    Have a project idea or just want to chat? Reach out—I'm always open to discussing new opportunities.
                 </p>
             </motion.div>
 

@@ -49,17 +49,17 @@ export function ProjectsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="mb-12 text-center"
+                className="mb-16 text-center"
             >
                 {/* <div className="flex items-center justify-center gap-2 mb-4">
                     <Sparkles className="w-5 h-5 text-primary animate-pulse" />
                     <span className="text-sm font-bold uppercase tracking-widest text-primary">Portfolio</span>
                 </div> */}
-                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-primary inline-block mb-3">
-                    Featured Work
+                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-primary inline-block mb-4">
+                    Featured Projects
                 </h2>
-                <p className="text-base text-muted-foreground max-w-2xl mx-auto">
-                    A selection of my recent projects, demonstrating expertise in full-stack development and creative problem-solving.
+                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    A collection of products I've built from conception to deployment, focusing on high-impact code and clean design.
                 </p>
             </motion.div>
 
