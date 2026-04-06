@@ -10,7 +10,7 @@ const projects = [
     {
         title: "Portfolio Website",
         icon: <Logo />,
-        description: "A modern personal portfolio website built to showcase web development skills, highlight featured projects, and provide professional contact information.",
+        description: "A highly optimized, high-performing personal portfolio designed to convert visitors into clients through modern UX principles and fluid micro-interactions.",
         notice: "Currently under maintenance, but completely functional and works well.",
         tags: ["Next.js", "React", "Framer Motion", "Shadcn UI"],
         demoUrl: "https://bhoi-dev.vercel.app/",
@@ -20,7 +20,7 @@ const projects = [
     {
         title: "Grocery E-commerce Platform",
         icon: <EcobazarLogo className="w-auto max-w-[120px]" />,
-        description: "A full-featured grocery shopping website allowing users to browse fresh produce, manage their cart, and experience a modern, responsive user interface.",
+        description: "A scalable, conversion-focused e-commerce solution enabling smooth product discovery, user-friendly cart management, and seamless checkout for customers.",
         notice: "Currently under development. Some features may not work and more are coming soon.",
         tags: ["Next.js", "React", "Tailwind", "Framer Motion"],
         demoUrl: "https://grocery-app-phi-snowy.vercel.app/",
@@ -30,7 +30,7 @@ const projects = [
     {
         title: "Grocery Admin Panel",
         icon: <EcobazarLogo className="w-auto max-w-[120px]" />,
-        description: "A dedicated administrative dashboard for managing grocery products, categories, customer orders, and shop analytics.",
+        description: "A fully integrated B2B dashboard built to streamline inventory tracking, manage customer orders efficiently, and deliver actionable sales analytics.",
         notice: "Coming soon.",
         tags: ["Next.js", "Tailwind", "Redux Toolkit", "Framer Motion", "SCSS", "Shadcn UI"],
         demoUrl: "#",
@@ -74,7 +74,7 @@ export function ProjectsSection() {
                         whileHover={project.isDisabled ? undefined : { y: -10 }}
                         className={`relative group h-full ${project.isDisabled ? 'pointer-events-none' : ''}`}
                     >
-                        <div className={`relative h-full flex flex-col p-8 rounded-2xl bg-card border border-border/50 shadow-sm backdrop-blur-xl overflow-hidden hover:shadow-md transition-all duration-300 ${project.className || ""}`}>
+                        <div className={`relative h-full flex flex-col p-8 rounded-2xl bg-card border border-border shadow-md backdrop-blur-xl overflow-hidden hover:shadow-lg transition-all duration-300 ${project.className || ""}`}>
                             {/* Card Content */}
                             <div className="flex-1">
                                 <div className="flex items-center gap-3 mb-6">

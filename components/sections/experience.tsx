@@ -9,24 +9,24 @@ const experience = [
         role: "Fullstack Engineer",
         duration: "07-2024 to Present",
         location: "Ahmedabad, India",
-        description: "Designing and implementing scalable full-stack features for enterprise-level applications. Optimizing system performance and leading frontend architecture improvements using Next.js and high-performance backend microservices.",
-        skills: ["Next.js", "Node.js", "MongoDB", "TypeScript", "Microservices"],
+        description: "Driving the development of scalable enterprise applications with a core focus on advanced backend architectures. Deepened technical expertise by orchestrating containerized deployments using Docker, designing scalable databases, and engineering robust APIs.",
+        skills: ["Next.js", "AntD", "Shadcn UI", "Node.js", "Express.js", "MongoDB", "TypeScript", "TypeORM", "AWS", "Docker"],
     },
     {
         company: "Syndell Technologies",
         role: "Jr. Fullstack Developer",
         duration: "03-2023 to 02-2024",
         location: "Ahmedabad, India",
-        description: "Contributed to the development of robust web solutions, focusing on both frontend responsiveness and backend efficiency. Integrated complex third-party APIs and managed database migrations.",
-        skills: ["React.js", "Express.js", "PostgreSQL", "Tailwind CSS", "Redux"],
+        description: "Engineered comprehensive full-stack solutions, mastering high-performance frontend development with React while successfully establishing core backend infrastructure. Implemented solid relational database models and developed highly responsive user interfaces.",
+        skills: ["React.js", "Node.js", "Express.js", "PostgreSQL", "MongoDB", "Tailwind CSS", "Redux Toolkit"],
     },
     {
         company: "KerInfotech",
         role: "React.js Intern",
         duration: "08-2022 to 03-2023",
         location: "Ahmedabad, India",
-        description: "Assisted in building modular UI components and implementing core application logic. Focused on writing clean, reusable code and learning industry best practices for frontend development.",
-        skills: ["React.js", "JavaScript", "HTML5", "CSS3", "Git"],
+        description: "Developed scalable and modular React architectures, accelerating feature delivery. Enforced clean code principles and collaborated with senior engineers to transform complex UI/UX requirements into highly interactive web applications.",
+        skills: ["React.js", "JavaScript", "HTML5", "CSS3", "Bootstrap", "GitHub"],
     },
 ]
 
@@ -68,7 +68,7 @@ export function ExperienceSection() {
                         <div className="w-full md:w-1/2">
                             <motion.div
                                 whileHover={{ y: -5 }}
-                                className="p-8 rounded-2xl bg-card border border-border/50 shadow-sm backdrop-blur-xl relative group overflow-hidden hover:shadow-md transition-all duration-300"
+                                className="p-8 rounded-2xl bg-card border border-border shadow-md backdrop-blur-xl relative group overflow-hidden hover:shadow-lg transition-all duration-300"
                             >
                                 {/* Glow Effect */}
                                 <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

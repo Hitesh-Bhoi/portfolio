@@ -12,7 +12,12 @@ import {
     Git,
     PostgreSQL,
     CSS3,
-    HTML5
+    HTML5,
+    Sass,
+    AWS,
+    Antd,
+    ExpressJS,
+    GitHub
 } from "@/components/shared/icons"
 import {
     Layout,
@@ -22,7 +27,10 @@ import {
     Code2,
     Layers,
     Cpu,
-    Webhook
+    Webhook,
+    ApertureIcon,
+    PowerSquare,
+    Code
 } from "lucide-react"
 
 const skillCategories = [
@@ -35,16 +43,20 @@ const skillCategories = [
             { name: "TypeScript", icon: <TypeScript className="w-5 h-5" /> },
             { name: "JavaScript", icon: <JavaScript className="w-5 h-5" /> },
             { name: "Tailwind CSS", icon: <TailwindCSS className="w-5 h-5" /> },
-            { name: "CSS3", icon: <CSS3 className="w-5 h-5" /> },
-            { name: "HTML5", icon: <HTML5 className="w-5 h-5" /> },
+            { name: "Ant Design", icon: <Antd className="w-5 h-5" /> },
+            { name: "SCSS", icon: <Sass className="w-5 h-5" /> },
+            { name: "Shadcn UI", icon: <Code2 className="w-5 h-5" /> },
         ]
     },
     {
         title: "Backend",
         icon: <Server className="w-6 h-6 text-green-500" />,
         skills: [
+            { name: "Next.js", icon: <NextJS className="w-5 h-5" /> },
             { name: "Node.js", icon: <NodeJS className="w-5 h-5" /> },
-            { name: "Express.js", icon: <Webhook className="w-5 h-5 text-[#828282]" /> },
+            { name: "Express.js", icon: <ExpressJS className="w-5 h-5" /> },
+            { name: "API Development & Integration", icon: <ApertureIcon className="w-5 h-5" /> },
+            { name: "Docker", icon: <Layers className="w-5 h-5" /> },
         ]
     },
     {
@@ -53,31 +65,36 @@ const skillCategories = [
         skills: [
             { name: "MongoDB", icon: <MongoDB className="w-5 h-5" /> },
             { name: "PostgreSQL", icon: <PostgreSQL className="w-5 h-5" /> },
+            { name: "AWS", icon: <AWS className="w-5 h-5" /> },
         ]
     },
     {
-        title: "Tools & Others",
+        title: "AI & Tools",
         icon: <Settings className="w-6 h-6 text-orange-500" />,
         skills: [
             { name: "Git", icon: <Git className="w-5 h-5" /> },
-            { name: "Docker", icon: <Layers className="w-5 h-5 text-[#2496ed]" /> },
-            { name: "Shadcn UI", icon: <Code2 className="w-5 h-5" /> },
-            { name: "SCSS", icon: <Cpu className="w-5 h-5 text-[#cf649a]" /> },
+            { name: "GitHub", icon: <GitHub className="w-5 h-5" /> },
+            { name: "Postman", icon: <PowerSquare className="w-5 h-5" /> },
+            { name: "VS Code", icon: <Code className="w-5 h-5" /> },
+            { name: "ChatGPT", icon: <Code className="w-5 h-5" /> },
+            { name: "GitHub Copilot", icon: <Code className="w-5 h-5" /> },
+            { name: "Google Gemini", icon: <Code className="w-5 h-5" /> },
+            { name: "Google Antigravity", icon: <Code className="w-5 h-5" /> },
         ]
     }
 ]
 
 export function SkillsSection() {
     return (
-        <section id="skills" className="container py-16 md:py-20 mx-auto px-6 relative overflow-hidden">
+        <section id="skills" className="container py-16 md:py-24 mx-auto px-6 relative overflow-hidden">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="mb-12 text-center"
+                className="mb-16 text-center"
             >
-                <h2 className="text-4xl font-bold tracking-tight sm:text-5xl text-primary inline-block mb-3">
+                <h2 className="text-4xl font-bold tracking-tight sm:text-5xl text-primary inline-block mb-4">
                     Technical Expertise
                 </h2>
                 <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -85,48 +102,67 @@ export function SkillsSection() {
                 </p>
             </motion.div>
 
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 max-w-7xl mx-auto">
-                {skillCategories.map((category, idx) => (
-                    <motion.div
-                        key={category.title}
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.4, delay: idx * 0.1 }}
-                        whileHover={{ y: -5 }}
-                        className="p-6 rounded-2xl bg-card border border-border/50 backdrop-blur-sm relative group overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
-                    >
-                        {/* Hover Overlay */}
-                        <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="flex flex-col gap-6 max-w-5xl mx-auto">
+                {skillCategories.map((category, idx) => {
+                    // Bento Box Layout configurations based on category
+                    let innerLayout = "flex flex-wrap gap-4";
+                    let bgGradient = "";
 
-                        <div className="relative z-10">
-                            <div className="flex items-center gap-3 mb-6">
-                                <div className="p-2 rounded-xl bg-background border border-border shadow-sm">
-                                    {category.icon}
+                    if (category.title === "Frontend") {
+                        bgGradient = "from-blue-500/10 via-transparent to-transparent";
+                    } else if (category.title === "Backend") {
+                        bgGradient = "from-green-500/10 via-transparent to-transparent";
+                    } else if (category.title === "Database") {
+                        bgGradient = "from-purple-500/10 via-transparent to-transparent";
+                    } else if (category.title === "AI & Tools" || category.title === "Tools & Others") {
+                        bgGradient = "from-orange-500/10 via-transparent to-transparent";
+                    }
+
+                    return (
+                        <motion.div
+                            key={category.title}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: idx * 0.1 }}
+                            whileHover={{ y: -5 }}
+                            className="p-6 sm:p-8 rounded-3xl bg-card border border-border backdrop-blur-xl relative group overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 w-full"
+                        >
+                            {/* Ambient Category Color Aura */}
+                            <div className={`absolute inset-0 bg-gradient-to-br ${bgGradient} opacity-50 group-hover:opacity-100 transition-opacity duration-700`} />
+                            
+                            {/* General Hover Overlay */}
+                            <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+                            <div className="relative z-10 flex flex-col h-full">
+                                <div className="flex items-center gap-4 mb-8">
+                                    <div className="p-3 rounded-2xl bg-background border border-border shadow-sm group-hover:scale-110 transition-transform duration-500">
+                                        {category.icon}
+                                    </div>
+                                    <h3 className="text-2xl font-bold tracking-tight">{category.title}</h3>
                                 </div>
-                                <h3 className="text-xl font-bold">{category.title}</h3>
-                            </div>
 
-                            <div className="flex flex-col gap-3">
-                                {category.skills.map((skill, sIdx) => (
-                                    <motion.div
-                                        key={skill.name}
-                                        initial={{ opacity: 0, x: -10 }}
-                                        whileInView={{ opacity: 1, x: 0 }}
-                                        viewport={{ once: true }}
-                                        transition={{ duration: 0.3, delay: (idx * 0.1) + (sIdx * 0.05) }}
-                                        className="flex items-center gap-3 p-2 rounded-xl border border-transparent hover:border-border hover:bg-muted/50 transition-all duration-300"
-                                    >
-                                        <div className="w-8 h-8 flex items-center justify-center p-1.5 rounded-lg bg-background border border-border shadow-sm group-hover:scale-110 transition-transform duration-300">
-                                            {skill.icon}
-                                        </div>
-                                        <span className="text-sm font-medium">{skill.name}</span>
-                                    </motion.div>
-                                ))}
+                                <div className={`${innerLayout}`}>
+                                    {category.skills.map((skill, sIdx) => (
+                                        <motion.div
+                                            key={skill.name}
+                                            initial={{ opacity: 0, x: -10 }}
+                                            whileInView={{ opacity: 1, x: 0 }}
+                                            viewport={{ once: true }}
+                                            transition={{ duration: 0.4, delay: (idx * 0.1) + (sIdx * 0.05) }}
+                                            className="flex items-center gap-3 p-3 rounded-2xl border border-border/50 hover:border-border bg-background/60 hover:bg-background transition-all duration-300 shadow-sm hover:shadow-md cursor-default group/skill"
+                                        >
+                                            <div className="w-10 h-10 flex items-center justify-center p-2 rounded-xl bg-background border border-border/50 shadow-inner group-hover/skill:scale-110 group-hover/skill:-rotate-3 transition-transform duration-300 shrink-0">
+                                                {skill.icon}
+                                            </div>
+                                            <span className="text-sm font-semibold tracking-wide">{skill.name}</span>
+                                        </motion.div>
+                                    ))}
+                                </div>
                             </div>
-                        </div>
-                    </motion.div>
-                ))}
+                        </motion.div>
+                    )
+                })}
             </div>
         </section>
     )

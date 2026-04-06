@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { motion } from "framer-motion"
-import { Mail, Send, MapPin, Phone, MessageSquare } from "lucide-react"
+import { Mail, Send, MapPin, Phone, MessageSquare, ShieldCheck, CheckCircle, CheckCheckIcon, CheckCircle2 } from "lucide-react"
 import { GitHub, LinkedIn, Twitter } from "@/components/shared/icons"
 
 const socialLinks = [
@@ -118,10 +118,10 @@ export function ContactSection() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
-                    className="flex flex-col justify-between"
+                    className="flex flex-col"
                 >
-                    <div className="space-y-8">
-                        <div>
+                    <div className="space-y-10">
+                        <div className="space-y-4">
                             <h3 className="text-xl font-bold mb-4">Let's connect</h3>
                             <p className="text-muted-foreground leading-relaxed text-sm md:text-base">
                                 I specialize in building scalable web applications and intuitive user interfaces. Whether you're a startup or an established company, I'd love to help you bring your vision to life.
@@ -136,7 +136,7 @@ export function ContactSection() {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.4, delay: idx * 0.1 }}
-                                    className="p-4 rounded-xl bg-card border border-border/50 shadow-sm flex items-center gap-4 group hover:border-primary/30 hover:shadow-md transition-all duration-300"
+                                    className="p-4 rounded-xl bg-card border border-border shadow-sm flex items-center gap-4 group hover:border-primary/30 hover:shadow-md transition-all duration-300"
                                 >
                                     <div className="p-2.5 rounded-lg bg-background border border-border group-hover:scale-110 transition-transform duration-300">
                                         {item.icon}
@@ -154,28 +154,28 @@ export function ContactSection() {
                                 </motion.div>
                             ))}
                         </div>
-                    </div>
 
-                    <div className="mt-12 lg:mt-0">
-                        <p className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-4">Follow me</p>
-                        <div className="flex flex-wrap gap-4">
-                            {socialLinks.map((link, idx) => (
-                                <motion.a
-                                    key={link.name}
-                                    href={link.href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    initial={{ opacity: 0, scale: 0.8 }}
-                                    whileInView={{ opacity: 1, scale: 1 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.3, delay: idx * 0.1 }}
-                                    whileHover={{ y: -3 }}
-                                    className={`flex items-center gap-2 px-4 py-2 rounded-lg bg-card border border-border/50 shadow-sm transition-all duration-300 hover:shadow-md ${link.color}`}
-                                >
-                                    {link.icon}
-                                    <span className="text-sm font-medium">{link.name}</span>
-                                </motion.a>
-                            ))}
+                        <div>
+                            <p className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-4">Follow me</p>
+                            <div className="flex flex-wrap gap-4">
+                                {socialLinks.map((link, idx) => (
+                                    <motion.a
+                                        key={link.name}
+                                        href={link.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        initial={{ opacity: 0, scale: 0.8 }}
+                                        whileInView={{ opacity: 1, scale: 1 }}
+                                        viewport={{ once: true }}
+                                        transition={{ duration: 0.3, delay: idx * 0.1 }}
+                                        whileHover={{ y: -3 }}
+                                        className={`flex items-center gap-2 px-4 py-2 rounded-lg bg-card border border-border shadow-sm transition-all duration-300 hover:shadow-md ${link.color}`}
+                                    >
+                                        {link.icon}
+                                        <span className="text-sm font-medium">{link.name}</span>
+                                    </motion.a>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </motion.div>
@@ -186,7 +186,7 @@ export function ContactSection() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
-                    className="p-8 rounded-2xl bg-card border border-border/50 shadow-sm backdrop-blur-xl relative overflow-hidden group hover:shadow-md transition-all duration-300"
+                    className="p-8 rounded-2xl bg-card border border-border shadow-md backdrop-blur-xl relative overflow-hidden group hover:shadow-lg transition-all duration-300"
                 >
                     <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
                         <div className="grid gap-6 sm:grid-cols-2">
@@ -195,8 +195,8 @@ export function ContactSection() {
                                 <Input
                                     id="name"
                                     name="name"
-                                    placeholder="Jane Doe"
-                                    className="bg-background/50 border-border/50 h-11 rounded-lg focus:ring-primary/20"
+                                    placeholder="John Doe"
+                                    className="px-4 bg-background border-border h-11 rounded-lg focus:ring-primary/20"
                                     required
                                 />
                             </div>
@@ -206,8 +206,8 @@ export function ContactSection() {
                                     id="email"
                                     name="email"
                                     type="email"
-                                    placeholder="jane@example.com"
-                                    className="bg-background/50 border-border/50 h-11 rounded-lg focus:ring-primary/20"
+                                    placeholder="john@company.com"
+                                    className="px-4 bg-background border-border h-11 rounded-lg focus:ring-primary/20"
                                     required
                                 />
                             </div>
@@ -217,8 +217,8 @@ export function ContactSection() {
                             <Input
                                 id="subject"
                                 name="subject"
-                                placeholder="Project Discussion"
-                                className="bg-background/50 border-border/50 h-11 rounded-lg focus:ring-primary/20"
+                                placeholder="What would you like to discuss?"
+                                className="px-4 bg-background border-border h-11 rounded-lg focus:ring-primary/20"
                                 required
                             />
                         </div>
@@ -227,35 +227,44 @@ export function ContactSection() {
                             <Textarea
                                 id="message"
                                 name="message"
-                                placeholder="Tell me about your project..."
-                                className="min-h-[120px] bg-background/50 border-border/50 rounded-lg focus:ring-primary/20 resize-none"
+                                placeholder="Tell me about your project, goals, timeline, and any specific requirements…"
+                                className="p-4 min-h-[120px] bg-background border-border rounded-lg focus:ring-primary/20 resize-none"
                                 required
                             />
                         </div>
-                        <Button
-                            type="submit"
-                            size="lg"
-                            className={`w-full h-11 rounded-lg text-base font-bold shadow-sm transition-all duration-300 active:scale-[0.98] ${success
-                                ? "bg-green-500 hover:bg-green-600 shadow-green-500/20"
-                                : "shadow-primary/20 hover:shadow-primary/30"
-                                }`}
-                            disabled={sending || success}
-                        >
-                            {sending ? (
-                                <span className="flex items-center gap-2">
-                                    <span className="w-4 h-4 border-2 border-background/30 border-t-background rounded-full animate-spin" />
-                                    Sending...
-                                </span>
-                            ) : success ? (
-                                <span className="flex items-center gap-2">
-                                    Mail Sent Successfully!
-                                </span>
-                            ) : (
-                                <span className="flex items-center gap-2">
-                                    <Send className="w-4 h-4" /> Send Mail
-                                </span>
-                            )}
-                        </Button>
+                        {success ? (
+                            <div
+                                className="w-full h-12 rounded-lg flex items-center justify-center gap-2.5 text-base font-bold text-foreground bg-card border border-border"
+                                style={{ boxShadow: "0 2px 12px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.06)" }}
+                            >
+                                Message sent successfully!
+                            </div>
+                        ) : (
+                            <Button
+                                type="submit"
+                                size="lg"
+                                className="w-full h-11 rounded-lg text-base font-bold shadow-sm transition-all duration-300 active:scale-[0.98] shadow-primary/20 hover:shadow-primary/30"
+                                disabled={sending}
+                            >
+                                {sending ? (
+                                    <span className="flex items-center gap-2">
+                                        <span className="w-4 h-4 border-2 border-background/30 border-t-background rounded-full animate-spin" />
+                                        Sending...
+                                    </span>
+                                ) : (
+                                    <span className="flex items-center gap-2">
+                                        <Send className="w-4 h-4" /> Start a Conversation
+                                    </span>
+                                )}
+                            </Button>
+                        )}
+                        
+                        <div className="flex items-center justify-center gap-2 pt-2 text-muted-foreground/80">
+                            <ShieldCheck className="w-4 h-4" />
+                            <span className="text-xs font-medium tracking-wide">
+                                Your information is safe. I typically respond within 2 hours.
+                            </span>
+                        </div>
                     </form>
                 </motion.div>
             </div>

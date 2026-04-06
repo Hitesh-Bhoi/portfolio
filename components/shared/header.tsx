@@ -22,49 +22,28 @@ export function Header() {
                     <Link className="mr-6 flex items-center space-x-2" href="/">
                         <Logo className="h-14 w-14" />
                     </Link>
-                    <nav className="flex items-center gap-6 text-sm font-medium">
-                        <Link
-                            href="/#about"
-                            className="transition-colors hover:text-foreground/80 text-foreground/60"
-                        >
-                            About
-                        </Link>
-                        <Link
-                            href="/#experience"
-                            className="transition-colors hover:text-foreground/80 text-foreground/60"
-                        >
-                            Experience
-                        </Link>
-                        <Link
-                            href="/#skills"
-                            className="transition-colors hover:text-foreground/80 text-foreground/60"
-                        >
-                            Skills
-                        </Link>
-                        <Link
-                            href="/#projects"
-                            className="transition-colors hover:text-foreground/80 text-foreground/60"
-                        >
-                            Projects
-                        </Link>
-                        <Link
-                            href="/resume"
-                            className="transition-colors hover:text-foreground/80 text-foreground/60"
-                        >
-                            Resume
-                        </Link>
-                        <Link
-                            href="/#faq"
-                            className="transition-colors hover:text-foreground/80 text-foreground/60"
-                        >
-                            FAQ
-                        </Link>
-                        <Link
-                            href="/#contact"
-                            className="transition-colors hover:text-foreground/80 text-foreground/60"
-                        >
-                            Contact
-                        </Link>
+                    <nav className="flex items-center gap-1 text-sm font-medium">
+                        {[
+                            { name: "About", href: "/#about" },
+                            { name: "Experience", href: "/#experience" },
+                            { name: "Skills", href: "/#skills" },
+                            { name: "Projects", href: "/#projects" },
+                            { name: "Resume", href: "/resume" },
+                            { name: "FAQ", href: "/#faq" },
+                            { name: "Contact", href: "/#contact" },
+                        ].map((link) => (
+                            <Link
+                                key={link.name}
+                                href={link.href}
+                                className="group relative px-4 py-2 transition-colors text-foreground/60 hover:text-foreground"
+                            >
+                                <span className="relative z-10">{link.name}</span>
+                                {/* Background Pill */}
+                                <span className="absolute inset-0 z-0 rounded-full bg-secondary/80 opacity-0 scale-90 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:scale-100 shadow-sm" />
+                                {/* Bottom Glowing Line */}
+                                <span className="absolute bottom-1 left-1/2 z-10 h-[2px] w-0 -translate-x-1/2 rounded-full bg-primary opacity-0 transition-all duration-300 ease-out group-hover:w-3/4 group-hover:opacity-100 shadow-[0_0_8px_hsl(var(--primary))]" />
+                            </Link>
+                        ))}
                     </nav>
                 </div>
                 <Sheet>
@@ -80,56 +59,33 @@ export function Header() {
                     </SheetTrigger>
                     <SheetContent side="left">
                         <SheetTitle className="sr-only">Mobile Navigation</SheetTitle>
-                        <nav className="grid gap-6 text-lg font-medium p-6 pt-10">
+                        <nav className="grid gap-2 text-lg font-medium p-6 pt-10">
                             <Link
                                 href="#"
-                                className="flex items-center gap-2 text-lg font-semibold"
+                                className="flex items-center gap-2 text-lg font-semibold mb-6"
                             >
                                 <Logo className="h-12 w-12" />
                                 <span className="sr-only">Hitesh Portfolio</span>
                             </Link>
-                            <Link
-                                href="/#about"
-                                className="text-muted-foreground hover:text-foreground"
-                            >
-                                About
-                            </Link>
-                            <Link
-                                href="/#experience"
-                                className="text-muted-foreground hover:text-foreground"
-                            >
-                                Experience
-                            </Link>
-                            <Link
-                                href="/#skills"
-                                className="text-muted-foreground hover:text-foreground"
-                            >
-                                Skills
-                            </Link>
-                            <Link
-                                href="/#projects"
-                                className="text-muted-foreground hover:text-foreground"
-                            >
-                                Projects
-                            </Link>
-                            <Link
-                                href="/resume"
-                                className="text-muted-foreground hover:text-foreground"
-                            >
-                                Resume
-                            </Link>
-                            <Link
-                                href="/#faq"
-                                className="text-muted-foreground hover:text-foreground"
-                            >
-                                FAQ
-                            </Link>
-                            <Link
-                                href="/#contact"
-                                className="text-muted-foreground hover:text-foreground"
-                            >
-                                Contact
-                            </Link>
+                            {[
+                                { name: "About", href: "/#about" },
+                                { name: "Experience", href: "/#experience" },
+                                { name: "Skills", href: "/#skills" },
+                                { name: "Projects", href: "/#projects" },
+                                { name: "Resume", href: "/resume" },
+                                { name: "FAQ", href: "/#faq" },
+                                { name: "Contact", href: "/#contact" },
+                            ].map((link) => (
+                                <Link
+                                    key={link.name}
+                                    href={link.href}
+                                    className="group relative flex items-center overflow-hidden rounded-lg px-4 py-3 text-muted-foreground transition-all duration-300 hover:bg-secondary/50 hover:text-foreground hover:translate-x-2"
+                                >
+                                    <span className="relative z-10">{link.name}</span>
+                                    {/* Left accent bar on hover */}
+                                    <span className="absolute left-0 top-0 bottom-0 w-1 bg-primary transform -translate-x-full transition-transform duration-300 group-hover:translate-x-0" />
+                                </Link>
+                            ))}
                         </nav>
                     </SheetContent>
                 </Sheet>

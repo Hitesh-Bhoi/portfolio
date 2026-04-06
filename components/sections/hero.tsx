@@ -26,10 +26,10 @@ import {
 } from "@/components/shared/icons";
 
 const roles = [
-  "Mern Stack Developer",
-  "Full Stack Developer",
-  "Frontend Developer",
-  "Backend Developer",
+  "Building Digital Products",
+  "High-Performance Web Apps",
+  "Solving Real-World Business Challenges",
+  "Delivering Customer Satisfaction",
 ];
 
 function TypingEffect({ roles }: { roles: string[] }) {
@@ -155,15 +155,23 @@ export function HeroSection() {
         >
           Hi, I'm <span className="text-primary">Hitesh</span>
         </motion.h1>
+          <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="text-2xl font-extrabold tracking-tight sm:text-5xl lg:text-3xl"
+        >
+          Full-Stack Developer | AI-Enabled Solutions
+        </motion.h2>
 
-        <motion.h2
+        <motion.h3
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-2xl font-bold text-muted-foreground lg:text-3xl flex items-center justify-center lg:justify-start"
+          className="text-2xl font-bold text-muted-foreground lg:text-2xl flex items-center justify-center lg:justify-start"
         >
           <TypingEffect roles={roles} />
-        </motion.h2>
+        </motion.h3>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -171,8 +179,7 @@ export function HeroSection() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="max-w-xl text-lg text-muted-foreground md:text-xl mx-auto lg:mx-0 leading-relaxed"
         >
-          Building seamless web experiences with modern technologies. Expert in
-          React, Next.js, Node.js, and scaling full-stack applications.
+          I partner with businesses and founders to build scalable, high-performance web applications. I focus on delivering exceptional user experiences that drive real results.
         </motion.p>
 
         <motion.div
@@ -183,7 +190,7 @@ export function HeroSection() {
         >
           <Button asChild size="lg" className="h-12 px-8 text-lg rounded-lg">
             <Link href="#contact">
-              Contact Me <ArrowRight className="h-5 w-5" />
+              Discuss Your Project <ArrowRight className="h-5 w-5 ml-2" />
             </Link>
           </Button>
           <Button
@@ -192,8 +199,8 @@ export function HeroSection() {
             asChild
             className="h-12 px-8 text-lg rounded-lg border-primary/20 hover:bg-primary/5"
           >
-            <Link href="/resume.pdf" target="_blank">
-              Download Resume <Download className="h-5 w-5" />
+            <Link href="#projects">
+              View Past Work
             </Link>
           </Button>
         </motion.div>

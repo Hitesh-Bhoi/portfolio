@@ -87,10 +87,11 @@ export function Footer() {
                                             href={item.href}
                                             target="_blank"
                                             rel="noreferrer"
-                                            className="text-foreground/70 hover:text-primary font-bold transition-colors inline-flex items-center gap-2"
+                                            className="text-foreground/70 hover:text-primary font-bold transition-colors inline-flex items-center gap-2 group"
                                         >
                                             <item.icon className="w-4 h-4" />
                                             {item.name}
+                                            <ExternalLink className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 -translate-y-1 transition-all" />
                                         </a>
                                     </li>
                                 ))}
