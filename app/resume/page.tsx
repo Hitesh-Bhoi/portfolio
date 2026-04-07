@@ -45,7 +45,7 @@ export default function ResumePage() {
 
                             <div className="space-y-2">
                                 <h1 className="text-xl font-bold uppercase tracking-tight">Hitesh</h1>
-                                <p className="text-primary text-sm font-bold uppercase tracking-widest">Full Stack Developer</p>
+                                <p className="text-primary text-sm font-bold uppercase tracking-widest">MERN Stack Developer</p>
                             </div>
 
                             <div className="flex gap-4">
@@ -112,7 +112,7 @@ export default function ResumePage() {
                     {/* Hero Text */}
                     <div className="space-y-4">
                         <h2 className="text-3xl font-bold tracking-tight">
-                            I'm <span className="text-primary">Hitesh</span>, a Creative Full Stack Developer
+                            I'm <span className="text-primary">Hitesh</span>, a Creative MERN Stack Developer
                         </h2>
                         <p className="text-muted-foreground text-base leading-relaxed max-w-3xl">
                             I build accessible, pixel-perfect, secure, and performant web applications. With a strong foundation in modern JavaScript/TypeScript and AI integration, I turn complex problems into elegant logic.
@@ -164,13 +164,13 @@ export default function ResumePage() {
                                 role="Fullstack Engineer"
                                 company="Intellimedia Networks"
                                 period="07-2024 - Present"
-                                description="Engineering high-performance video streaming solutions and scalable enterprise web applications using modern full-stack technologies."
+                                description="Engineering high-performance video streaming solutions and scalable enterprise web applications using modern mern-stack technologies."
                             />
                             <ExperienceItem
                                 role="Jr. Fullstack Developer"
                                 company="Syndell Technologies"
                                 period="03-2023 - 02-2024"
-                                description="Developed and optimized full-stack web applications, focusing on performance, scalability, and seamless user experiences."
+                                description="Developed and optimized mern-stack web applications, focusing on performance, scalability, and seamless user experiences."
                             />
                             <ExperienceItem
                                 role="React.js Intern"

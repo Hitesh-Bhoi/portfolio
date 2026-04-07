@@ -112,6 +112,7 @@ export function ProjectsSection() {
                                 <Link
                                     href={project.repoUrl}
                                     target="_blank"
+                                    rel="noopener noreferrer"
                                     className="flex-1 flex items-center justify-center gap-2 py-3 rounded-lg bg-secondary/50 border border-border text-sm font-bold hover:bg-secondary transition-colors"
                                 >
                                     <Github className="w-4 h-4" /> Code
@@ -119,6 +120,7 @@ export function ProjectsSection() {
                                 <Link
                                     href={project.demoUrl}
                                     target="_blank"
+                                    rel="noopener noreferrer"
                                     className="flex-1 flex items-center justify-center gap-2 py-3 rounded-lg bg-primary text-primary-foreground text-sm font-bold shadow-sm shadow-primary/10 hover:shadow-md hover:shadow-primary/20 transition-all"
                                 >
                                     <ExternalLink className="w-4 h-4" /> Live Demo

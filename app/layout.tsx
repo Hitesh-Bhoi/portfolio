@@ -31,6 +31,8 @@ export const metadata: Metadata = {
     "MERN Stack Developer specializing in Next.js, React.js, Node.js, Express.js, and MongoDB, focused on building high-performance, scalable, and modern web applications.",
   keywords: [
     "Bhoi Hitesh",
+    "bhoi hitesh",
+    "hitesh bhoi",
     "Hitesh Bhoi",
     "MERN Developer",
     "Frontend Developer",
@@ -55,6 +57,21 @@ export const metadata: Metadata = {
       },
     ],
   },
+  alternates: {
+    canonical: "/",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Bhoi Hitesh | MERN Stack Developer",
+    description: "MERN Stack Developer crafting fast, scalable, and user-friendly web experiences using modern web technologies.",
+    images: ["https://bhoi-dev.vercel.app/og.png"],
+    creator: "@hitesh_bhoi", // Replace with actual handle if different
+  },
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png", // We should probably generate this or just use favicon for now
+  },
+  manifest: "/manifest.json",
 };
 
 export default function RootLayout({

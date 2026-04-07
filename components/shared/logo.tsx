@@ -22,7 +22,10 @@ export function Logo({ className = "w-10 h-10" }: { className?: string }) {
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
                 className="w-full h-full"
+                role="img"
+                aria-labelledby="logoTitle"
             >
+                <title id="logoTitle">Bhoi Hitesh Portfolio</title>
                 {/* Faint Base Frame */}
                 <rect
                     x="16" y="16" width="68" height="68"

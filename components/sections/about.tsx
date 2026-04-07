@@ -64,7 +64,7 @@ export function AboutSection() {
                             <span className="text-primary dark:text-primary/90">I engineer digital products that drive business value.</span>
                         </p>
                         <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
-                            As a Full Stack Developer, I partner with businesses to turn their ideas into high-performance web applications. By bridging the gap between complex backend systems and intuitive user interfaces, I deliver products that are not only robust but also perfectly aligned with your broader business goals. 
+                            As a MERN Stack Developer, I partner with businesses to turn their ideas into high-performance web applications. By bridging the gap between complex backend systems and intuitive user interfaces, I deliver products that are not only robust but also perfectly aligned with your broader business goals. 
                         </p>
                         <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
                             My expertise spans the entire development lifecycle—from designing scalable database architectures to crafting pixel-perfect, conversion-optimized UIs. I am passionate about creating digital experiences that leave a lasting impact and help your business scale fluidly.
@@ -107,7 +107,7 @@ export function AboutSection() {
 
                     <div className="flex flex-wrap gap-3 pt-2">
                         {[
-                            "Full Stack Development", 
+                            "MERN Stack Development", 
                             "AI Integration", 
                             "System Architecture", 
                             "Performance Optimization",
@@ -142,7 +142,7 @@ export function AboutSection() {
                             {[
                                 { icon: <Brain className="w-5 h-5" />, title: "AI-Driven Development", desc: "Leveraging LLMs for optimized workflows", color: "text-primary", bg: "bg-primary/10 border-primary/20" },
                                 { icon: <Terminal className="w-5 h-5" />, title: "Clean Architecture", desc: "Scalable, maintainable codebases", color: "text-purple-500", bg: "bg-purple-500/10 border-purple-500/20" },
-                                { icon: <Code2 className="w-5 h-5" />, title: "Full Stack Mastery", desc: "React, Next.js, Node.js, MongoDB", color: "text-blue-500", bg: "bg-blue-500/10 border-blue-500/20" },
+                                { icon: <Code2 className="w-5 h-5" />, title: "MERN Stack Mastery", desc: "React.js, Next.js, Node.js, Express.js and MongoDB", color: "text-blue-500", bg: "bg-blue-500/10 border-blue-500/20" },
                                 { icon: <Rocket className="w-5 h-5" />, title: "Performance First", desc: "Optimized for speed and SEO", color: "text-green-500", bg: "bg-green-500/10 border-green-500/20" }
                             ].map((item, i) => (
                                 <motion.div

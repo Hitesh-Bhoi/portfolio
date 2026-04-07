@@ -12,7 +12,10 @@ export function EcobazarLogo({ className = "h-7 w-auto", glow = false }: { class
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
                 className="w-full h-full"
+                role="img"
+                aria-labelledby="ecobazarTitle"
             >
+                <title id="ecobazarTitle">Ecobazar E-commerce Logo</title>
                 <motion.g
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}

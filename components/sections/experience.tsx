@@ -6,7 +6,7 @@ import { Calendar, MapPin, Briefcase } from "lucide-react"
 const experience = [
     {
         company: "Intellimedia Networks",
-        role: "Fullstack Engineer",
+        role: "Fullstack Developer",
         duration: "07-2024 to Present",
         location: "Ahmedabad, India",
         description: "Driving the development of scalable enterprise applications with a core focus on advanced backend architectures. Deepened technical expertise by orchestrating containerized deployments using Docker, designing scalable databases, and engineering robust APIs.",

@@ -151,9 +151,9 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl"
+          className="text-2xl font-extrabold tracking-tight sm:text-5xl lg:text-4xl"
         >
-          Hi, I'm <span className="text-primary">Hitesh</span>
+          Bhoi Hitesh | <span className="text-primary">MERN Stack Developer</span>
         </motion.h1>
           <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -161,7 +161,7 @@ export function HeroSection() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-2xl font-extrabold tracking-tight sm:text-5xl lg:text-3xl"
         >
-          Full-Stack Developer | AI-Enabled Solutions
+          AI-Enabled Developer
         </motion.h2>
 
         <motion.h3
