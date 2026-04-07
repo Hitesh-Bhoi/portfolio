@@ -94,10 +94,7 @@ export function FaqSection() {
 
     return (
         <section id="faq" className="w-full py-16 md:py-24 relative overflow-hidden bg-background">
-            {/* Minimalist Grid Background */}
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[24px_24px] pointer-events-none" />
-            <div className="absolute inset-0 bg-background/50 pointer-events-none" />
-
+            
             <div className="container mx-auto px-6 relative z-10 flex flex-col items-center">
                 
                 <motion.div
