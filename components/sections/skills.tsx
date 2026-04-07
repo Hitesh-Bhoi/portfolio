@@ -17,7 +17,14 @@ import {
     AWS,
     Antd,
     ExpressJS,
-    GitHub
+    GitHub,
+    Postman,
+    VScode,
+    ChatGPT,
+    Copilot,
+    Gemini,
+    Antigravity,
+    Docker
 } from "@/components/shared/icons"
 import {
     Layout,
@@ -56,7 +63,7 @@ const skillCategories = [
             { name: "Node.js", icon: <NodeJS className="w-5 h-5" /> },
             { name: "Express.js", icon: <ExpressJS className="w-5 h-5" /> },
             { name: "API Development & Integration", icon: <ApertureIcon className="w-5 h-5" /> },
-            { name: "Docker", icon: <Layers className="w-5 h-5" /> },
+            { name: "Docker", icon: <Docker className="w-5 h-5" /> },
         ]
     },
     {
@@ -74,12 +81,12 @@ const skillCategories = [
         skills: [
             { name: "Git", icon: <Git className="w-5 h-5" /> },
             { name: "GitHub", icon: <GitHub className="w-5 h-5" /> },
-            { name: "Postman", icon: <PowerSquare className="w-5 h-5" /> },
-            { name: "VS Code", icon: <Code className="w-5 h-5" /> },
-            { name: "ChatGPT", icon: <Code className="w-5 h-5" /> },
-            { name: "GitHub Copilot", icon: <Code className="w-5 h-5" /> },
-            { name: "Google Gemini", icon: <Code className="w-5 h-5" /> },
-            { name: "Google Antigravity", icon: <Code className="w-5 h-5" /> },
+            { name: "Postman", icon: <Postman className="w-5 h-5" /> },
+            { name: "VS Code", icon: <VScode className="w-5 h-5" /> },
+            { name: "ChatGPT", icon: <ChatGPT className="w-5 h-5" /> },
+            { name: "GitHub Copilot", icon: <Copilot className="w-5 h-5" /> },
+            { name: "Google Gemini", icon: <Gemini className="w-5 h-5" /> },
+            { name: "Google Antigravity", icon: <Antigravity className="w-5 h-5" /> },
         ]
     }
 ]
