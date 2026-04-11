@@ -11,7 +11,6 @@ const projects = [
         title: "Portfolio Website",
         icon: <Logo />,
         description: "A highly optimized, high-performing personal portfolio designed to convert visitors into clients through modern UX principles and fluid micro-interactions.",
-        notice: "Currently under maintenance, but completely functional and works well.",
         tags: ["Next.js", "React", "Framer Motion", "Shadcn UI"],
         demoUrl: "https://bhoi-dev.vercel.app/",
         repoUrl: "https://github.com/Hitesh-Bhoi/portfolio",
