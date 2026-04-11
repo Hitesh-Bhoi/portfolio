@@ -27,12 +27,14 @@ export function Footer() {
 
     const navigation = {
         sitemap: [
-            { name: "About", href: "#about" },
-            { name: "Skills", href: "#skills" },
-            { name: "Projects", href: "#projects" },
-            { name: "Services", href: "#services" },
-            { name: "Experience", href: "#experience" },
-            { name: "Contact", href: "#contact" },
+            { name: "About", href: "/#about" },
+            { name: "Skills", href: "/#skills" },
+            { name: "Projects", href: "/#projects" },
+            { name: "Experience", href: "/#experience" },
+            { name: "Services", href: "/#services" },
+            { name: "Resume", href: "/resume" },
+            { name: "FAQ", href: "/#faq" },
+            { name: "Contact", href: "/#contact" },
         ],
         socials: [
             { name: "GitHub", href: process.env.NEXT_PUBLIC_GITHUB, icon: Github },

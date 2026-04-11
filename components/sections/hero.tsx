@@ -153,9 +153,10 @@ export function HeroSection() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-2xl font-extrabold tracking-tight sm:text-5xl lg:text-4xl"
         >
-          Bhoi Hitesh | <span className="text-primary">MERN Stack Developer</span>
+          Bhoi Hitesh |{" "}
+          <span className="text-primary">MERN Stack Developer</span>
         </motion.h1>
-          <motion.h2
+        <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
@@ -179,7 +180,9 @@ export function HeroSection() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="max-w-xl text-lg text-muted-foreground md:text-xl mx-auto lg:mx-0 leading-relaxed"
         >
-          I partner with businesses and founders to build scalable, high-performance web applications. I focus on delivering exceptional user experiences that drive real results.
+          I partner with businesses and founders to build scalable,
+          high-performance web applications. I focus on delivering exceptional
+          user experiences that drive real results.
         </motion.p>
 
         <motion.div
@@ -199,9 +202,7 @@ export function HeroSection() {
             asChild
             className="h-12 px-8 text-lg rounded-lg border-primary/20 hover:bg-primary/5"
           >
-            <Link href="#projects">
-              View Past Work
-            </Link>
+            <Link href="#projects">View Past Work</Link>
           </Button>
         </motion.div>
 

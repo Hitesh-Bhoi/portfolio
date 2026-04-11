@@ -1,10 +1,10 @@
 import { HeroSection } from "@/components/sections/hero";
 import { AboutSection } from "@/components/sections/about";
-import { ExperienceSection } from "@/components/sections/experience";
 import { SkillsSection } from "@/components/sections/skills";
 import { ProjectsSection } from "@/components/sections/projects";
-import { FaqSection } from "@/components/sections/faq";
+import { ExperienceSection } from "@/components/sections/experience";
 import { ServicesSection } from "@/components/sections/services";
+import { FaqSection } from "@/components/sections/faq";
 import { ContactSection } from "@/components/sections/contact";
 import { Separator } from "@/components/ui/separator";
 
@@ -15,11 +15,11 @@ export default function Home() {
       <Separator className="w-full max-w-11/12 mx-auto opacity-50" />
       <AboutSection />
       <Separator className="w-full max-w-11/12 mx-auto opacity-50" />
-      <ExperienceSection />
-      <Separator className="w-full max-w-11/12 mx-auto opacity-50" />
       <SkillsSection />
       <Separator className="w-full max-w-11/12 mx-auto opacity-50" />
       <ProjectsSection />
+      <Separator className="w-full max-w-11/12 mx-auto opacity-50" />
+      <ExperienceSection />
       <Separator className="w-full max-w-11/12 mx-auto opacity-50" />
       <ServicesSection />
       <Separator className="w-full max-w-11/12 mx-auto opacity-50" />

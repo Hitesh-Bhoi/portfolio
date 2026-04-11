@@ -25,9 +25,9 @@ export function Header() {
                     <nav className="flex items-center gap-1 text-sm font-medium">
                         {[
                             { name: "About", href: "/#about" },
-                            { name: "Experience", href: "/#experience" },
                             { name: "Skills", href: "/#skills" },
                             { name: "Projects", href: "/#projects" },
+                            { name: "Experience", href: "/#experience" },
                             { name: "Services", href: "/#services" },
                             { name: "Resume", href: "/resume" },
                             { name: "FAQ", href: "/#faq" },
@@ -70,9 +70,9 @@ export function Header() {
                             </Link>
                             {[
                                 { name: "About", href: "/#about" },
-                                { name: "Experience", href: "/#experience" },
                                 { name: "Skills", href: "/#skills" },
                                 { name: "Projects", href: "/#projects" },
+                                { name: "Experience", href: "/#experience" },
                                 { name: "Services", href: "/#services" },
                                 { name: "Resume", href: "/resume" },
                                 { name: "FAQ", href: "/#faq" },

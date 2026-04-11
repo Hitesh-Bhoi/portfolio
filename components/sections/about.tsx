@@ -7,12 +7,13 @@ import { useEffect, useRef } from "react"
 
 function Counter({ value, direction = "up" }: { value: number; direction?: "up" | "down" }) {
     const ref = useRef<HTMLSpanElement>(null)
-    const motionValue = useMotionValue(direction === "down" ? value : 0)
+    const initialValue = direction === "down" ? value : 0
+    const motionValue = useMotionValue(initialValue)
     const springValue = useSpring(motionValue, {
         damping: 30,
         stiffness: 100,
     })
-    const isInView = useInView(ref, { once: true, margin: "-100px" })
+    const isInView = useInView(ref, { once: true, margin: "-20px" })
 
     useEffect(() => {
         if (isInView) {
@@ -28,7 +29,7 @@ function Counter({ value, direction = "up" }: { value: number; direction?: "up" 
         })
     }, [springValue])
 
-    return <span ref={ref} />
+    return <span ref={ref}>{initialValue}</span>
 }
 
 export function AboutSection() {
