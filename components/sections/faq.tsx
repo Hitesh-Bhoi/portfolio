@@ -95,7 +95,7 @@ export function FaqSection() {
     return (
         <section id="faq" className="w-full py-16 md:py-24 relative overflow-hidden bg-background">
             
-            <div className="container mx-auto px-6 relative z-10 flex flex-col items-center">
+            <div className="w-full px-6 md:px-10 lg:px-16 mx-auto relative z-10 flex flex-col items-center">
                 
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -116,7 +116,7 @@ export function FaqSection() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                    className="w-full max-w-4xl flex flex-col gap-2"
+                    className="w-full flex flex-col gap-2"
                 >
                     {faqData.map((item, index) => (
                         <FaqItem

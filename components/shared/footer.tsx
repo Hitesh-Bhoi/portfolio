@@ -48,14 +48,17 @@ export function Footer() {
     }
 
     return (
-        <footer className="relative bg-background border-t border-border/50 pt-20 pb-10">
-            <div className="container mx-auto px-6 max-w-7xl">
+        <footer className="relative bg-background border-t border-border/50 pt-16 pb-8 w-full overflow-hidden">
+            {/* Subtle Background Radial Glow */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[600px] bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
+
+            <div className="relative z-10 w-full px-6 md:px-10 lg:px-16 mx-auto">
                 {/* Brand Section */}
-                <div className="flex flex-col md:flex-row justify-between items-start gap-12 mb-20">
+                <div className="flex flex-col md:flex-row justify-between items-start gap-12 mb-20 lg:mb-24">
                     <div className="space-y-6 max-w-sm">
                         <div className="flex items-center gap-3">
                             <Logo className="w-16 h-16" />
-                            <span className="text-2xl font-black tracking-tighter uppercase italic">Hitesh.</span>
+                            <h1 className="text-2xl font-black tracking-tighter uppercase italic">Bhoi Hitesh</h1>
                         </div>
                         <p className="text-muted-foreground text-lg leading-relaxed font-medium">
                             Building digital products with a focus on clean aesthetics, performance, and user-centric design.
@@ -65,16 +68,15 @@ export function Footer() {
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-12 lg:gap-24">
                         {/* Sitemap */}
                         <div className="space-y-6">
-                            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-primary/50">Sitemap</h4>
-                            <ul className="space-y-4">
+                            <h4 className="text-sm font-bold uppercase tracking-wider text-foreground/80">Sitemap</h4>
+                            <ul className="space-y-4 shadow-none">
                                 {navigation.sitemap.map((item) => (
                                     <li key={item.name}>
                                         <Link
                                             href={item.href}
-                                            className="text-foreground/70 hover:text-primary font-bold transition-colors inline-flex items-center group"
+                                            className="text-foreground/70 hover:text-primary font-bold transition-all duration-300 inline-flex items-center group hover:translate-x-1"
                                         >
                                             {item.name}
-                                            <ExternalLink className="w-3 h-3 ml-2 opacity-0 group-hover:opacity-100 -translate-y-1 transition-all" />
                                         </Link>
                                     </li>
                                 ))}
@@ -83,7 +85,7 @@ export function Footer() {
 
                         {/* Socials */}
                         <div className="space-y-6">
-                            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-primary/50">Connect</h4>
+                            <h4 className="text-sm font-bold uppercase tracking-wider text-foreground/80">Connect</h4>
                             <ul className="space-y-4">
                                 {navigation.socials.map((item) => (
                                     <li key={item.name}>
@@ -91,11 +93,10 @@ export function Footer() {
                                             href={item.href}
                                             target="_blank"
                                             rel="noreferrer"
-                                            className="text-foreground/70 hover:text-primary font-bold transition-colors inline-flex items-center gap-2 group"
+                                            className="text-foreground/70 hover:text-primary font-bold transition-all duration-300 inline-flex items-center gap-2.5 group hover:translate-x-1"
                                         >
                                             <item.icon className="w-4 h-4" />
                                             {item.name}
-                                            <ExternalLink className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 -translate-y-1 transition-all" />
                                         </a>
                                     </li>
                                 ))}
@@ -104,10 +105,10 @@ export function Footer() {
 
                         {/* Info */}
                         <div className="space-y-6 col-span-2 sm:col-span-1">
-                            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-primary/50">Availability</h4>
+                            <h4 className="text-sm font-bold uppercase tracking-wider text-foreground/80">Availability</h4>
                             <div className="space-y-4">
-                                <div className="flex items-center gap-2 text-foreground/70 font-bold">
-                                    <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                                <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 text-green-600 dark:text-green-500 font-bold text-sm shadow-sm md:w-fit group hover:bg-green-500/20 transition-colors cursor-default">
+                                    <div className="w-2 h-2 rounded-full bg-green-500 animate-[pulse_2s_ease-in-out_infinite]" />
                                     Available for hire
                                 </div>
                                 <p className="text-sm text-muted-foreground font-medium">
@@ -118,9 +119,12 @@ export function Footer() {
                     </div>
                 </div>
 
+                {/* Solid Divider */}
+                <div className="w-full h-px bg-border/50 mb-8" />
+
                 {/* Bottom Bar */}
-                <div className="flex flex-col md:flex-row items-center justify-between gap-8 pt-10 border-t border-border/30">
-                    <div className="flex flex-wrap justify-center gap-6 text-xs font-bold uppercase tracking-widest text-muted-foreground">
+                <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+                    <div className="flex flex-wrap justify-center gap-6 text-[11px] font-black uppercase tracking-widest text-muted-foreground/60">
                         <span>© {new Date().getFullYear()} All Rights Reserved</span>
                         <Link href="#" className="hover:text-primary transition-colors">Privacy Policy</Link>
                         <Link href="#" className="hover:text-primary transition-colors">Terms of Service</Link>
@@ -140,7 +144,7 @@ export function Footer() {
                             }}
                             whileHover={{ y: -5 }}
                             whileTap={{ scale: 0.95 }}
-                            className="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-50 p-4 rounded-full bg-background/80 backdrop-blur-md border border-border text-foreground hover:border-primary/50 hover:text-primary transition-all shadow-lg"
+                            className="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-50 p-4 rounded-full bg-background/80 backdrop-blur-md border border-border text-foreground hover:border-primary/50 hover:text-primary transition-all shadow-xl hover:shadow-primary/20"
                             aria-label="Back to Top"
                         >
                             <ArrowUp className="w-5 h-5" />

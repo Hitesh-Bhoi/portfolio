@@ -34,7 +34,7 @@ function Counter({ value, direction = "up" }: { value: number; direction?: "up" 
 
 export function AboutSection() {
     return (
-        <section id="about" className="container py-16 md:py-24 mx-auto px-6 relative overflow-hidden">
+        <section id="about" className="w-full py-16 md:py-24 mx-auto px-6 md:px-10 lg:px-16 relative overflow-hidden">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -50,7 +50,7 @@ export function AboutSection() {
                 </p>
             </motion.div>
 
-            <div className="grid gap-12 lg:gap-16 lg:grid-cols-2 items-start max-w-7xl mx-auto">
+            <div className="grid gap-12 lg:gap-16 lg:grid-cols-2 items-start w-full">
                 {/* Text Content */}
                 <motion.div
                     initial={{ opacity: 0, x: -50 }}

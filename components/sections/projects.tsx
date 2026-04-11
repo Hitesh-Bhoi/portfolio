@@ -11,7 +11,7 @@ const projects = [
         title: "Portfolio Website",
         icon: <Logo />,
         description: "A highly optimized, high-performing personal portfolio designed to convert visitors into clients through modern UX principles and fluid micro-interactions.",
-        tags: ["Next.js", "React", "Framer Motion", "Shadcn UI"],
+        tags: ["Next.js", "React.js", "TypeScript", "Framer Motion", "Tailwind CSS"],
         demoUrl: "https://bhoi-dev.vercel.app/",
         repoUrl: "https://github.com/Hitesh-Bhoi/portfolio",
         gradient: "from-orange-500/20 to-yellow-500/20"
@@ -21,7 +21,7 @@ const projects = [
         icon: <EcobazarLogo className="w-auto max-w-[120px]" />,
         description: "A scalable, conversion-focused e-commerce solution enabling smooth product discovery, user-friendly cart management, and seamless checkout for customers.",
         notice: "Currently under development. Some features may not work and more are coming soon.",
-        tags: ["Next.js", "React", "Tailwind", "Framer Motion"],
+        tags: ["Next.js", "React.js", "TypeScript", "Redux Toolkit", "SCSS", "Styled Components", "Tailwind CSS", "Framer Motion"],
         demoUrl: "https://grocery-app-phi-snowy.vercel.app/",
         repoUrl: "https://github.com/Hitesh-Bhoi/food-cart",
         gradient: "from-blue-500/20 to-cyan-500/20"
@@ -30,8 +30,8 @@ const projects = [
         title: "Grocery Admin Panel",
         icon: <EcobazarLogo className="w-auto max-w-[120px]" />,
         description: "A fully integrated B2B dashboard built to streamline inventory tracking, manage customer orders efficiently, and deliver actionable sales analytics.",
-        notice: "Coming soon.",
-        tags: ["Next.js", "Tailwind", "Redux Toolkit", "Framer Motion", "SCSS", "Shadcn UI"],
+        notice: "Coming soon.", 
+        tags: ["Next.js", "React.js", "TypeScript", "Tailwind CSS", "Redux Toolkit", "Framer Motion", "SCSS", "Shadcn UI"],
         demoUrl: "#",
         repoUrl: "#",
         gradient: "from-green-500/20 to-emerald-500/20",
@@ -42,7 +42,7 @@ const projects = [
 
 export function ProjectsSection() {
     return (
-        <section id="projects" className="container py-16 md:py-20 mx-auto px-6 relative overflow-hidden">
+        <section id="projects" className="w-full py-16 md:py-24 mx-auto px-6 md:px-10 lg:px-16 relative overflow-hidden">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -62,7 +62,7 @@ export function ProjectsSection() {
                 </p>
             </motion.div>
 
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 w-full">
                 {projects.map((project, index) => (
                     <motion.div
                         key={project.title}
@@ -98,7 +98,7 @@ export function ProjectsSection() {
                                     {project.tags.map((tag) => (
                                         <span
                                             key={tag}
-                                            className="px-3 py-1 text-xs font-semibold rounded-full bg-secondary/80 border border-border text-secondary-foreground"
+                                            className="px-4 py-1.5 text-sm font-semibold rounded-full bg-secondary/80 border border-border text-secondary-foreground shadow-sm group-hover:border-border/80 transition-colors"
                                         >
                                             {tag}
                                         </span>

@@ -129,7 +129,7 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative w-full flex flex-col items-center justify-center gap-10 pt-4 pb-12 md:pt-8 md:pb-20 lg:pt-16 lg:pb-16 text-center lg:text-left lg:flex-row lg:gap-20 mx-auto px-4 sm:px-6 overflow-hidden"
+      className="relative w-full flex flex-col items-center justify-center gap-10 pt-4 pb-12 md:pt-8 md:pb-20 lg:pt-16 lg:pb-16 text-center lg:text-left lg:flex-row lg:gap-20 mx-auto px-6 md:px-10 lg:px-16 overflow-hidden"
     >
       <div className="flex-1 space-y-6 z-10 w-full max-w-2xl px-4 lg:px-0">
         <motion.div

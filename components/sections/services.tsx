@@ -120,7 +120,7 @@ const discussPoints = [
 
 export function ServicesSection() {
     return (
-        <section id="services" className="container py-16 md:py-24 mx-auto px-6 relative overflow-hidden">
+        <section id="services" className="w-full py-16 md:py-24 mx-auto px-6 md:px-10 lg:px-16 relative overflow-hidden">
 
             {/* Header */}
             <motion.div
@@ -139,7 +139,7 @@ export function ServicesSection() {
             </motion.div>
 
             {/* Pricing Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 max-w-6xl mx-auto mb-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 w-full mx-auto mb-6">
                 {services.map((service, i) => (
                     <motion.div
                         key={service.title}
@@ -220,7 +220,7 @@ export function ServicesSection() {
             </div>
 
             {/* Add-ons + Let's Discuss row */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 w-full mx-auto">
 
                 {/* Add-ons */}
                 <motion.div

@@ -93,7 +93,7 @@ const skillCategories = [
 
 export function SkillsSection() {
     return (
-        <section id="skills" className="container py-16 md:py-24 mx-auto px-6 relative overflow-hidden">
+        <section id="skills" className="w-full py-16 md:py-24 mx-auto px-6 md:px-10 lg:px-16 relative overflow-hidden">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -109,7 +109,7 @@ export function SkillsSection() {
                 </p>
             </motion.div>
 
-            <div className="flex flex-col gap-6 max-w-5xl mx-auto">
+            <div className="flex flex-col gap-6 w-full">
                 {skillCategories.map((category, idx) => {
                     // Bento Box Layout configurations based on category
                     let innerLayout = "flex flex-wrap gap-4";

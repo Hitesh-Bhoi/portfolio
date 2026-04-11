@@ -3,6 +3,7 @@
 import * as React from "react"
 import Link from "next/link"
 import { Menu, Code2 } from "lucide-react"
+import { motion } from "framer-motion"
 
 import { Button } from "@/components/ui/button"
 import {
@@ -17,10 +18,10 @@ import { Logo } from "@/components/shared/logo"
 export function Header() {
     return (
         <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
-            <div className="flex justify-between h-14 w-full items-center px-4 sm:px-6">
+            <div className="flex justify-between h-20 w-full items-center px-6 md:px-10 lg:px-16">
                 <div className="mr-4 hidden md:flex">
                     <Link className="mr-6 flex items-center space-x-2" href="/">
-                        <Logo className="h-14 w-14" />
+                        <Logo className="h-16 w-16 -ml-2" />
                     </Link>
                     <nav className="flex items-center gap-1 text-sm font-medium">
                         {[
@@ -61,13 +62,20 @@ export function Header() {
                     <SheetContent side="left">
                         <SheetTitle className="sr-only">Mobile Navigation</SheetTitle>
                         <nav className="grid gap-2 text-lg font-medium p-6 pt-10">
-                            <Link
-                                href="#"
-                                className="flex items-center gap-2 text-lg font-semibold mb-6"
+                            <motion.div
+                                initial={{ opacity: 0, x: -20 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.5, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
                             >
-                                <Logo className="h-12 w-12" />
-                                <span className="sr-only">Hitesh Portfolio</span>
-                            </Link>
+                                <Link
+                                    href="#"
+                                    className="flex items-center gap-2 text-lg font-semibold mb-6"
+                                >
+                                    <Logo className="h-12 w-12" />
+                                    <span className="sr-only">Hitesh Portfolio</span>
+                                </Link>
+                            </motion.div>
+                            
                             {[
                                 { name: "About", href: "/#about" },
                                 { name: "Skills", href: "/#skills" },
@@ -77,16 +85,22 @@ export function Header() {
                                 { name: "Resume", href: "/resume" },
                                 { name: "FAQ", href: "/#faq" },
                                 { name: "Contact", href: "/#contact" },
-                            ].map((link) => (
-                                <Link
+                            ].map((link, index) => (
+                                <motion.div
                                     key={link.name}
-                                    href={link.href}
-                                    className="group relative flex items-center overflow-hidden rounded-lg px-4 py-3 text-muted-foreground transition-all duration-300 hover:bg-secondary/50 hover:text-foreground hover:translate-x-2"
+                                    initial={{ opacity: 0, x: -20 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ duration: 0.5, delay: 0.15 + (index * 0.05), ease: [0.22, 1, 0.36, 1] }}
                                 >
-                                    <span className="relative z-10">{link.name}</span>
-                                    {/* Left accent bar on hover */}
-                                    <span className="absolute left-0 top-0 bottom-0 w-1 bg-primary transform -translate-x-full transition-transform duration-300 group-hover:translate-x-0" />
-                                </Link>
+                                    <Link
+                                        href={link.href}
+                                        className="group relative flex items-center overflow-hidden rounded-lg px-4 py-3 text-muted-foreground transition-all duration-300 hover:bg-secondary/50 hover:text-foreground hover:translate-x-2"
+                                    >
+                                        <span className="relative z-10 font-medium">{link.name}</span>
+                                        {/* Left accent bar on hover */}
+                                        <span className="absolute left-0 top-0 bottom-0 w-1 rounded-r-full bg-primary transform -translate-x-full transition-transform duration-300 group-hover:translate-x-0" />
+                                    </Link>
+                                </motion.div>
                             ))}
                         </nav>
                     </SheetContent>
