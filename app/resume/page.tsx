@@ -15,6 +15,7 @@ import {
   GraduationCap,
   Terminal,
   ExternalLink,
+  Instagram,
 } from "lucide-react";
 
 const technicalArsenal = [
@@ -145,6 +146,10 @@ export default function ResumePage() {
                   icon: Linkedin,
                   href:
                     process.env.NEXT_PUBLIC_LINKED_IN || "https://linkedin.com",
+                },
+                {
+                  icon: Instagram,
+                  href: "https://www.instagram.com/bhoihitesh1844/",
                 },
               ].map((social, i) => (
                 <a

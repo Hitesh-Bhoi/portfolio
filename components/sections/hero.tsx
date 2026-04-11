@@ -3,7 +3,7 @@
 import * as React from "react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowRight, Download, Instagram } from "lucide-react";
 import Link from "next/link";
 import { Logo } from "@/components/shared/logo";
 import {
@@ -90,9 +90,9 @@ export function HeroSection() {
       label: "LinkedIn",
     },
     {
-      icon: <Twitter className="w-5 h-5" />,
-      href: "https://twitter.com",
-      label: "Twitter",
+      icon: <Instagram className="w-5 h-5" />,
+      href: "https://www.instagram.com/bhoihitesh1844/",
+      label: "Instagram",
     },
   ];
 

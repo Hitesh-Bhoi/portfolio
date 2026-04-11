@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { motion } from "framer-motion"
-import { Mail, Send, MapPin, Phone, MessageSquare, ShieldCheck, CheckCircle, CheckCheckIcon, CheckCircle2 } from "lucide-react"
+import { Mail, Send, MapPin, Phone, MessageSquare, ShieldCheck, CheckCircle, CheckCheckIcon, CheckCircle2, Instagram } from "lucide-react"
 import { GitHub, LinkedIn, Twitter } from "@/components/shared/icons"
 
 const socialLinks = [
@@ -23,10 +23,10 @@ const socialLinks = [
         color: "hover:text-[#0077b5] hover:border-[#0077b5]/30 hover:bg-[#0077b5]/5"
     },
     {
-        name: "Twitter",
-        icon: <Twitter className="w-5 h-5" />,
-        href: "https://twitter.com",
-        color: "hover:text-[#1da1f2] hover:border-[#1da1f2]/30 hover:bg-[#1da1f2]/5"
+        name: "Instagram",
+        icon: <Instagram className="w-5 h-5" />,
+        href: "https://www.instagram.com/bhoihitesh1844/",
+        color: "hover:text-[#E1306C] hover:border-[#E1306C]/30 hover:bg-[#E1306C]/5"
     }
 ]
 

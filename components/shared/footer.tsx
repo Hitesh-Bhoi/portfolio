@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Github, Linkedin, Twitter, Mail, MapPin, ExternalLink, ArrowUp } from "lucide-react"
+import { Github, Linkedin, Instagram, Mail, MapPin, ExternalLink, ArrowUp } from "lucide-react"
 import { Logo } from "@/components/shared/logo"
 import Link from "next/link"
 import { useState, useEffect } from "react"
@@ -39,6 +39,7 @@ export function Footer() {
         socials: [
             { name: "GitHub", href: process.env.NEXT_PUBLIC_GITHUB, icon: Github },
             { name: "LinkedIn", href: process.env.NEXT_PUBLIC_LINKED_IN, icon: Linkedin },
+            { name: "Instagram", href: "https://www.instagram.com/bhoihitesh1844/", icon: Instagram },
         ],
         contact: [
             { label: "Email", value: process.env.NEXT_PUBLIC_EMAIL, icon: Mail },

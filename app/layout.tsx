@@ -98,6 +98,7 @@ export default function RootLayout({
               sameAs: [
                 "https://github.com/Hitesh-Bhoi",
                 "https://www.linkedin.com/in/bhoi-hitesh-332a601a8/",
+                "https://www.instagram.com/bhoihitesh1844/",
               ],
               knowsAbout: [
                 "Next.js",
