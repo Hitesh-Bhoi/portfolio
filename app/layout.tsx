@@ -19,11 +19,11 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://bhoi-dev.vercel.app"),
+  metadataBase: new URL("https://imhitesh.vercel.app/"),
   applicationName: "Bhoi Hitesh",
 
   verification: {
-    google: "JW3afhQrjbgq-WfdbI-XknS2QBnzuax1vcaM0UJO5hg",
+    google: "35Iek724jp8dUrHztMdx_ntZLXokufUG47R5yfGOp-Q",
   },
 
   title: "Bhoi Hitesh | MERN Stack Developer",
@@ -45,12 +45,12 @@ export const metadata: Metadata = {
     title: "Bhoi Hitesh | MERN Stack Developer",
     description:
       "Hi, I’m Bhoi Hitesh — a MERN Stack Developer crafting fast, scalable, and user-friendly web experiences using modern web technologies.",
-    url: "https://bhoi-dev.vercel.app/",
+    url: "https://imhitesh.vercel.app/",
     siteName: "Bhoi Hitesh",
     type: "website",
     images: [
       {
-        url: "https://bhoi-dev.vercel.app/og.png",
+        url: "https://imhitesh.vercel.app/og.png",
         width: 1200,
         height: 630,
         alt: "Bhoi Hitesh Portfolio",
@@ -63,8 +63,9 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Bhoi Hitesh | MERN Stack Developer",
-    description: "MERN Stack Developer crafting fast, scalable, and user-friendly web experiences using modern web technologies.",
-    images: ["https://bhoi-dev.vercel.app/og.png"],
+    description:
+      "MERN Stack Developer crafting fast, scalable, and user-friendly web experiences using modern web technologies.",
+    images: ["https://imhitesh.vercel.app/og.png"],
     creator: "@hitesh_bhoi", // Replace with actual handle if different
   },
   icons: {
@@ -89,7 +90,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               name: "Hitesh Bhoi",
-              url: "https://bhoi-dev.vercel.app/",
+              url: "https://imhitesh.vercel.app/",
               jobTitle: "MERN Stack Developer",
               worksFor: {
                 "@type": "Organization",
