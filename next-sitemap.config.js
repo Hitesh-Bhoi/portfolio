@@ -1,4 +1,4 @@
 module.exports = {
-  siteUrl: "https://bhoi-dev.vercel.app",
+  siteUrl: "https://imhitesh.vercel.app/",
   generateRobotsTxt: true,
 };
