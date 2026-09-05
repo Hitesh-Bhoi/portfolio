@@ -192,7 +192,7 @@ export function HeroSection() {
           className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 justify-center lg:justify-start"
         >
           <Button asChild size="lg" className="h-12 px-8 text-lg rounded-lg">
-            <Link href="#contact">
+            <Link href="/contact">
               Discuss Your Project <ArrowRight className="h-5 w-5 ml-2" />
             </Link>
           </Button>
@@ -202,7 +202,7 @@ export function HeroSection() {
             asChild
             className="h-12 px-8 text-lg rounded-lg border-primary/20 hover:bg-primary/5"
           >
-            <Link href="#projects">View Past Work</Link>
+            <Link href="/projects">View Past Work</Link>
           </Button>
         </motion.div>
 

@@ -205,7 +205,7 @@ export function ServicesSection() {
 
                         {/* CTA */}
                         <a
-                            href="#contact"
+                            href="/contact"
                             className={`w-full h-10 rounded-xl text-xs font-black uppercase tracking-widest flex items-center justify-center gap-2 transition-all duration-200 group/btn
                                 ${service.highlight
                                     ? "bg-background text-foreground hover:bg-background/90"

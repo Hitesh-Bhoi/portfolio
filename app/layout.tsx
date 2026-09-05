@@ -26,9 +26,9 @@ export const metadata: Metadata = {
     google: "JW3afhQrjbgq-WfdbI-XknS2QBnzuax1vcaM0UJO5hg",
   },
 
-  title: "Bhoi Hitesh | MERN Stack Developer",
+  title: "Hitesh Bhoi | Full Stack Software Engineer",
   description:
-    "MERN Stack Developer specializing in Next.js, React.js, Node.js, Express.js, and MongoDB, focused on building high-performance, scalable, and modern web applications.",
+    "Full Stack Software Engineer specializing in Next.js, React.js, Node.js, Express.js, and MongoDB, focused on building high-performance, scalable, and modern web applications.",
   keywords: [
     "Bhoi Hitesh",
     "bhoi hitesh",
@@ -42,9 +42,9 @@ export const metadata: Metadata = {
   ],
 
   openGraph: {
-    title: "Bhoi Hitesh | MERN Stack Developer",
+    title: "Hitesh Bhoi | Full Stack Software Engineer",
     description:
-      "Hi, I’m Bhoi Hitesh — a MERN Stack Developer crafting fast, scalable, and user-friendly web experiences using modern web technologies.",
+      "Hi, I'm Hitesh Bhoi — a Full Stack Software Engineer crafting fast, scalable, and user-friendly web experiences using modern web technologies.",
     url: "https://bhoi-dev.vercel.app/",
     siteName: "Bhoi Hitesh",
     type: "website",
@@ -57,13 +57,11 @@ export const metadata: Metadata = {
       },
     ],
   },
-  alternates: {
-    canonical: "/",
-  },
+
   twitter: {
     card: "summary_large_image",
-    title: "Bhoi Hitesh | MERN Stack Developer",
-    description: "MERN Stack Developer crafting fast, scalable, and user-friendly web experiences using modern web technologies.",
+    title: "Hitesh Bhoi | Full Stack Software Engineer",
+    description: "Full Stack Software Engineer crafting fast, scalable, and user-friendly web experiences using modern web technologies.",
     images: ["https://bhoi-dev.vercel.app/og.png"],
     creator: "@hitesh_bhoi", // Replace with actual handle if different
   },
@@ -90,7 +88,9 @@ export default function RootLayout({
               "@type": "Person",
               name: "Hitesh Bhoi",
               url: "https://bhoi-dev.vercel.app/",
-              jobTitle: "MERN Stack Developer",
+              jobTitle: "Full Stack Software Engineer",
+              description:
+                "Full Stack Software Engineer with 3+ years of experience building high-performance, scalable web applications using Next.js, React.js, Node.js, and MongoDB.",
               worksFor: {
                 "@type": "Organization",
                 name: "Freelance / Open Source",
