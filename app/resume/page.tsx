@@ -310,7 +310,7 @@ export default function ResumePage() {
                   >
                     {/* Background Glow */}
                     <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-primary/10 blur-[50px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-                    
+
                     <div className="relative flex items-center gap-4">
                       <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-background border border-border/50 text-muted-foreground group-hover:text-primary group-hover:scale-110 group-hover:border-primary/30 group-hover:bg-primary/10 transition-all duration-500 shadow-sm">
                         <Icon className="w-6 h-6" />
@@ -346,15 +346,28 @@ export default function ResumePage() {
             <div className="space-y-8">
               <ProjectBlock
                 name="Portfolio Website"
-                url="https://bhoi-dev.vercel.app/"
+                url="https://imhitesh.vercel.app/"
                 description="Architected a high-performance personal portfolio leveraging Next.js and Framer Motion. Implemented fluid micro-interactions, SEO optimization, and modern UX principles to effectively convert visitors into clients."
-                stack={["Next.js", "React.js", "Framer Motion", "TailwindCSS", "Resend(Email Service)"]}
+                stack={[
+                  "Next.js",
+                  "React.js",
+                  "Framer Motion",
+                  "TailwindCSS",
+                  "Resend(Email Service)",
+                ]}
               />
               <ProjectBlock
                 name="Grocery E-commerce Platform"
-                url="https://grocery-app-phi-snowy.vercel.app/"
+                url="https://farmiva.vercel.app/"
                 description="Engineered a scalable, full-featured e-commerce platform focusing on user retention and conversion. Delivered seamless product discovery, intuitive cart management, and a frictionless checkout experience."
-                stack={["Next.js", "React.js", "Styled components", "SCSS",  "Framer Motion", "Redux Toolkit"]}
+                stack={[
+                  "Next.js",
+                  "React.js",
+                  "Styled components",
+                  "SCSS",
+                  "Framer Motion",
+                  "Redux Toolkit",
+                ]}
               />
             </div>
           </section>
@@ -431,14 +444,14 @@ function ProjectBlock({
       <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-primary/10 blur-[60px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
       <div className="md:w-48 shrink-0 pt-1 relative z-10 flex flex-col gap-3">
-          <a
-            href={url}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex w-fit items-center gap-2 font-mono text-sm font-medium text-muted-foreground bg-background border border-border/50 px-4 py-2 rounded-xl hover:text-primary hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 shadow-sm hover:shadow-md"
-          >
-            <ExternalLink className="w-4 h-4" /> Live Demo
-          </a>
+        <a
+          href={url}
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex w-fit items-center gap-2 font-mono text-sm font-medium text-muted-foreground bg-background border border-border/50 px-4 py-2 rounded-xl hover:text-primary hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 shadow-sm hover:shadow-md"
+        >
+          <ExternalLink className="w-4 h-4" /> Live Demo
+        </a>
       </div>
 
       <div className="flex-1 space-y-4 relative z-10">
