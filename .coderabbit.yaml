@@ -1,19 +1,13 @@
-# .coderabbit.yaml
-version: "2"
+# yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
 language: "en-US"
 
 reviews:
-  # Tone and strictness level: "chill" (focused on bugs/architecture) or "assertive" (strict style/linting)
   profile: "chill"
-
-  # Automatic review triggers
   auto_review:
     enabled: true
-    drafts: false       # Set to true if you want draft PRs reviewed
+    drafts: false
     base_branches:
-      - ".*"            # Matches ANY target/base branch (main, development, feature/*, etc.)
-
-  # Path exclusion filters (ignore generated code, lockfiles, minified assets)
+      - ".*"
   path_filters:
     - "!**/node_modules/**"
     - "!**/dist/**"
@@ -22,12 +16,9 @@ reviews:
     - "!package-lock.json"
     - "!yarn.lock"
     - "!pnpm-lock.yaml"
-
-  # Standalone static analysis tools
   request_tools:
     ast_grep:
       enabled: true
 
-# Chatbot interaction settings inside PR comments
 chat:
   auto_reply: true
