@@ -26,9 +26,9 @@ export const metadata: Metadata = {
     google: "35Iek724jp8dUrHztMdx_ntZLXokufUG47R5yfGOp-Q",
   },
 
-  title: "Bhoi Hitesh | MERN Stack Developer",
+  title: "Hitesh Bhoi | Full Stack Software Engineer",
   description:
-    "MERN Stack Developer specializing in Next.js, React.js, Node.js, Express.js, and MongoDB, focused on building high-performance, scalable, and modern web applications.",
+    "Full Stack Software Engineer specializing in Next.js, React.js, Node.js, Express.js, and MongoDB, focused on building high-performance, scalable, and modern web applications.",
   keywords: [
     "Bhoi Hitesh",
     "bhoi hitesh",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   ],
 
   openGraph: {
-    title: "Bhoi Hitesh | MERN Stack Developer",
+    title: "Hitesh Bhoi | Full Stack Software Engineer",
     description:
       "Hi, I’m Bhoi Hitesh — a MERN Stack Developer crafting fast, scalable, and user-friendly web experiences using modern web technologies.",
     url: "https://imhitesh.vercel.app/",
@@ -57,9 +57,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-  alternates: {
-    canonical: "/",
-  },
+
   twitter: {
     card: "summary_large_image",
     title: "Bhoi Hitesh | MERN Stack Developer",

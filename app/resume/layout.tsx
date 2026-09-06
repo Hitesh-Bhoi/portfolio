@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Resume | Bhoi Hitesh - MERN Stack Developer",
-  description: "Professional resume of Bhoi Hitesh, a MERN Stack Developer specializing in MERN Tech, and AI-enabled solutions. View technical skills, experience, and education.",
+  title: "Hitesh Bhoi | Resume",
+  description:
+    "Professional resume of Hitesh Bhoi — Full Stack Software Engineer with expertise in React, Next.js, Node.js, MongoDB, and enterprise application development. View education, experience, skills, and projects.",
+  alternates: {
+    canonical: "/resume",
+  },
 };
 
 export default function ResumeLayout({
