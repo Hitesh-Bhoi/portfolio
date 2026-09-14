@@ -3,16 +3,25 @@ import { AboutSection } from "@/components/sections/about";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "About Hitesh Bhoi | Full Stack Software Engineer",
+  title: "About Hitesh Bhoi | Full Stack Web Developer",
   description:
-    "Learn about Hitesh Bhoi — a Full Stack Software Engineer with 3+ years of experience building high-performance web applications using React, Next.js, Node.js, and MongoDB.",
+    "About Hitesh Bhoi — Full Stack Software Engineer with 3+ years of experience in web development and app development, specializing in scalable, high-performance web applications.",
+  keywords: [
+    "about",
+    "full stack developer",
+    "web developer",
+    "software engineer",
+    "web development experience",
+    "React developer",
+    "Next.js developer",
+  ],
   alternates: {
     canonical: "/about",
   },
   openGraph: {
-    title: "About Hitesh Bhoi | Full Stack Software Engineer",
+    title: "About Hitesh Bhoi | Full Stack Developer",
     description:
-      "Learn about Hitesh Bhoi — a Full Stack Software Engineer with 3+ years of experience building high-performance web applications.",
+      "Full Stack Software Engineer with 3+ years of experience in web and app development.",
     url: "/about",
   },
 };

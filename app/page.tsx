@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { HeroSection } from "@/components/sections/hero";
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
@@ -11,6 +12,52 @@ import {
   HelpCircle,
   Mail,
 } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Hitesh Bhoi | Web Development & App Development Services",
+  description:
+    "Professional web development and app development services. Hire Hitesh Bhoi for custom web applications, e-commerce solutions, and full-stack development. Expert in Next.js, React, and Node.js.",
+  keywords: [
+    "web development",
+    "app development",
+    "custom web development",
+    "web development services",
+    "full stack development",
+    "Next.js developer",
+    "React developer",
+    "MERN stack developer",
+    "software development services",
+    "IT services",
+    "freelance web developer",
+    "web application development",
+    "responsive web design",
+  ],
+  alternates: {
+    canonical: "https://imhitesh.vercel.app/",
+  },
+  openGraph: {
+    title: "Hitesh Bhoi | Professional Web & App Development Services",
+    description:
+      "Get professional web development and app development services. Custom solutions for your business using modern technologies.",
+    url: "https://imhitesh.vercel.app/",
+    siteName: "Bhoi Hitesh Portfolio",
+    type: "website",
+    images: [
+      {
+        url: "https://imhitesh.vercel.app/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Hitesh Bhoi - Web Developer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Hitesh Bhoi | Web & App Development",
+    description:
+      "Professional web development and IT services by Hitesh Bhoi",
+  },
+};
 
 const exploreLinks = [
   {

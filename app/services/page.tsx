@@ -2,16 +2,24 @@ import type { Metadata } from "next";
 import { ServicesSection } from "@/components/sections/services";
 
 export const metadata: Metadata = {
-  title: "Hitesh Bhoi | Software Development Services",
+  title: "Web Development & App Development Services | Hitesh Bhoi",
   description:
-    "Explore web development services by Hitesh Bhoi — from single-page sites and landing pages to full-stack custom web applications. Transparent pricing and professional delivery.",
+    "Professional web development and app development services by Hitesh Bhoi. Custom web applications, responsive design, full-stack solutions, e-commerce platforms, and IT services.",
+  keywords: [
+    "web development services",
+    "app development services",
+    "custom web development",
+    "e-commerce development",
+    "IT services",
+    "freelance web developer",
+  ],
   alternates: {
     canonical: "/services",
   },
   openGraph: {
-    title: "Hitesh Bhoi | Software Development Services",
+    title: "Web Development & App Development Services",
     description:
-      "Explore web development services by Hitesh Bhoi — transparent pricing, professional delivery.",
+      "Professional web and app development services with transparent pricing and expert delivery.",
     url: "/services",
   },
 };

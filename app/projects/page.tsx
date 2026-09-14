@@ -3,16 +3,25 @@ import { ProjectsSection } from "@/components/sections/projects";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Hitesh Bhoi | Software Engineering Projects",
+  title: "Web Development Projects & Portfolio | Hitesh Bhoi",
   description:
-    "Browse software engineering projects by Hitesh Bhoi — from portfolio websites to full-stack e-commerce platforms, built with Next.js, React, and modern web technologies.",
+    "View web development and app development projects by Hitesh Bhoi — e-commerce platforms, responsive websites, and full-stack applications built with Next.js, React, and modern technologies.",
+  keywords: [
+    "web development projects",
+    "app development projects",
+    "portfolio projects",
+    "e-commerce projects",
+    "full stack projects",
+    "Next.js projects",
+    "React projects",
+  ],
   alternates: {
     canonical: "/projects",
   },
   openGraph: {
-    title: "Hitesh Bhoi | Software Engineering Projects",
+    title: "Web Development & App Development Projects",
     description:
-      "Browse software engineering projects by Hitesh Bhoi built with Next.js, React, and modern web technologies.",
+      "Portfolio of web and app development projects built with modern technologies.",
     url: "/projects",
   },
 };

@@ -3,16 +3,25 @@ import { FaqSection } from "@/components/sections/faq";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Hitesh Bhoi | Frequently Asked Questions",
+  title: "FAQ | Hitesh Bhoi | Web Development & App Development Questions",
   description:
-    "Find answers to frequently asked questions about Hitesh Bhoi's services, tech stack, freelance availability, pricing, and development process.",
+    "Frequently asked questions about Hitesh Bhoi's web development and app development services, tech stack, pricing, freelance availability, and development process.",
+  keywords: [
+    "FAQ",
+    "frequently asked questions",
+    "web development FAQ",
+    "pricing",
+    "freelance availability",
+    "development process",
+    "tech stack",
+  ],
   alternates: {
     canonical: "/faq",
   },
   openGraph: {
-    title: "Hitesh Bhoi | Frequently Asked Questions",
+    title: "FAQ | Web Development Services",
     description:
-      "Find answers to common questions about Hitesh Bhoi's web development services and process.",
+      "Common questions about web development services, pricing, and process.",
     url: "/faq",
   },
 };
