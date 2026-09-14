@@ -30,7 +30,7 @@ export default function NotFound() {
                         </Link>
                     </Button>
                     <Button asChild variant="outline" size="lg" className="rounded-full border-primary/20 hover:bg-primary/5">
-                        <Link href="/#contact">
+                        <Link href="/contact">
                             <ArrowLeft className="mr-2 h-5 w-5" />
                             Report an Issue
                         </Link>

@@ -26,23 +26,30 @@ export const metadata: Metadata = {
     google: "35Iek724jp8dUrHztMdx_ntZLXokufUG47R5yfGOp-Q",
   },
 
-  title: "Bhoi Hitesh | MERN Stack Developer",
+  title: "Hitesh Bhoi | Web Developer | App Development & IT Services",
   description:
-    "MERN Stack Developer specializing in Next.js, React.js, Node.js, Express.js, and MongoDB, focused on building high-performance, scalable, and modern web applications.",
+    "Hitesh Bhoi — Full Stack Software Engineer providing professional web development, app development, and IT services. Expert in Next.js, React, Node.js, and building scalable web applications.",
   keywords: [
-    "Bhoi Hitesh",
-    "bhoi hitesh",
-    "hitesh bhoi",
-    "Hitesh Bhoi",
-    "MERN Developer",
-    "Frontend Developer",
-    "Backend Developer",
-    "Full Stack Developer",
-    "Software Engineer",
+    "web development",
+    "app development",
+    "web developer",
+    "freelance web developer",
+    "web development services",
+    "IT services",
+    "full stack developer",
+    "Next.js developer",
+    "React developer",
+    "Node.js developer",
+    "MERN developer",
+    "software engineer",
+    "web application development",
+    "custom web development",
+    "e-commerce development",
+    "responsive web design",
   ],
 
   openGraph: {
-    title: "Bhoi Hitesh | MERN Stack Developer",
+    title: "Hitesh Bhoi | Web Developer & App Development Services",
     description:
       "Hi, I’m Bhoi Hitesh — a MERN Stack Developer crafting fast, scalable, and user-friendly web experiences using modern web technologies.",
     url: "https://imhitesh.vercel.app/",
@@ -57,12 +64,10 @@ export const metadata: Metadata = {
       },
     ],
   },
-  alternates: {
-    canonical: "/",
-  },
+
   twitter: {
     card: "summary_large_image",
-    title: "Bhoi Hitesh | MERN Stack Developer",
+    title: "Bhoi Hitesh | Web Developer",
     description:
       "MERN Stack Developer crafting fast, scalable, and user-friendly web experiences using modern web technologies.",
     images: ["https://imhitesh.vercel.app/og.png"],
