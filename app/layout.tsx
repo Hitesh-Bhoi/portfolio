@@ -17,6 +17,7 @@ import { Header } from "@/components/shared/header";
 import { Footer } from "@/components/shared/footer";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { SOCIAL_LINKS } from "@/lib/social-links";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://imhitesh.vercel.app/"),
@@ -102,9 +103,9 @@ export default function RootLayout({
                 name: "Freelance / Open Source",
               },
               sameAs: [
-                "https://github.com/Hitesh-Bhoi",
-                "https://www.linkedin.com/in/bhoi-hitesh-332a601a8/",
-                "https://www.instagram.com/bhoihitesh1844/",
+                SOCIAL_LINKS.github.href,
+                SOCIAL_LINKS.linkedin.href,
+                SOCIAL_LINKS.instagram.href,
               ],
               knowsAbout: [
                 "Next.js",

@@ -3,8 +3,6 @@
 import { motion } from "framer-motion";
 import {
   Download,
-  Github,
-  Linkedin,
   Code2,
   Smartphone,
   Database,
@@ -15,8 +13,8 @@ import {
   GraduationCap,
   Terminal,
   ExternalLink,
-  Instagram,
 } from "lucide-react";
+import { SocialLinks } from "@/components/shared/social-links";
 
 const technicalArsenal = [
   {
@@ -136,35 +134,11 @@ export default function ResumePage() {
             </div>
 
             {/* Social Links */}
-            <div className="flex gap-4 pt-4">
-              {[
-                {
-                  icon: Github,
-                  href: process.env.NEXT_PUBLIC_GITHUB || "https://github.com",
-                },
-                {
-                  icon: Linkedin,
-                  href:
-                    process.env.NEXT_PUBLIC_LINKED_IN || "https://linkedin.com",
-                },
-                {
-                  icon: Instagram,
-                  href: "https://www.instagram.com/bhoihitesh1844/",
-                },
-              ].map((social, i) => (
-                <a
-                  key={i}
-                  href={social.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="p-3 rounded-lg bg-secondary/30 hover:bg-primary hover:text-primary-foreground border border-border/50 transition-all"
-                >
-                  <social.icon className="w-5 h-5" />
-                </a>
-              ))}
+            <div className="flex flex-wrap items-center gap-3 pt-4">
+              <SocialLinks />
               <button
                 disabled
-                className="flex flex-1 items-center justify-center gap-2 rounded-lg bg-secondary text-foreground/80 font-medium text-base py-2 cursor-not-allowed border border-border shadow-sm transition-colors"
+                className="flex flex-1 min-w-[200px] h-12 items-center justify-center gap-2 rounded-2xl bg-secondary text-foreground/80 font-medium text-base py-2 cursor-not-allowed border border-border shadow-sm transition-colors"
                 title="Resume coming soon"
               >
                 <Download className="w-5 h-5 opacity-70" /> Download CV

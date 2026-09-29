@@ -3,9 +3,10 @@
 import * as React from "react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { ArrowRight, Download, Instagram } from "lucide-react";
+import { ArrowRight, Download } from "lucide-react";
 import Link from "next/link";
 import { Logo } from "@/components/shared/logo";
+import { SocialLinks } from "@/components/shared/social-links";
 import {
   ReactJS,
   NextJS,
@@ -21,8 +22,6 @@ import {
   TailwindCSS,
   Git,
   GitHub,
-  LinkedIn,
-  Twitter,
 } from "@/components/shared/icons";
 
 const roles = [
@@ -77,24 +76,6 @@ export function HeroSection() {
   React.useEffect(() => {
     setMounted(true);
   }, []);
-
-  const socialLinks = [
-    {
-      icon: <GitHub className="w-5 h-5" />,
-      href: "https://github.com",
-      label: "GitHub",
-    },
-    {
-      icon: <LinkedIn className="w-5 h-5" />,
-      href: "https://linkedin.com",
-      label: "LinkedIn",
-    },
-    {
-      icon: <Instagram className="w-5 h-5" />,
-      href: "https://www.instagram.com/bhoihitesh1844/",
-      label: "Instagram",
-    },
-  ];
 
   const techStack = {
     outer: [
@@ -211,21 +192,9 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.5 }}
-          className="flex items-center justify-center lg:justify-start gap-2"
+          className="flex items-center justify-center lg:justify-start"
         >
-          {socialLinks.map((social, index) => (
-            <motion.a
-              key={index}
-              href={social.href}
-              whileHover={{ y: -5, scale: 1.1 }}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center w-12 h-12 rounded-2xl bg-muted border border-border hover:border-primary/50 hover:text-primary transition-colors duration-300 shadow-sm hover:shadow-md"
-              aria-label={social.label}
-            >
-              {social.icon}
-            </motion.a>
-          ))}
+          <SocialLinks />
         </motion.div>
       </div>
 

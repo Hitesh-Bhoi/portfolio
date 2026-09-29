@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { Github, Linkedin, Instagram, Mail, MapPin, ExternalLink, ArrowUp } from "lucide-react"
 import { Logo } from "@/components/shared/logo"
+import { SOCIAL_LINKS } from "@/lib/social-links"
 import Link from "next/link"
 import { useState, useEffect } from "react"
 
@@ -37,9 +38,9 @@ export function Footer() {
             { name: "Contact", href: "/contact" },
         ],
         socials: [
-            { name: "GitHub", href: process.env.NEXT_PUBLIC_GITHUB, icon: Github },
-            { name: "LinkedIn", href: process.env.NEXT_PUBLIC_LINKED_IN, icon: Linkedin },
-            { name: "Instagram", href: "https://www.instagram.com/bhoihitesh1844/", icon: Instagram },
+            { name: SOCIAL_LINKS.github.name, href: SOCIAL_LINKS.github.href, label: SOCIAL_LINKS.github.label, icon: Github },
+            { name: SOCIAL_LINKS.linkedin.name, href: SOCIAL_LINKS.linkedin.href, label: SOCIAL_LINKS.linkedin.label, icon: Linkedin },
+            { name: SOCIAL_LINKS.instagram.name, href: SOCIAL_LINKS.instagram.href, label: SOCIAL_LINKS.instagram.label, icon: Instagram },
         ],
         contact: [
             { label: "Email", value: process.env.NEXT_PUBLIC_EMAIL, icon: Mail },
@@ -92,7 +93,8 @@ export function Footer() {
                                         <a
                                             href={item.href}
                                             target="_blank"
-                                            rel="noreferrer"
+                                            rel="noopener noreferrer"
+                                            aria-label={item.label}
                                             className="text-foreground/70 hover:text-primary font-bold transition-all duration-300 inline-flex items-center gap-2.5 group hover:translate-x-1"
                                         >
                                             <item.icon className="w-4 h-4" />
