@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Github, Linkedin, Instagram, Mail, MapPin, ExternalLink, ArrowUp } from "lucide-react"
+import { Github, Linkedin, Instagram, Mail, MapPin, ArrowUp } from "lucide-react"
 import { Logo } from "@/components/shared/logo"
 import { SOCIAL_LINKS } from "@/lib/social-links"
 import Link from "next/link"

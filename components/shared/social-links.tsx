@@ -5,9 +5,7 @@ import { motion } from "framer-motion";
 import { GitHub, LinkedIn, Instagram } from "@/components/shared/icons";
 import {
   SOCIAL_LINKS,
-  SOCIAL_LINKS_ARRAY,
   type SocialPlatform,
-  type SocialLink as SocialLinkType,
 } from "@/lib/social-links";
 import { cn } from "@/lib/utils";
 
