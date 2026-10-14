@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/sheet"
 import { ModeToggle } from "@/components/mode-toggle"
 import { Logo } from "@/components/shared/logo"
+import { SocialLinks } from "@/components/shared/social-links"
 
 const navLinks = [
     { name: "About", href: "/about" },
@@ -129,6 +130,16 @@ export function Header() {
                                     </motion.div>
                                 )
                             })}
+
+                            <motion.div
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.5, delay: 0.55 }}
+                                className="pt-6 mt-2 border-t border-border/50 px-2"
+                            >
+                                <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-3">Connect</p>
+                                <SocialLinks />
+                            </motion.div>
                         </nav>
                     </SheetContent>
                 </Sheet>

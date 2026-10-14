@@ -1,5 +1,4 @@
-// lib/structured-data.ts
-// Add this to your app/layout.tsx for enhanced SEO with JSON-LD structured data
+import { SOCIAL_LINKS } from "./social-links";
 
 export const personSchema = {
   "@context": "https://schema.org",
@@ -16,9 +15,9 @@ export const personSchema = {
     name: "Freelance / Self-employed",
   },
   sameAs: [
-    "https://linkedin.com/in/your-profile", // Update with your LinkedIn
-    "https://github.com/your-profile", // Update with your GitHub
-    "https://twitter.com/your-profile", // Update with your Twitter
+    SOCIAL_LINKS.github.href,
+    SOCIAL_LINKS.linkedin.href,
+    SOCIAL_LINKS.instagram.href,
   ],
 };
 
@@ -31,8 +30,9 @@ export const organizationSchema = {
   description:
     "Professional web development and app development services by Hitesh Bhoi",
   sameAs: [
-    "https://linkedin.com/in/your-profile",
-    "https://github.com/your-profile",
+    SOCIAL_LINKS.github.href,
+    SOCIAL_LINKS.linkedin.href,
+    SOCIAL_LINKS.instagram.href,
   ],
   address: {
     "@type": "PostalAddress",
