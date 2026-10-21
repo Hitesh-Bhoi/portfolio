@@ -19,6 +19,7 @@ import { Logo } from "@/components/shared/logo"
 import { SocialLinks } from "@/components/shared/social-links"
 
 const navLinks = [
+    { name: "Home", href: "/" },
     { name: "About", href: "/about" },
     { name: "Skills", href: "/skills" },
     { name: "Projects", href: "/projects" },

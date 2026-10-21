@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { FaqSection } from "@/components/sections/faq";
-import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "FAQ | Hitesh Bhoi | Web Development & App Development Questions",
@@ -31,14 +30,6 @@ export default function FaqPage() {
     <div className="flex flex-col gap-0 pb-20 overflow-x-hidden">
       <h1 className="sr-only">Frequently Asked Questions</h1>
       <FaqSection />
-      <div className="w-full px-6 md:px-10 lg:px-16 pt-4 pb-8 flex flex-wrap gap-4 justify-center">
-        <Link
-          href="/contact"
-          className="text-sm font-semibold text-primary hover:underline underline-offset-4"
-        >
-          Still have questions? Get in touch →
-        </Link>
-      </div>
     </div>
   );
 }
