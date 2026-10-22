@@ -63,7 +63,7 @@ export function Footer() {
     return (
         <footer className="relative bg-background border-t border-border/50 pt-16 pb-8 w-full overflow-hidden">
             {/* Subtle Background Radial Glow */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[600px] bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-150 bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
 
             <div className="relative z-10 w-full px-6 md:px-10 lg:px-16 mx-auto">
                 {/* Brand Section */}
