@@ -3,9 +3,9 @@
 import * as React from "react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { ArrowRight, Download, Instagram } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { Logo } from "@/components/shared/logo";
+import { SocialLinks } from "@/components/shared/social-links";
 import {
   ReactJS,
   NextJS,
@@ -21,8 +21,6 @@ import {
   TailwindCSS,
   Git,
   GitHub,
-  LinkedIn,
-  Twitter,
 } from "@/components/shared/icons";
 
 const roles = [
@@ -78,24 +76,6 @@ export function HeroSection() {
     setMounted(true);
   }, []);
 
-  const socialLinks = [
-    {
-      icon: <GitHub className="w-5 h-5" />,
-      href: "https://github.com",
-      label: "GitHub",
-    },
-    {
-      icon: <LinkedIn className="w-5 h-5" />,
-      href: "https://linkedin.com",
-      label: "LinkedIn",
-    },
-    {
-      icon: <Instagram className="w-5 h-5" />,
-      href: "https://www.instagram.com/bhoihitesh1844/",
-      label: "Instagram",
-    },
-  ];
-
   const techStack = {
     outer: [
       { node: <ReactJS />, label: "React" },
@@ -132,21 +112,6 @@ export function HeroSection() {
       className="relative w-full flex flex-col items-center justify-center gap-10 pt-4 pb-12 md:pt-8 md:pb-20 lg:pt-16 lg:pb-16 text-center lg:text-left lg:flex-row lg:gap-20 mx-auto px-6 md:px-10 lg:px-16 overflow-hidden"
     >
       <div className="flex-1 space-y-6 z-10 w-full max-w-2xl px-4 lg:px-0">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="flex flex-wrap items-center justify-center lg:justify-start"
-        >
-          <span className="inline-flex items-center gap-1.5 px-3 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium border border-primary/20">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-4 w-0 outline-green-500"></span>
-            </span>
-            Open to Work
-          </span>
-        </motion.div>
-
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -154,7 +119,7 @@ export function HeroSection() {
           className="text-2xl font-extrabold tracking-tight sm:text-5xl lg:text-4xl"
         >
           Bhoi Hitesh |{" "}
-          <span className="text-primary">MERN Stack Developer</span>
+          <span className="text-primary">Software Engineer</span>
         </motion.h1>
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -162,7 +127,7 @@ export function HeroSection() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-2xl font-extrabold tracking-tight sm:text-5xl lg:text-3xl"
         >
-          AI-Enabled Developer
+          Fullstack AI Engineer
         </motion.h2>
 
         <motion.h3
@@ -192,7 +157,7 @@ export function HeroSection() {
           className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 justify-center lg:justify-start"
         >
           <Button asChild size="lg" className="h-12 px-8 text-lg rounded-lg">
-            <Link href="#contact">
+            <Link href="/contact">
               Discuss Your Project <ArrowRight className="h-5 w-5 ml-2" />
             </Link>
           </Button>
@@ -202,7 +167,7 @@ export function HeroSection() {
             asChild
             className="h-12 px-8 text-lg rounded-lg border-primary/20 hover:bg-primary/5"
           >
-            <Link href="#projects">View Past Work</Link>
+            <Link href="/projects">View Past Work</Link>
           </Button>
         </motion.div>
 
@@ -211,21 +176,9 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.5 }}
-          className="flex items-center justify-center lg:justify-start gap-2"
+          className="flex items-center justify-center lg:justify-start"
         >
-          {socialLinks.map((social, index) => (
-            <motion.a
-              key={index}
-              href={social.href}
-              whileHover={{ y: -5, scale: 1.1 }}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center w-12 h-12 rounded-2xl bg-muted border border-border hover:border-primary/50 hover:text-primary transition-colors duration-300 shadow-sm hover:shadow-md"
-              aria-label={social.label}
-            >
-              {social.icon}
-            </motion.a>
-          ))}
+          <SocialLinks />
         </motion.div>
       </div>
 

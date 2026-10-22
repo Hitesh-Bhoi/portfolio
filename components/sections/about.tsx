@@ -93,12 +93,12 @@ export function AboutSection() {
                             whileHover={{ y: -5, scale: 1.02 }}
                             className="flex flex-col space-y-2 p-6 sm:p-8 rounded-3xl bg-background border border-border shadow-sm relative group overflow-hidden transition-all duration-300"
                         >
-                            <div className="absolute inset-0 bg-gradient-to-bl from-primary/10 via-transparent to-transparent opacity-100 transition-opacity" />
+                            <div className="absolute inset-0 from-primary/10 via-transparent to-transparent opacity-100 transition-opacity" />
                             <div className="absolute top-0 right-0 w-24 h-24 bg-primary/10 rounded-full blur-2xl -mr-10 -mt-10 group-hover:bg-primary/20 transition-colors" />
 
                             <div className="relative z-10 flex flex-col pt-2">
                                 <span className="text-5xl font-black text-primary flex items-baseline tracking-tighter">
-                                    <Counter value={10} />
+                                    <Counter value={20} />
                                     <span className="text-2xl ml-1 text-primary/80">+</span>
                                 </span>
                                 <span className="text-sm font-bold uppercase tracking-widest text-muted-foreground mt-2">Projects Delivered</span>

@@ -3,8 +3,6 @@ import dbConnect from '@/lib/db';
 import Contact from '@/lib/models/contact';
 import { Resend } from 'resend';
 
-// Initialize Resend
-const resend = new Resend(process.env.RESEND_API_KEY?.replace(/^["']|["']$/g, '').trim());
 
 export async function POST(req: Request) {
     try {
@@ -32,6 +30,7 @@ export async function POST(req: Request) {
 
         if (process.env.RESEND_API_KEY && destinationEmail) {
             try {
+                const resend = new Resend(process.env.RESEND_API_KEY.replace(/^["']|["']$/g, '').trim());
                 await resend.emails.send({
                     from: 'Hitesh Portfolio <onboarding@resend.dev>',
                     to: destinationEmail,

@@ -6,29 +6,9 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { motion } from "framer-motion"
-import { Mail, Send, MapPin, Phone, MessageSquare, ShieldCheck, CheckCircle, CheckCheckIcon, CheckCircle2, Instagram } from "lucide-react"
-import { GitHub, LinkedIn, Twitter } from "@/components/shared/icons"
+import { Mail, Send, MapPin, MessageSquare, ShieldCheck } from "lucide-react"
+import { SocialLinks } from "@/components/shared/social-links"
 
-const socialLinks = [
-    {
-        name: "GitHub",
-        icon: <GitHub className="w-5 h-5" />,
-        href: process.env.NEXT_PUBLIC_GITHUB || "https://github.com",
-        color: "hover:text-[#333] hover:border-[#333]/30 hover:bg-[#333]/5"
-    },
-    {
-        name: "LinkedIn",
-        icon: <LinkedIn className="w-5 h-5" />,
-        href: process.env.NEXT_PUBLIC_LINKED_IN || "https://linkedin.com",
-        color: "hover:text-[#0077b5] hover:border-[#0077b5]/30 hover:bg-[#0077b5]/5"
-    },
-    {
-        name: "Instagram",
-        icon: <Instagram className="w-5 h-5" />,
-        href: "https://www.instagram.com/bhoihitesh1844/",
-        color: "hover:text-[#E1306C] hover:border-[#E1306C]/30 hover:bg-[#E1306C]/5"
-    }
-]
 
 const contactInfo = [
     {
@@ -157,25 +137,7 @@ export function ContactSection() {
 
                         <div>
                             <p className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-4">Follow me</p>
-                            <div className="flex flex-wrap gap-4">
-                                {socialLinks.map((link, idx) => (
-                                    <motion.a
-                                        key={link.name}
-                                        href={link.href}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        initial={{ opacity: 0, scale: 0.8 }}
-                                        whileInView={{ opacity: 1, scale: 1 }}
-                                        viewport={{ once: true }}
-                                        transition={{ duration: 0.3, delay: idx * 0.1 }}
-                                        whileHover={{ y: -3 }}
-                                        className={`flex items-center gap-2 px-4 py-2 rounded-lg bg-card border border-border shadow-sm transition-all duration-300 hover:shadow-md ${link.color}`}
-                                    >
-                                        {link.icon}
-                                        <span className="text-sm font-medium">{link.name}</span>
-                                    </motion.a>
-                                ))}
-                            </div>
+                            <SocialLinks />
                         </div>
                     </div>
                 </motion.div>
