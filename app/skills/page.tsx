@@ -4,7 +4,7 @@ import { SkillsSection } from "@/components/sections/skills";
 export const metadata: Metadata = {
   title: "Web Developer Skills & Technologies | Hitesh Bhoi",
   description:
-    "Explore Hitesh Bhoi's technical expertise — React, Next.js, Node.js, TypeScript, MongoDB, PostgreSQL, Docker, AWS for building scalable web and app development solutions.",
+    "Explore Hitesh Bhoi's full-stack technical expertise across React, Next.js, Node.js, Python, databases, AWS, system design, and AI development and integration.",
   keywords: [
     "web developer skills",
     "technologies",
@@ -14,6 +14,9 @@ export const metadata: Metadata = {
     "full stack skills",
     "TypeScript",
     "MongoDB",
+    "AWS",
+    "AI integration",
+    "system design",
     "web development technologies",
     "app development technologies",
   ],
@@ -23,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Web Developer Skills & Technical Expertise",
     description:
-      "Technical skills and modern technologies used for web and app development.",
+      "Full-stack web development, cloud, system design, and AI development and integration expertise.",
     url: "/skills",
   },
 };

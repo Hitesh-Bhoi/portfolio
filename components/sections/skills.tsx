@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import Image from "next/image"
 import {
     ReactJS,
     NextJS,
@@ -11,20 +12,36 @@ import {
     TailwindCSS,
     Git,
     PostgreSQL,
-    CSS3,
-    HTML5,
-    Sass,
     AWS,
     Antd,
+    Bootstrap,
+    CodeRabbit,
     ExpressJS,
+    FastAPI,
     GitHub,
+    MySQL,
+    Mongoose,
+    Npm,
+    OpenAI,
+    Prisma,
+    Python,
+    Redis,
+    Redux,
+    Render,
+    ShadcnUI,
+    Stripe,
+    Vercel,
+    Vite,
+    Webpack,
+    Yarn,
+    Anthropic,
+    Cursor,
     Postman,
     VScode,
-    ChatGPT,
     Copilot,
     Gemini,
+    Docker,
     Antigravity,
-    Docker
 } from "@/components/shared/icons"
 import {
     Layout,
@@ -35,9 +52,6 @@ import {
     Layers,
     Cpu,
     Webhook,
-    ApertureIcon,
-    PowerSquare,
-    Code
 } from "lucide-react"
 
 const skillCategories = [
@@ -48,45 +62,102 @@ const skillCategories = [
             { name: "React.js", icon: <ReactJS className="w-5 h-5" /> },
             { name: "Next.js", icon: <NextJS className="w-5 h-5" /> },
             { name: "TypeScript", icon: <TypeScript className="w-5 h-5" /> },
-            { name: "JavaScript", icon: <JavaScript className="w-5 h-5" /> },
+            { name: "JavaScript (ES6+)", icon: <JavaScript className="w-5 h-5" /> },
+            { name: "Redux Toolkit", icon: <Redux className="w-5 h-5" /> },
             { name: "Tailwind CSS", icon: <TailwindCSS className="w-5 h-5" /> },
             { name: "Ant Design", icon: <Antd className="w-5 h-5" /> },
-            { name: "SCSS", icon: <Sass className="w-5 h-5" /> },
-            { name: "Shadcn UI", icon: <Code2 className="w-5 h-5" /> },
+            { name: "Bootstrap", icon: <Bootstrap className="w-5 h-5" /> },
+            { name: "shadcn/ui", icon: <ShadcnUI className="w-5 h-5" /> },
         ]
     },
     {
-        title: "Backend",
+        title: "Backend & APIs",
         icon: <Server className="w-6 h-6 text-green-500" />,
         skills: [
-            { name: "Next.js", icon: <NextJS className="w-5 h-5" /> },
+            { name: "Python", icon: <Python className="w-5 h-5" /> },
             { name: "Node.js", icon: <NodeJS className="w-5 h-5" /> },
             { name: "Express.js", icon: <ExpressJS className="w-5 h-5" /> },
-            { name: "API Development & Integration", icon: <ApertureIcon className="w-5 h-5" /> },
-            { name: "Docker", icon: <Docker className="w-5 h-5" /> },
+            { name: "REST APIs", icon: <Webhook className="w-5 h-5" /> },
+            { name: "FastAPI", icon: <FastAPI className="w-5 h-5" /> },
+            { name: "Microservices", icon: <Layers className="w-5 h-5" /> },
+            { name: "WebSockets", icon: <Webhook className="w-5 h-5" /> },
+            { name: "Authentication, JWT & RBAC", icon: <Settings className="w-5 h-5" /> },
+            { name: "Stripe Integration", icon: <Stripe className="w-5 h-5" /> },
         ]
     },
     {
-        title: "Database",
+        title: "Databases",
         icon: <Database className="w-6 h-6 text-purple-500" />,
         skills: [
             { name: "MongoDB", icon: <MongoDB className="w-5 h-5" /> },
+            { name: "Mongoose", icon: <Mongoose className="w-5 h-5" /> },
             { name: "PostgreSQL", icon: <PostgreSQL className="w-5 h-5" /> },
-            { name: "AWS", icon: <AWS className="w-5 h-5" /> },
+            { name: "Redis", icon: <Redis className="w-5 h-5" /> },
+            { name: "MySQL", icon: <MySQL className="w-5 h-5" /> },
+            { name: "Prisma", icon: <Prisma className="w-5 h-5" /> },
         ]
     },
     {
-        title: "AI & Tools",
+        title: "Architecture & Design",
+        icon: <Layers className="w-6 h-6 text-cyan-500" />,
+        skills: [
+            { name: "System Design", icon: <Layers className="w-5 h-5" /> },
+            { name: "Scalable Architecture", icon: <Layers className="w-5 h-5" /> },
+            { name: "Database Design", icon: <Database className="w-5 h-5" /> },
+            { name: "API Design", icon: <Webhook className="w-5 h-5" /> },
+            { name: "Caching", icon: <Cpu className="w-5 h-5" /> },
+            { name: "Rate Limiting", icon: <Settings className="w-5 h-5" /> },
+        ]
+    },
+    {
+        title: "Cloud & DevOps",
+        icon: <Cpu className="w-6 h-6 text-indigo-500" />,
+        skills: [
+            { name: "AWS EC2 & ECS", icon: <AWS className="w-5 h-5" /> },
+            { name: "AWS S3", icon: <AWS className="w-5 h-5" /> },
+            { name: "AWS Lambda & API Gateway", icon: <AWS className="w-5 h-5" /> },
+            { name: "Docker", icon: <Docker className="w-5 h-5" /> },
+            { name: "CI/CD", icon: <Settings className="w-5 h-5" /> },
+            { name: "Vercel", icon: <Vercel className="w-5 h-5" /> },
+            { name: "Render", icon: <Render className="w-5 h-5" /> },
+            { name: "MongoDB Atlas", icon: <MongoDB className="w-5 h-5" /> },
+        ]
+    },
+    {
+        title: "AI Development & Integration",
+        icon: <Cpu className="w-6 h-6 text-orange-500" />,
+        skills: [
+            { name: "LLM API Integration", icon: <Webhook className="w-5 h-5" /> },
+            { name: "Generative AI", icon: <Cpu className="w-5 h-5" /> },
+            { name: "AI-Powered Features", icon: <Code2 className="w-5 h-5" /> },
+            { name: "Model Context Protocol (MCP)", icon: <Webhook className="w-5 h-5" /> },
+            { name: "Prompt Engineering", icon: <Code2 className="w-5 h-5" /> },
+            { name: "OpenAI API", icon: <OpenAI className="w-5 h-5" /> },
+            { name: "Google Gemini API", icon: <Gemini className="w-5 h-5" /> },
+            { name: "Claude", icon: <Anthropic className="w-5 h-5" /> },
+            { name: "Google AI Studio", icon: <Gemini className="w-5 h-5" /> },
+        ]
+    },
+    {
+        title: "Development Tools",
         icon: <Settings className="w-6 h-6 text-orange-500" />,
         skills: [
             { name: "Git", icon: <Git className="w-5 h-5" /> },
             { name: "GitHub", icon: <GitHub className="w-5 h-5" /> },
+            { name: "Vite", icon: <Vite className="w-5 h-5" /> },
+            { name: "Webpack", icon: <Webpack className="w-5 h-5" /> },
+            { name: "npm", icon: <Npm className="w-5 h-5" /> },
+            { name: "Yarn", icon: <Yarn className="w-5 h-5" /> },
             { name: "Postman", icon: <Postman className="w-5 h-5" /> },
+            { name: "Playwright", icon: <Image src="/playwright-logo.svg" alt="" width={20} height={20} /> },
+            { name: "CodeRabbit", icon: <CodeRabbit className="w-5 h-5" /> },
             { name: "VS Code", icon: <VScode className="w-5 h-5" /> },
-            { name: "ChatGPT", icon: <ChatGPT className="w-5 h-5" /> },
             { name: "GitHub Copilot", icon: <Copilot className="w-5 h-5" /> },
-            { name: "Google Gemini", icon: <Gemini className="w-5 h-5" /> },
-            { name: "Google Antigravity", icon: <Antigravity className="w-5 h-5" /> },
+            { name: "Codex", icon: <OpenAI className="w-5 h-5" /> },
+            { name: "Cursor", icon: <Cursor className="w-5 h-5" /> },
+            { name: "Antigravity", icon: <Antigravity className="w-5 h-5" /> },
+            { name: "MongoDB Compass", icon: <MongoDB className="w-5 h-5" /> },
+            { name: "pgAdmin", icon: <Database className="w-5 h-5" /> },
         ]
     }
 ]
@@ -105,23 +176,23 @@ export function SkillsSection() {
                     Technical Expertise
                 </h2>
                 <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                    A comprehensive overview of the technologies and tools I use to build high-performance, scalable web applications.
+                    Full-stack engineering skills across modern web development, API and system design, cloud infrastructure, and AI-powered application development and integration.
                 </p>
             </motion.div>
 
             <div className="flex flex-col gap-6 w-full">
                 {skillCategories.map((category, idx) => {
                     // Bento Box Layout configurations based on category
-                    let innerLayout = "flex flex-wrap gap-4";
+                    const innerLayout = "flex flex-wrap gap-4";
                     let bgGradient = "";
 
                     if (category.title === "Frontend") {
                         bgGradient = "from-blue-500/10 via-transparent to-transparent";
-                    } else if (category.title === "Backend") {
+                    } else if (category.title === "Backend & APIs") {
                         bgGradient = "from-green-500/10 via-transparent to-transparent";
-                    } else if (category.title === "Database") {
+                    } else if (category.title === "Databases") {
                         bgGradient = "from-purple-500/10 via-transparent to-transparent";
-                    } else if (category.title === "AI & Tools" || category.title === "Tools & Others") {
+                    } else if (category.title === "AI Development & Integration" || category.title === "Development Tools") {
                         bgGradient = "from-orange-500/10 via-transparent to-transparent";
                     }
 

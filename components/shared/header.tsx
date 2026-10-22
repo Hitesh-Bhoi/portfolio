@@ -19,6 +19,7 @@ import { Logo } from "@/components/shared/logo"
 import { SocialLinks } from "@/components/shared/social-links"
 
 const navLinks = [
+    { name: "Home", href: "/" },
     { name: "About", href: "/about" },
     { name: "Skills", href: "/skills" },
     { name: "Projects", href: "/projects" },
@@ -35,7 +36,7 @@ export function Header() {
     return (
         <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
             <div className="flex justify-between h-20 w-full items-center px-6 md:px-10 lg:px-16">
-                <div className="mr-4 hidden md:flex">
+                <div className="mr-4 hidden xl:flex">
                     <Link className="mr-6 flex items-center space-x-2" href="/">
                         <Logo className="h-16 w-16 -ml-2" />
                     </Link>
@@ -75,7 +76,7 @@ export function Header() {
                         <Button
                             variant="outline"
                             size="icon"
-                            className="shrink-0 md:hidden"
+                            className="shrink-0 xl:hidden"
                         >
                             <Menu className="h-5 w-5" />
                             <span className="sr-only">Toggle navigation menu</span>
