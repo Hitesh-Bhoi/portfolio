@@ -24,51 +24,88 @@ const technicalArsenal = [
       "React.js",
       "Next.js",
       "TypeScript",
+      "JavaScript (ES6+)",
+      "Redux Toolkit",
       "Tailwind CSS",
-      "Styled Components",
-      "Framer Motion",
+      "Ant Design",
       "Bootstrap",
-      "SCSS",
-      "AntD",
-      "Shadcn UI",
-      "Responsive Design",
-      "Performance Optimization"
+      "shadcn/ui",
     ],
   },
   {
-    title: "Backend",
+    title: "Backend & APIs",
     icon: Server,
     tech: [
-      "Next.js",
+      "Python",
       "Node.js",
       "Express.js",
       "REST APIs",
-      "TypeORM",
-      "System Design",
-      "Query Optimization"
+      "FastAPI",
+      "Microservices",
+      "WebSockets",
+      "Authentication, JWT & RBAC",
+      "Stripe Integration",
     ],
   },
   {
-    title: "Database",
+    title: "Databases",
     icon: Database,
-    tech: ["MongoDB", "PostgreSQL", "AWS Lambda"],
+    tech: ["MongoDB", "Mongoose", "Redis", "PostgreSQL", "Prisma", "MySQL"],
   },
   {
-    title: "AI & Tools",
+    title: "Architecture & Design",
+    icon: Code2,
+    tech: [
+      "System Design",
+      "Scalable System Architecture",
+      "Database Design",
+      "REST & FastAPI Design",
+      "Caching",
+      "API Rate Limiting",
+    ],
+  },
+  {
+    title: "Cloud & DevOps",
+    icon: Server,
+    tech: [
+      "AWS EC2, ECS & S3",
+      "AWS Lambda & API Gateway",
+      "Docker",
+      "CI/CD",
+      "Vercel",
+      "Render",
+      "MongoDB Atlas",
+    ],
+  },
+  {
+    title: "AI Development & Integration",
     icon: Cpu,
     tech: [
-      "Git",
-      "GitHub",
-      "Docker",
-      "Vercel",
-      "Postman",
-      "Google Search Console",
-      "ChatGPT",
-      "ChatGPT Codex",
-      "Gemini",
+      "LLM API Integration",
+      "Generative AI",
+      "MCP",
+      "AI-Powered Features",
+      "Prompt Engineering",
+      "OpenAI API",
+      "Google Gemini API",
       "Claude",
-      "Google Antigravity",
-      "GitHub Copilot"
+      "Codex, Cursor & Antigravity",
+      "Google AI Studio",
+    ],
+  },
+  {
+    title: "Development Tools",
+    icon: Code2,
+    tech: [
+      "Git & GitHub",
+      "Vite & Webpack",
+      "NPM & Yarn",
+      "Postman",
+      "CodeRabbit",
+      "Playwright",
+      "VS Code",
+      "MongoDB Compass",
+      "pgAdmin",
     ],
   },
 ];
@@ -103,9 +140,9 @@ export default function ResumePage() {
                 </p>
               </div>
               <p className="text-base md:text-lg leading-relaxed text-muted-foreground max-w-md mx-auto">
-                Designing and building high-performance, scalable web
-                applications with a focus on modern JS frameworks and systemic
-                architecture.
+              Full Stack Developer with 3+ years of experience building
+              production-ready web applications, designing scalable APIs and
+              systems, and integrating AI capabilities.
               </p>
             </div>
 
@@ -136,14 +173,13 @@ export default function ResumePage() {
             {/* Social Links */}
             <div className="flex flex-wrap items-center gap-3 pt-4">
               <SocialLinks />
-              <button
-                disabled
-                className="flex flex-1 min-w-[200px] h-12 items-center justify-center gap-2 rounded-2xl bg-secondary text-foreground/80 font-medium text-base py-2 cursor-not-allowed border border-border shadow-sm transition-colors"
-                title="Resume coming soon"
+              <a
+                href="/Bhoi-Hitesh-Resume.docx"
+                download="Bhoi-Hitesh-Resume.docx"
+                className="flex flex-1 min-w-[200px] h-12 items-center justify-center gap-2 rounded-2xl bg-secondary text-foreground/80 font-medium text-base py-2 border border-border shadow-sm transition-colors hover:bg-secondary/80"
               >
                 <Download className="w-5 h-5 opacity-70" /> Download CV
-                <span className="text-[10px] text-amber-600 dark:text-amber-500 bg-amber-500/10 dark:bg-amber-500/20 px-2 py-0.5 rounded-full uppercase tracking-wider font-bold ml-1 border border-amber-500/30">Coming Soon</span>
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -214,7 +250,7 @@ export default function ResumePage() {
                 company="Intellimedia Networks"
                 role="Fullstack Developer"
                 date="Jul 2024 — Present"
-                description="Developed strong expertise in frontend development, UI/UX design, responsive interfaces, application performance optimization, and API integration, while continuously expanding knowledge in backend technologies and cloud computing."
+                description="Architected and deployed scalable Next.js and Node.js applications, delivering production-ready features focused on performance and user engagement. Optimized REST APIs and MongoDB/PostgreSQL queries, reducing API response latency by 30%."
                 stack={[
                   "React.js",
                   "Next.js",
@@ -233,7 +269,7 @@ export default function ResumePage() {
                 company="Syndell Technologies"
                 role="Jr. Fullstack Developer"
                 date="Mar 2023 — Feb 2024"
-                description="Expanded expertise in frontend development and responsive design, while establishing a solid foundation in backend development."
+                description="Built reusable React component libraries from Figma designs using Redux Toolkit, Tailwind CSS, and Bootstrap. Developed secure Node.js/Express APIs with validation, error handling, and MongoDB indexing."
                 stack={[
                   "React.js",
                   "Node.js",
@@ -248,7 +284,7 @@ export default function ResumePage() {
                 company="KerInfotech"
                 role="React.js Intern"
                 date="Aug 2022 — Mar 2023"
-                description="Learned the fundamental basics of frontend development."
+                description="Developed reusable, responsive UI components using React.js, Next.js, and Redux Toolkit."
                 stack={[
                   "JavaScript",
                   "React.js",
