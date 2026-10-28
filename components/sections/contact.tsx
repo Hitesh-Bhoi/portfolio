@@ -10,6 +10,8 @@ import { Mail, Send, MapPin, MessageSquare, ShieldCheck, Phone } from "lucide-re
 import { SocialLinks } from "@/components/shared/social-links"
 
 
+const resolvedEmail = process.env.NEXT_PUBLIC_EMAIL || "bhoihitesh183@gmail.com"
+
 const contactInfo = [
     {
         icon: <Phone className="w-5 h-5 text-emerald-500" />,
@@ -20,8 +22,8 @@ const contactInfo = [
     {
         icon: <Mail className="w-5 h-5 text-primary" />,
         label: "Email",
-        value: process.env.NEXT_PUBLIC_EMAIL || "bhoihitesh183@gmail.com",
-        href: `mailto: ${process.env.NEXT_PUBLIC_EMAIL}`
+        value: resolvedEmail,
+        href: `mailto:${resolvedEmail}`
     },
     {
         icon: <MapPin className="w-5 h-5 text-purple-500" />,

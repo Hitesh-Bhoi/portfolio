@@ -50,8 +50,8 @@ export function Footer() {
         ],
         contact: [
             {
-                label: "bhoihitesh183@gmail.com",
-                href: "mailto:bhoihitesh183@gmail.com",
+                label: process.env.NEXT_PUBLIC_EMAIL || "bhoihitesh183@gmail.com",
+                href: `mailto:${process.env.NEXT_PUBLIC_EMAIL || "bhoihitesh183@gmail.com"}`,
                 icon: Mail,
             },
             {

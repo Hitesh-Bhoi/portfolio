@@ -43,8 +43,8 @@ const projects: Project[] = [
     icon: <EcobazarLogo className="w-auto max-w-[120px]" />,
     description: "A fully integrated B2B dashboard built to streamline inventory tracking, manage customer orders efficiently, and deliver actionable sales analytics.",
     tags: ["Next.js", "React.js", "TypeScript", "Tailwind CSS", "Redux Toolkit", "Framer Motion", "SCSS", "Shadcn UI"],
-    demoUrl: "http://farmiva-adminpanel.vercel.app/",
-    repoUrl: "https://github.com/Hitesh-Bhoi",
+    demoUrl: "https://farmiva-adminpanel.vercel.app/",
+    repoUrl: "",
     gradient: "from-green-500/20 to-emerald-500/20"
   },
 ]
@@ -117,6 +117,7 @@ export function ProjectsSection() {
 
               {/* Footer / Actions */}
               <div className="flex gap-4 pt-6 border-t border-border/50">
+                {project.repoUrl && (
                 <Link
                   href={project.repoUrl}
                   target="_blank"
@@ -125,6 +126,7 @@ export function ProjectsSection() {
                 >
                   <Github className="w-4 h-4" /> Code
                 </Link>
+                )}
                 <Link
                   href={project.demoUrl}
                   target="_blank"

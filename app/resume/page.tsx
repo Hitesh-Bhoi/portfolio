@@ -159,7 +159,7 @@ export default function ResumePage() {
                 </span>
               </a>
               <a
-                href="tel:8200861893"
+                href="tel:+918200861893"
                 className="flex items-center justify-between group hover:text-primary transition-colors"
               >
                 <span className="text-muted-foreground">Phone</span>
@@ -392,7 +392,7 @@ export default function ResumePage() {
               />
               <ProjectBlock
                 name="Grocery Admin Panel"
-                url="http://farmiva-adminpanel.vercel.app/"
+                url="https://farmiva-adminpanel.vercel.app/"
                 description="Built a comprehensive B2B administrative dashboard to manage inventory catalogs, track customer order lifecycles, and visualize sales analytics."
                 stack={[
                   "Next.js",
