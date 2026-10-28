@@ -98,6 +98,7 @@ export default function RootLayout({
               name: "Hitesh Bhoi",
               url: "https://imhitesh.vercel.app/",
               jobTitle: "MERN Stack Developer",
+              telephone: "+91 8200861893",
               worksFor: {
                 "@type": "Organization",
                 name: "Freelance / Open Source",
