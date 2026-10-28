@@ -149,12 +149,22 @@ export default function ResumePage() {
             {/* Contact Array */}
             <div className="space-y-4 font-mono text-base border-t border-border/50 pt-8">
               <a
-                href={`mailto:${process.env.NEXT_PUBLIC_EMAIL || "hello@example.com"}`}
+                href={`mailto:${process.env.NEXT_PUBLIC_EMAIL || "bhoihitesh183@gmail.com"}`}
                 className="flex items-center justify-between group hover:text-primary transition-colors"
               >
                 <span className="text-muted-foreground">Email</span>
                 <span className="flex items-center gap-2">
-                  {process.env.NEXT_PUBLIC_EMAIL || "hello@example.com"}{" "}
+                  {process.env.NEXT_PUBLIC_EMAIL || "bhoihitesh183@gmail.com"}{" "}
+                  <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </span>
+              </a>
+              <a
+                href="tel:8200861893"
+                className="flex items-center justify-between group hover:text-primary transition-colors"
+              >
+                <span className="text-muted-foreground">Phone</span>
+                <span className="flex items-center gap-2">
+                  +91 8200861893{" "}
                   <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </span>
               </a>
@@ -355,15 +365,16 @@ export default function ResumePage() {
 
             <div className="space-y-8">
               <ProjectBlock
-                name="Portfolio Website"
-                url="https://imhitesh.vercel.app/"
-                description="Architected a high-performance personal portfolio leveraging Next.js and Framer Motion. Implemented fluid micro-interactions, SEO optimization, and modern UX principles to effectively convert visitors into clients."
+                name="Users Management Platform"
+                url="https://lms-fe-rpgd.onrender.com/"
+                description="Engineered a scalable user and leads management platform with a containerized backend deployed on Render. Implemented role-based access, efficient state management, and optimized API workflows."
                 stack={[
                   "Next.js",
                   "React.js",
-                  "Framer Motion",
+                  "Node.js",
+                  "Docker",
+                  "Render",
                   "TailwindCSS",
-                  "Resend(Email Service)",
                 ]}
               />
               <ProjectBlock
@@ -377,6 +388,19 @@ export default function ResumePage() {
                   "SCSS",
                   "Framer Motion",
                   "Redux Toolkit",
+                ]}
+              />
+              <ProjectBlock
+                name="Grocery Admin Panel"
+                url="http://farmiva-adminpanel.vercel.app/"
+                description="Built a comprehensive B2B administrative dashboard to manage inventory catalogs, track customer order lifecycles, and visualize sales analytics."
+                stack={[
+                  "Next.js",
+                  "React.js",
+                  "TypeScript",
+                  "TailwindCSS",
+                  "Redux Toolkit",
+                  "Shadcn UI",
                 ]}
               />
             </div>
