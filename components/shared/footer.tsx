@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Github, Linkedin, Instagram, Mail, MapPin, ArrowUp } from "lucide-react"
+import { Github, Linkedin, Instagram, Mail, MapPin, ArrowUp, Phone } from "lucide-react"
 import { Logo } from "@/components/shared/logo"
 import { SOCIAL_LINKS } from "@/lib/social-links"
 import Link from "next/link"
@@ -50,11 +50,14 @@ export function Footer() {
         ],
         contact: [
             {
-                label: process.env.NEXT_PUBLIC_EMAIL || "Send a message",
-                href: process.env.NEXT_PUBLIC_EMAIL
-                    ? `mailto:${process.env.NEXT_PUBLIC_EMAIL}`
-                    : "/contact",
+                label: process.env.NEXT_PUBLIC_EMAIL || "bhoihitesh183@gmail.com",
+                href: `mailto:${process.env.NEXT_PUBLIC_EMAIL || "bhoihitesh183@gmail.com"}`,
                 icon: Mail,
+            },
+            {
+                label: "+91 8200861893",
+                href: "tel:+918200861893",
+                icon: Phone,
             },
             { label: "Ahmedabad, Gujarat, India", icon: MapPin },
         ]

@@ -1,42 +1,51 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ExternalLink, Github, Code2, AlertTriangle, Sparkles } from "lucide-react"
+import { ExternalLink, Github, Code2, AlertTriangle, Sparkles, Users } from "lucide-react"
 import Link from "next/link"
-import { Logo } from "@/components/shared/logo"
 import { EcobazarLogo } from "@/components/shared/ecobazar-logo"
 
-const projects = [
+interface Project {
+  title: string
+  icon?: React.ReactNode
+  description: string
+  notice?: string
+  tags: string[]
+  demoUrl: string
+  repoUrl: string
+  gradient?: string
+  className?: string
+  isDisabled?: boolean
+}
+
+const projects: Project[] = [
   {
-    title: "Portfolio Website",
-    icon: <Logo />,
-        description: "A highly optimized, high-performing personal portfolio designed to convert visitors into clients through modern UX principles and fluid micro-interactions.",
-        tags: ["Next.js", "React.js", "TypeScript", "Framer Motion", "Tailwind CSS"],
-        demoUrl: "https://imhitesh.vercel.app/",
-    repoUrl: "https://github.com/Hitesh-Bhoi/portfolio",
+    title: "Users Management Platform",
+    icon: <Users className="w-6 h-6 text-primary" />,
+    description: "A scalable user and leads management platform with a containerized backend deployed on Render, designed for streamlined workflow administration and secure role-based access.",
+    tags: ["Next.js", "React.js", "TypeScript", "Node.js", "Docker", "Render", "Tailwind CSS"],
+    demoUrl: "https://lms-fe-rpgd.onrender.com/",
+    repoUrl: "https://github.com/Hitesh-Bhoi/lms-fe",
     gradient: "from-orange-500/20 to-yellow-500/20"
   },
   {
     title: "Grocery E-commerce Platform",
     icon: <EcobazarLogo className="w-auto max-w-[120px]" />,
-        description: "A scalable, conversion-focused e-commerce solution enabling smooth product discovery, user-friendly cart management, and seamless checkout for customers.",
-        notice: "Currently under development. Some features may not work and more are coming soon.",
-        tags: ["Next.js", "React.js", "TypeScript", "Redux Toolkit", "SCSS", "Styled Components", "Tailwind CSS", "Framer Motion"],
-    demoUrl: "https://grocery-app-phi-snowy.vercel.app/",
+    description: "A scalable, conversion-focused e-commerce solution enabling smooth product discovery, user-friendly cart management, and seamless checkout for customers.",
+    notice: "Currently under development. Some features may not work and more are coming soon.",
+    tags: ["Next.js", "React.js", "TypeScript", "Redux Toolkit", "SCSS", "Styled Components", "Tailwind CSS", "Framer Motion"],
+    demoUrl: "https://farmiva.vercel.app/",
     repoUrl: "https://github.com/Hitesh-Bhoi/food-cart",
-        gradient: "from-blue-500/20 to-cyan-500/20"
+    gradient: "from-blue-500/20 to-cyan-500/20"
   },
   {
     title: "Grocery Admin Panel",
     icon: <EcobazarLogo className="w-auto max-w-[120px]" />,
-        description: "A fully integrated B2B dashboard built to streamline inventory tracking, manage customer orders efficiently, and deliver actionable sales analytics.",
-    notice: "Coming soon.",
-        tags: ["Next.js", "React.js", "TypeScript", "Tailwind CSS", "Redux Toolkit", "Framer Motion", "SCSS", "Shadcn UI"],
-    demoUrl: "#",
-    repoUrl: "#",
-    gradient: "from-green-500/20 to-emerald-500/20",
-    className: "opacity-60",
-        isDisabled: true
+    description: "A fully integrated B2B dashboard built to streamline inventory tracking, manage customer orders efficiently, and deliver actionable sales analytics.",
+    tags: ["Next.js", "React.js", "TypeScript", "Tailwind CSS", "Redux Toolkit", "Framer Motion", "SCSS", "Shadcn UI"],
+    demoUrl: "https://farmiva-adminpanel.vercel.app/",
+    repoUrl: "",
+    gradient: "from-green-500/20 to-emerald-500/20"
   },
 ]
 
@@ -108,6 +117,7 @@ export function ProjectsSection() {
 
               {/* Footer / Actions */}
               <div className="flex gap-4 pt-6 border-t border-border/50">
+                {project.repoUrl && (
                 <Link
                   href={project.repoUrl}
                   target="_blank"
@@ -116,6 +126,7 @@ export function ProjectsSection() {
                 >
                   <Github className="w-4 h-4" /> Code
                 </Link>
+                )}
                 <Link
                   href={project.demoUrl}
                   target="_blank"

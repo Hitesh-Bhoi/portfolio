@@ -6,16 +6,24 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { motion } from "framer-motion"
-import { Mail, Send, MapPin, MessageSquare, ShieldCheck } from "lucide-react"
+import { Mail, Send, MapPin, MessageSquare, ShieldCheck, Phone } from "lucide-react"
 import { SocialLinks } from "@/components/shared/social-links"
 
 
+const resolvedEmail = process.env.NEXT_PUBLIC_EMAIL || "bhoihitesh183@gmail.com"
+
 const contactInfo = [
+    {
+        icon: <Phone className="w-5 h-5 text-emerald-500" />,
+        label: "Phone",
+        value: "+91 8200861893",
+        href: "tel:+918200861893"
+    },
     {
         icon: <Mail className="w-5 h-5 text-primary" />,
         label: "Email",
-        value: process.env.NEXT_PUBLIC_EMAIL,
-        href: `mailto: ${process.env.NEXT_PUBLIC_EMAIL}`
+        value: resolvedEmail,
+        href: `mailto:${resolvedEmail}`
     },
     {
         icon: <MapPin className="w-5 h-5 text-purple-500" />,

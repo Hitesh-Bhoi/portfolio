@@ -9,6 +9,7 @@ export const personSchema = {
     "Full Stack Software Engineer specializing in web development and app development with 3+ years of experience.",
   image: "https://imhitesh.vercel.app/og.png",
   email: "your-email@example.com", // Add your email
+  telephone: "+91 8200861893",
   jobTitle: "Full Stack Software Engineer",
   worksFor: {
     "@type": "Organization",
