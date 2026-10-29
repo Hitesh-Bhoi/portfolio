@@ -38,7 +38,7 @@ export function Header() {
             <div className="flex justify-between h-20 w-full items-center px-6 md:px-10 lg:px-16">
                 <div className="mr-4 hidden xl:flex">
                     <Link className="mr-6 flex items-center space-x-2" href="/">
-                        <Logo className="h-16 w-16 -ml-2" />
+                        <Logo className="h-12 w-12 -ml-1" />
                     </Link>
                     <nav className="flex items-center gap-1 text-sm font-medium">
                         {navLinks.map((link) => {
@@ -95,7 +95,7 @@ export function Header() {
                                         href="/"
                                         className="flex items-center gap-2 text-lg font-semibold mb-6"
                                     >
-                                        <Logo className="h-12 w-12" />
+                                        <Logo className="h-10 w-10" />
                                         <span className="sr-only">Hitesh Portfolio</span>
                                     </Link>
                                 </SheetClose>

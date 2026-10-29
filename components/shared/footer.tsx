@@ -73,7 +73,7 @@ export function Footer() {
                 <div className="mb-12 grid grid-cols-2 items-start gap-x-8 gap-y-10 md:grid-cols-3 2xl:grid-cols-[minmax(0,1.5fr)_minmax(0,0.8fr)_minmax(0,1.1fr)_minmax(0,0.8fr)_minmax(0,1fr)_minmax(0,1fr)]">
                     <div className="min-w-0 max-w-sm space-y-6">
                         <div className="flex items-center gap-3">
-                            <Logo className="w-16 h-16" />
+                            <Logo className="w-12 h-12" />
                             <h1 className="text-2xl font-black tracking-tighter uppercase italic">Bhoi Hitesh</h1>
                         </div>
                         <p className="text-muted-foreground text-lg leading-relaxed font-medium">
