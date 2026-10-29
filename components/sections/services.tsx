@@ -250,7 +250,7 @@ export function ServicesSection() {
             {/* CTA */}
             <a
               href="/contact"
-              className={`w-full h-10 rounded-xl text-xs font-black uppercase tracking-widest flex items-center justify-center gap-2 transition-all duration-200 group/btn
+              className={`w-full h-10 rounded-lg text-xs font-black uppercase tracking-widest flex items-center justify-center gap-2 transition-all duration-200 group/btn
                                 ${
                                   service.highlight
                                     ? "bg-background text-foreground hover:bg-background/90"
@@ -346,7 +346,7 @@ export function ServicesSection() {
           </div>
           <a
             href="/contact"
-            className="w-full h-10 rounded-xl border-2 border-foreground text-xs font-black uppercase tracking-widest flex items-center justify-center gap-2 transition-all duration-200 group/btn text-foreground hover:bg-foreground hover:text-background hover:scale-[1.02] active:scale-[0.98]"
+            className="w-full h-10 rounded-lg border-2 border-foreground text-xs font-black uppercase tracking-widest flex items-center justify-center gap-2 transition-all duration-200 group/btn text-foreground hover:bg-foreground hover:text-background hover:scale-[1.02] active:scale-[0.98]"
           >
             Let's Discuss
             <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform duration-200" />

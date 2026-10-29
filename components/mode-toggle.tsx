@@ -3,6 +3,7 @@
 import * as React from "react"
 import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
+import { CONTROL_FOCUS } from "@/components/ui/control-styles"
 
 export function ModeToggle() {
     const { setTheme, resolvedTheme } = useTheme()
@@ -21,8 +22,9 @@ export function ModeToggle() {
 
     return (
         <button
+            type="button"
             onClick={() => setTheme(isDark ? "light" : "dark")}
-            className="group relative flex items-center justify-between w-[70px] h-10 p-1 rounded-full bg-secondary/60 border border-border/50 overflow-hidden transition-all duration-300 hover:border-primary/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 shadow-inner"
+            className={`group relative flex items-center justify-between w-[70px] h-10 p-1 rounded-full bg-secondary/60 border border-border/50 overflow-hidden transition-all duration-300 hover:border-primary/40 shadow-inner ${CONTROL_FOCUS}`}
             aria-label="Toggle theme"
         >
             {/* Sliding Pill Background */}

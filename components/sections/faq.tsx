@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Plus } from "lucide-react"
+import { CONTROL_FOCUS } from "@/components/ui/control-styles"
 
 const faqData = [
     {
@@ -45,9 +46,10 @@ function FaqItem({
             {/* Ambient Hover Glow */}
             <div className="absolute inset-0 bg-linear-to-br from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
 
-            <button 
+            <button
+                type="button"
                 onClick={onClick}
-                className={`w-full flex items-center justify-between px-6 md:px-8 pt-6 md:pt-8 ${isOpen ? 'pb-2 md:pb-4' : 'pb-6 md:pb-8'} text-left focus:outline-none relative z-10 transition-all duration-300`}
+                className={`w-full flex items-center justify-between px-6 md:px-8 pt-6 md:pt-8 ${isOpen ? 'pb-2 md:pb-4' : 'pb-6 md:pb-8'} text-left relative z-10 transition-all duration-300 ${CONTROL_FOCUS}`}
             >
                 <div className="flex items-center gap-4 md:gap-8 flex-1">
                     <span className="text-muted-foreground font-mono text-sm md:text-base hidden sm:block shrink-0 opacity-50">

@@ -6,6 +6,7 @@ import { Logo } from "@/components/shared/logo"
 import { SOCIAL_LINKS } from "@/lib/social-links"
 import Link from "next/link"
 import { useState, useEffect } from "react"
+import { CONTROL_FOCUS } from "@/components/ui/control-styles"
 
 export function Footer() {
     const [isVisible, setIsVisible] = useState(false)
@@ -194,7 +195,7 @@ export function Footer() {
                             }}
                             whileHover={{ y: -5 }}
                             whileTap={{ scale: 0.95 }}
-                            className="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-50 p-4 rounded-full bg-background/80 backdrop-blur-md border border-border text-foreground hover:border-primary/50 hover:text-primary transition-all shadow-xl hover:shadow-primary/20"
+                            className={`fixed bottom-6 right-6 md:bottom-10 md:right-10 z-50 p-4 rounded-full bg-background/80 backdrop-blur-md border border-border text-foreground hover:border-primary/50 hover:text-primary transition-all shadow-xl hover:shadow-primary/20 ${CONTROL_FOCUS}`}
                             aria-label="Back to Top"
                         >
                             <ArrowUp className="w-5 h-5" />
