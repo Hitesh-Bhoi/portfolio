@@ -76,7 +76,6 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png", // We should probably generate this or just use favicon for now
   },
   manifest: "/manifest.json",
 };

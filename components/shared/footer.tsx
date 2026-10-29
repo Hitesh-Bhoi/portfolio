@@ -6,6 +6,7 @@ import { Logo } from "@/components/shared/logo"
 import { SOCIAL_LINKS } from "@/lib/social-links"
 import Link from "next/link"
 import { useState, useEffect } from "react"
+import { CONTROL_FOCUS } from "@/components/ui/control-styles"
 
 export function Footer() {
     const [isVisible, setIsVisible] = useState(false)
@@ -73,7 +74,7 @@ export function Footer() {
                 <div className="mb-12 grid grid-cols-2 items-start gap-x-8 gap-y-10 md:grid-cols-3 2xl:grid-cols-[minmax(0,1.5fr)_minmax(0,0.8fr)_minmax(0,1.1fr)_minmax(0,0.8fr)_minmax(0,1fr)_minmax(0,1fr)]">
                     <div className="min-w-0 max-w-sm space-y-6">
                         <div className="flex items-center gap-3">
-                            <Logo className="w-16 h-16" />
+                            <Logo className="w-12 h-12" />
                             <h1 className="text-2xl font-black tracking-tighter uppercase italic">Bhoi Hitesh</h1>
                         </div>
                         <p className="text-muted-foreground text-lg leading-relaxed font-medium">
@@ -194,7 +195,7 @@ export function Footer() {
                             }}
                             whileHover={{ y: -5 }}
                             whileTap={{ scale: 0.95 }}
-                            className="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-50 p-4 rounded-full bg-background/80 backdrop-blur-md border border-border text-foreground hover:border-primary/50 hover:text-primary transition-all shadow-xl hover:shadow-primary/20"
+                            className={`fixed bottom-6 right-6 md:bottom-10 md:right-10 z-50 p-4 rounded-full bg-background/80 backdrop-blur-md border border-border text-foreground hover:border-primary/50 hover:text-primary transition-all shadow-xl hover:shadow-primary/20 ${CONTROL_FOCUS}`}
                             aria-label="Back to Top"
                         >
                             <ArrowUp className="w-5 h-5" />

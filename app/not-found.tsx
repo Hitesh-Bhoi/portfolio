@@ -23,13 +23,13 @@ export default function NotFound() {
                     Oops! It seems you've wandered into digital space. The page you are looking for might have been moved or doesn't exist.
                 </p>
                 <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-                    <Button asChild size="lg" className="rounded-full shadow-lg hover:shadow-primary/20 transition-all">
+                    <Button asChild size="lg" className="shadow-lg hover:shadow-primary/20">
                         <Link href="/">
                             <Home className="mr-2 h-5 w-5" />
                             Back to Home
                         </Link>
                     </Button>
-                    <Button asChild variant="outline" size="lg" className="rounded-full border-primary/20 hover:bg-primary/5">
+                    <Button asChild variant="outline" size="lg" className="border-primary/20 hover:bg-primary/5">
                         <Link href="/contact">
                             <ArrowLeft className="mr-2 h-5 w-5" />
                             Report an Issue

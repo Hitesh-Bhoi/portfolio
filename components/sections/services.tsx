@@ -2,108 +2,93 @@
 
 import { motion } from "framer-motion";
 import {
+  ArrowRight,
+  CalendarDays,
   Check,
+  Handshake,
+  MessageCircle,
+  Rocket,
+  Shield,
   Sparkles,
   Zap,
-  Shield,
-  Rocket,
-  ArrowRight,
-  MessageCircle,
-  CalendarDays,
-  Handshake,
 } from "lucide-react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 const services = [
   {
-    icon: <Rocket className="w-5 h-5" />,
-    badge: "Starter",
+    icon: <Rocket className="h-5 w-5" />,
+    label: "Starter",
     title: "Single Page Site",
-    tagline: "Perfect to get online fast",
+    tagline: "Get online quickly",
     price: "₹2,500",
     priceNote: "one-time",
     description:
-      "A clean, single-page site to establish your online presence — ideal for freelancers, creators, or small businesses just starting out.",
+      "A focused, responsive site for freelancers, creators, and small businesses starting out.",
     features: [
       "Single-page responsive design",
-      "About, Services & Contact",
+      "About, services, and contact sections",
       "Basic SEO setup",
-      "Mobile-friendly layout",
       "Contact form",
-      "Delivered in 1-2 days",
+      "Delivered in 1–2 days",
     ],
-    highlight: false,
-    accentColor: "text-blue-500",
-    glowColor: "hover:shadow-blue-500/10",
-    borderHover: "hover:border-blue-500/40",
+    popular: false,
   },
   {
-    icon: <Zap className="w-5 h-5" />,
-    badge: "Popular",
+    icon: <Zap className="h-5 w-5" />,
+    label: "Popular",
     title: "Landing Page",
-    tagline: "First impressions that convert",
+    tagline: "Turn visits into enquiries",
     price: "₹5,000",
     priceNote: "one-time",
     description:
-      "A blazing-fast, conversion-optimised landing page built to turn visitors into customers — designed with your brand identity in mind.",
+      "A custom landing page built around your offer, brand, and next customer action.",
     features: [
       "Custom responsive design",
       "SEO-ready structure",
       "Lead capture form",
-      "Performance optimised",
-      "Analytics integration",
-      "1 revision round",
-      "Delivered in 2-3 days",
+      "Performance and analytics setup",
+      "One revision round · 2–3 days",
     ],
-    highlight: false,
-    accentColor: "text-violet-500",
-    glowColor: "hover:shadow-violet-500/10",
-    borderHover: "hover:border-violet-500/40",
+    popular: true,
   },
   {
-    icon: <Sparkles className="w-5 h-5" />,
-    badge: "Best Value",
+    icon: <Sparkles className="h-5 w-5" />,
+    label: "For growing teams",
     title: "Business Website",
-    tagline: "Your brand, built to impress",
+    tagline: "A complete home for your brand",
     price: "₹10,000",
     priceNote: "one-time",
     description:
-      "A complete multi-page site that showcases your services and story — polished and premium to stand out from the crowd.",
+      "A polished multi-page website that presents your business, services, and work clearly.",
     features: [
       "Up to 6 custom pages",
-      "Premium UI/UX design",
-      "Blog or Projects section",
-      "SEO + Social Meta tags",
+      "Premium UI and UX design",
+      "Blog or projects section",
+      "SEO and social metadata",
       "Contact form with email",
-      "2 revision rounds",
-      "Delivered within 10 days",
+      "Two revision rounds · within 10 days",
     ],
-    highlight: true,
-    accentColor: "text-background",
-    glowColor: "",
-    borderHover: "",
+    popular: false,
   },
   {
-    icon: <Shield className="w-5 h-5" />,
-    badge: "Enterprise",
+    icon: <Shield className="h-5 w-5" />,
+    label: "Custom scope",
     title: "Custom Web App",
-    tagline: "Scale your business digitally",
+    tagline: "Built around your workflow",
     price: "₹15,000+",
-    priceNote: "starts at",
+    priceNote: "starting price",
     description:
-      "A tailor-made full-stack web application for your specific workflow — from dashboards to full e-commerce platforms.",
+      "A tailored full-stack application for complex workflows, dashboards, or e-commerce.",
     features: [
       "Full-stack development",
-      "User auth & roles",
-      "Database integration",
+      "Authentication and user roles",
+      "Database and API integrations",
       "Admin dashboard",
-      "API integrations",
-      "3+ revision rounds",
-      "Timeline as per scope",
+      "Three or more revision rounds",
+      "Timeline planned to match scope",
     ],
-    highlight: false,
-    accentColor: "text-orange-500",
-    glowColor: "hover:shadow-orange-500/10",
-    borderHover: "hover:border-orange-500/40",
+    popular: false,
   },
 ];
 
@@ -116,19 +101,19 @@ const addOns = [
 
 const discussPoints = [
   {
-    icon: <MessageCircle className="w-5 h-5" />,
-    title: "Something unique in mind?",
-    desc: "No two projects are the same. If your idea doesn't fit a standard package, I'll scope it specifically for you.",
+    icon: <MessageCircle className="h-4 w-4" />,
+    title: "A specific idea",
+    desc: "If your project doesn't fit a package, I'll scope it around your needs.",
   },
   {
-    icon: <CalendarDays className="w-5 h-5" />,
-    title: "Tight deadline?",
-    desc: "Need it done faster? Express delivery is available. Let's see what we can do together.",
+    icon: <CalendarDays className="h-4 w-4" />,
+    title: "A tight deadline",
+    desc: "Express delivery may be possible depending on the project scope.",
   },
   {
-    icon: <Handshake className="w-5 h-5" />,
-    title: "Long-term collaboration?",
-    desc: "Looking for a dedicated dev partner for your agency or growing business? I'm open to retainer arrangements.",
+    icon: <Handshake className="h-4 w-4" />,
+    title: "Ongoing support",
+    desc: "Retainer arrangements are available for long-term development work.",
   },
 ];
 
@@ -136,222 +121,234 @@ export function ServicesSection() {
   return (
     <section
       id="services"
-      className="w-full py-16 md:py-24 mx-auto px-6 md:px-10 lg:px-16 relative overflow-hidden"
+      className="relative mx-auto w-full overflow-hidden px-6 py-16 md:px-10 md:py-24 lg:px-16"
     >
-      {/* Header */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="mb-16 text-center"
-      >
-        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-primary inline-block mb-4">
-          Services & Pricing
-        </h2>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          Transparent pricing, zero surprises. Whether you're just starting out
-          or scaling up — there's a plan built for you.
-        </p>
-      </motion.div>
+      <div className="w-full">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="mx-auto mb-12 max-w-3xl text-center md:mb-16"
+        >
+          <h2 className="mb-5 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
+            The right build for your next step.
+          </h2>
+          <p className="mx-auto max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
+            Clear packages for a new idea, a growing business, or a custom
+            workflow. Every project starts with a conversation about what you
+            need.
+          </p>
+          <div className="mt-6 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
+            <span>Prices in INR</span>
+            <span>Upfront scope and timeline</span>
+            <span>Custom work available</span>
+          </div>
+        </motion.div>
 
-      {/* Pricing Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 w-full mx-auto mb-6">
-        {services.map((service, i) => (
+        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          {services.map((service, index) => (
+            <motion.article
+              key={service.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.45, delay: index * 0.06 }}
+              className={`relative flex h-full flex-col rounded-2xl border p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${
+                service.popular
+                  ? "border-primary bg-primary text-primary-foreground"
+                  : "border-border bg-card text-card-foreground hover:border-foreground/30"
+              }`}
+            >
+              <div className="mb-6 flex items-center justify-between gap-3">
+                <span
+                  className={`rounded-full border px-3 py-1 text-xs font-semibold ${
+                    service.popular
+                      ? "border-primary-foreground/20 bg-primary-foreground/10 text-primary-foreground"
+                      : "border-border bg-muted text-muted-foreground"
+                  }`}
+                >
+                  {service.label}
+                </span>
+                <span
+                  className={`flex h-10 w-10 items-center justify-center rounded-xl border ${
+                    service.popular
+                      ? "border-primary-foreground/20 bg-primary-foreground/10 text-primary-foreground"
+                      : "border-border bg-muted text-foreground"
+                  }`}
+                  aria-hidden="true"
+                >
+                  {service.icon}
+                </span>
+              </div>
+
+              <p
+                className={`mb-2 text-xs font-medium uppercase tracking-wide ${
+                  service.popular
+                    ? "text-primary-foreground/65"
+                    : "text-muted-foreground"
+                }`}
+              >
+                {service.tagline}
+              </p>
+              <h3 className="text-xl font-bold tracking-tight">
+                {service.title}
+              </h3>
+              <p
+                className={`mt-3 min-h-16 text-sm leading-relaxed ${
+                  service.popular
+                    ? "text-primary-foreground/75"
+                    : "text-muted-foreground"
+                }`}
+              >
+                {service.description}
+              </p>
+
+              <div
+                className={`mt-6 border-y py-5 ${
+                  service.popular
+                    ? "border-primary-foreground/20"
+                    : "border-border"
+                }`}
+              >
+                <p className="text-3xl font-bold tracking-tight">
+                  {service.price}
+                </p>
+                <p
+                  className={`mt-1 text-xs ${
+                    service.popular
+                      ? "text-primary-foreground/65"
+                      : "text-muted-foreground"
+                  }`}
+                >
+                  {service.priceNote}
+                </p>
+              </div>
+
+              <ul className="mt-6 flex-1 space-y-3">
+                {service.features.map((feature) => (
+                  <li key={feature} className="flex items-start gap-2.5 text-sm">
+                    <Check
+                      className={`mt-0.5 h-4 w-4 shrink-0 ${
+                        service.popular
+                          ? "text-primary-foreground"
+                          : "text-foreground"
+                      }`}
+                      aria-hidden="true"
+                    />
+                    <span
+                      className={
+                        service.popular
+                          ? "text-primary-foreground/80"
+                          : "text-muted-foreground"
+                      }
+                    >
+                      {feature}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+
+              <Button
+                asChild
+                variant={service.popular ? "secondary" : "outline"}
+                className={`mt-8 w-full ${
+                  service.popular
+                    ? "border-transparent bg-primary-foreground text-primary hover:bg-primary-foreground/90"
+                    : "bg-transparent"
+                }`}
+              >
+                <Link href="/contact">
+                  Discuss this package
+                  <ArrowRight aria-hidden="true" />
+                </Link>
+              </Button>
+            </motion.article>
+          ))}
+        </div>
+
+        <div className="mt-6 text-center text-sm text-muted-foreground">
+          Every project includes a clear scope before work begins. Final pricing
+          may vary with requirements.
+        </div>
+
+        <div className="mt-14 grid gap-6 lg:grid-cols-2">
           <motion.div
-            key={service.title}
-            initial={{ opacity: 0, y: 32 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.55, delay: i * 0.1 }}
-            className={`relative rounded-2xl border flex flex-col p-7 transition-all duration-300
-                            ${
-                              service.highlight
-                                ? "border-foreground bg-foreground text-background shadow-[0_8px_32px_rgba(0,0,0,0.18)]"
-                                : `border-border bg-card shadow-[0_2px_8px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_28px_rgba(0,0,0,0.1)] ${service.glowColor} ${service.borderHover}`
-                            }`}
+            transition={{ duration: 0.45 }}
+            className="rounded-2xl border border-border bg-card p-6 shadow-sm md:p-8"
           >
-            {/* Badge + Icon */}
-            <div className="flex items-center justify-between mb-6">
-              <span
-                className={`text-[10px] font-black uppercase tracking-[0.15em] px-2.5 py-1 rounded-full border
-                                ${
-                                  service.highlight
-                                    ? "border-background/20 text-background/70 bg-background/10"
-                                    : "border-border text-muted-foreground bg-muted"
-                                }`}
-              >
-                {service.badge}
-              </span>
-              <div
-                className={`w-9 h-9 rounded-xl flex items-center justify-center border
-                                ${
-                                  service.highlight
-                                    ? "bg-background/10 border-background/20 text-background"
-                                    : `bg-muted border-border ${service.accentColor}`
-                                }`}
-              >
-                {service.icon}
-              </div>
+            <div className="mb-5">
+              <p className="text-sm font-semibold text-foreground">Optional extras</p>
+              <h3 className="mt-1 text-2xl font-bold tracking-tight">
+                Add-ons & maintenance
+              </h3>
             </div>
-
-            <p
-              className={`text-[10px] font-bold uppercase tracking-widest mb-1 ${service.highlight ? "text-background/50" : "text-muted-foreground"}`}
-            >
-              {service.tagline}
-            </p>
-            <h3
-              className={`text-base font-black mb-3 leading-snug ${service.highlight ? "text-background" : "text-foreground"}`}
-            >
-              {service.title}
-            </h3>
-            <p
-              className={`text-xs leading-relaxed mb-6 ${service.highlight ? "text-background/60" : "text-muted-foreground"}`}
-            >
-              {service.description}
-            </p>
-
-            {/* Price */}
-            <div
-              className={`pb-5 mb-5 border-b ${service.highlight ? "border-background/15" : "border-border/60"}`}
-            >
-              <span
-                className={`text-3xl font-black tracking-tight ${service.highlight ? "text-background" : "text-foreground"}`}
-              >
-                {service.price}
-              </span>
-              <span
-                className={`text-xs font-medium ml-1.5 ${service.highlight ? "text-background/50" : "text-muted-foreground"}`}
-              >
-                {service.priceNote}
-              </span>
-            </div>
-
-            {/* Features */}
-            <ul className="space-y-2.5 flex-1 mb-8">
-              {service.features.map((f) => (
-                <li key={f} className="flex items-start gap-2 text-xs">
-                  <Check
-                    className={`w-3.5 h-3.5 mt-0.5 shrink-0 ${service.highlight ? "text-background" : service.accentColor}`}
-                  />
-                  <span
-                    className={
-                      service.highlight
-                        ? "text-background/75"
-                        : "text-muted-foreground"
-                    }
-                  >
-                    {f}
+            <ul className="divide-y divide-border">
+              {addOns.map((addon) => (
+                <li
+                  key={addon.name}
+                  className="flex items-center justify-between gap-4 py-4 first:pt-0 last:pb-0"
+                >
+                  <span className="text-sm text-muted-foreground">
+                    {addon.name}
+                  </span>
+                  <span className="shrink-0 text-sm font-semibold text-foreground">
+                    {addon.price}
                   </span>
                 </li>
               ))}
             </ul>
-
-            {/* CTA */}
-            <a
-              href="/contact"
-              className={`w-full h-10 rounded-xl text-xs font-black uppercase tracking-widest flex items-center justify-center gap-2 transition-all duration-200 group/btn
-                                ${
-                                  service.highlight
-                                    ? "bg-background text-foreground hover:bg-background/90"
-                                    : "bg-foreground text-background hover:bg-foreground/85 hover:scale-[1.02] active:scale-[0.98]"
-                                }`}
-            >
-              Get Started
-              <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform duration-200" />
-            </a>
+            <p className="mt-6 text-xs text-muted-foreground">
+              All prices in INR · International pricing available on request
+            </p>
           </motion.div>
-        ))}
-      </div>
 
-      {/* Add-ons + Let's Discuss row */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 w-full mx-auto">
-        {/* Add-ons */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="rounded-2xl border border-border bg-card shadow-[0_2px_8px_rgba(0,0,0,0.05)] p-7"
-        >
-          <div className="flex items-center gap-3 mb-6">
-            <span className="text-xs font-black uppercase tracking-widest text-foreground whitespace-nowrap">
-              Add-ons & Extras
-            </span>
-            <div className="flex-1 h-px bg-border" />
-          </div>
-          <div className="grid grid-cols-2 gap-3 mb-5">
-            {addOns.map((addon, i) => (
-              <motion.div
-                key={addon.name}
-                initial={{ opacity: 0, y: 8 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.07, duration: 0.4 }}
-                className="bg-muted/40 border border-border/80 rounded-xl p-4 hover:border-foreground/25 hover:bg-muted hover:shadow-sm transition-all duration-200 group cursor-default"
-              >
-                <p className="text-sm font-bold text-foreground mb-0.5 group-hover:text-primary transition-colors">
-                  {addon.name}
-                </p>
-                <p className="text-xs text-muted-foreground font-semibold">
-                  {addon.price}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-          <p className="text-xs text-muted-foreground/70 text-center font-medium">
-            All prices in INR · International pricing available on request
-          </p>
-        </motion.div>
-
-        {/* Let's Discuss */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="rounded-2xl border border-border bg-card shadow-[0_2px_8px_rgba(0,0,0,0.05)] p-7 flex flex-col justify-between"
-        >
-          <div>
-            <div className="flex items-center gap-3 mb-6">
-              <span className="text-xs font-black uppercase tracking-widest text-foreground whitespace-nowrap">
-                Something Else?
-              </span>
-              <div className="flex-1 h-px bg-border" />
-            </div>
-            <div className="space-y-4 mb-8">
-              {discussPoints.map((point, i) => (
-                <motion.div
-                  key={point.title}
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.2 + i * 0.08, duration: 0.4 }}
-                  className="flex items-start gap-3 group"
-                >
-                  <div className="w-8 h-8 rounded-lg bg-muted border border-border flex items-center justify-center shrink-0 text-muted-foreground group-hover:border-foreground/30 group-hover:text-foreground transition-all duration-200 mt-0.5">
-                    {point.icon}
-                  </div>
-                  <div>
-                    <p className="text-sm font-bold text-foreground mb-0.5">
-                      {point.title}
-                    </p>
-                    <p className="text-xs text-muted-foreground leading-relaxed">
-                      {point.desc}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-          <a
-            href="/contact"
-            className="w-full h-10 rounded-xl border-2 border-foreground text-xs font-black uppercase tracking-widest flex items-center justify-center gap-2 transition-all duration-200 group/btn text-foreground hover:bg-foreground hover:text-background hover:scale-[1.02] active:scale-[0.98]"
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.45, delay: 0.08 }}
+            className="flex flex-col rounded-2xl border border-border bg-muted/40 p-6 shadow-sm md:p-8"
           >
-            Let's Discuss
-            <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform duration-200" />
-          </a>
-        </motion.div>
+            <div className="mb-6">
+              <p className="text-sm font-semibold text-muted-foreground">
+                Have a different brief?
+              </p>
+              <h3 className="mt-1 text-2xl font-bold tracking-tight">
+                Let’s plan the right solution.
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                Tell me what you’re building, when you need it, and what support
+                you have in mind.
+              </p>
+            </div>
+            <ul className="mb-8 flex-1 space-y-4">
+              {discussPoints.map((point) => (
+                <li key={point.title} className="flex items-start gap-3">
+                  <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-border bg-background text-foreground">
+                    {point.icon}
+                  </span>
+                  <span>
+                    <span className="block text-sm font-semibold text-foreground">
+                      {point.title}
+                    </span>
+                    <span className="mt-0.5 block text-sm leading-relaxed text-muted-foreground">
+                      {point.desc}
+                    </span>
+                  </span>
+                </li>
+              ))}
+            </ul>
+            <Button asChild className="w-full sm:w-fit">
+              <Link href="/contact">
+                Let’s discuss your project
+                <ArrowRight aria-hidden="true" />
+              </Link>
+            </Button>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
