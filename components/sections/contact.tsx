@@ -166,7 +166,7 @@ export function ContactSection() {
                                     id="name"
                                     name="name"
                                     placeholder="John Doe"
-                                    className="px-4 bg-background border-border h-11 rounded-lg focus:ring-primary/20"
+                                    className="px-4"
                                     required
                                 />
                             </div>
@@ -177,7 +177,7 @@ export function ContactSection() {
                                     name="email"
                                     type="email"
                                     placeholder="john@company.com"
-                                    className="px-4 bg-background border-border h-11 rounded-lg focus:ring-primary/20"
+                                    className="px-4"
                                     required
                                 />
                             </div>
@@ -188,7 +188,7 @@ export function ContactSection() {
                                 id="subject"
                                 name="subject"
                                 placeholder="What would you like to discuss?"
-                                className="px-4 bg-background border-border h-11 rounded-lg focus:ring-primary/20"
+                                className="px-4"
                                 required
                             />
                         </div>
@@ -198,7 +198,7 @@ export function ContactSection() {
                                 id="message"
                                 name="message"
                                 placeholder="Tell me about your project, goals, timeline, and any specific requirements…"
-                                className="p-4 min-h-[120px] bg-background border-border rounded-lg focus:ring-primary/20 resize-none"
+                                className="p-4 min-h-[120px] resize-none"
                                 required
                             />
                         </div>

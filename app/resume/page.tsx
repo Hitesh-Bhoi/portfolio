@@ -186,7 +186,7 @@ export default function ResumePage() {
               <a
                 href="/Bhoi-Hitesh-Resume.docx"
                 download="Bhoi-Hitesh-Resume.docx"
-                className="flex flex-1 min-w-[200px] h-12 items-center justify-center gap-2 rounded-2xl bg-secondary text-foreground/80 font-medium text-base py-2 border border-border shadow-sm transition-colors hover:bg-secondary/80"
+                className="flex flex-1 min-w-[200px] h-12 items-center justify-center gap-2 rounded-lg bg-secondary text-foreground/80 font-medium text-base py-2 border border-border shadow-sm transition-colors hover:bg-secondary/80"
               >
                 <Download className="w-5 h-5 opacity-70" /> Download CV
               </a>

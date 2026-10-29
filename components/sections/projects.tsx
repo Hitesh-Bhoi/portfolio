@@ -9,7 +9,6 @@ interface Project {
   title: string
   icon?: React.ReactNode
   description: string
-  notice?: string
   tags: string[]
   demoUrl: string
   repoUrl: string
@@ -32,7 +31,6 @@ const projects: Project[] = [
     title: "Grocery E-commerce Platform",
     icon: <EcobazarLogo className="w-auto max-w-[120px]" />,
     description: "A scalable, conversion-focused e-commerce solution enabling smooth product discovery, user-friendly cart management, and seamless checkout for customers.",
-    notice: "Currently under development. Some features may not work and more are coming soon.",
     tags: ["Next.js", "React.js", "TypeScript", "Redux Toolkit", "SCSS", "Styled Components", "Tailwind CSS", "Framer Motion"],
     demoUrl: "https://farmiva.vercel.app/",
     repoUrl: "https://github.com/Hitesh-Bhoi/food-cart",
@@ -44,7 +42,7 @@ const projects: Project[] = [
     description: "A fully integrated B2B dashboard built to streamline inventory tracking, manage customer orders efficiently, and deliver actionable sales analytics.",
     tags: ["Next.js", "React.js", "TypeScript", "Tailwind CSS", "Redux Toolkit", "Framer Motion", "SCSS", "Shadcn UI"],
     demoUrl: "https://farmiva-adminpanel.vercel.app/",
-    repoUrl: "",
+    repoUrl: "https://github.com/Hitesh-Bhoi/grocery-app-admin-fe",
     gradient: "from-green-500/20 to-emerald-500/20"
   },
 ]
@@ -95,13 +93,6 @@ export function ProjectsSection() {
                 <p className="text-muted-foreground leading-relaxed mb-6">
                   {project.description}
                 </p>
-
-                {project.notice && (
-                  <div className="mb-6 flex items-start gap-2 p-3 text-sm rounded-lg bg-yellow-500/10 border border-yellow-500/20 text-yellow-600 dark:text-yellow-500">
-                    <AlertTriangle className="w-5 h-5 shrink-0 mt-0.5" />
-                    <p>{project.notice}</p>
-                  </div>
-                )}
 
                 <div className="flex flex-wrap gap-2 mb-8">
                   {project.tags.map((tag) => (

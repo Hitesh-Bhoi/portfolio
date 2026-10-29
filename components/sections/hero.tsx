@@ -109,7 +109,7 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative w-full flex flex-col items-center justify-center gap-10 pt-4 pb-12 md:pt-8 md:pb-20 lg:pt-16 lg:pb-16 text-center lg:text-left lg:flex-row lg:gap-20 mx-auto px-6 md:px-10 lg:px-16 overflow-hidden"
+      className="relative w-full flex flex-col items-center justify-center gap-10 pt-4 pb-12 md:pt-8 md:pb-20 lg:pt-16 lg:pb-16 text-center lg:text-left lg:flex-row lg:gap-10 xl:gap-12 mx-auto px-6 md:px-10 lg:px-16 overflow-hidden"
     >
       <div className="flex-1 space-y-6 z-10 w-full max-w-2xl px-4 lg:px-0">
         <motion.h1
@@ -186,12 +186,12 @@ export function HeroSection() {
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.7, delay: 0.2, type: "spring" }}
-        className="flex-1 flex justify-center lg:justify-end items-center relative w-full h-[380px] sm:h-[550px] lg:h-[600px] lg:mt-0"
+        className="flex-1 flex justify-center items-center relative w-full h-[380px] sm:h-[550px] lg:h-[560px] lg:mt-0"
       >
         {/* Tech Stack Orbit Container */}
-        <div className="relative w-full max-w-[680px] aspect-square flex items-center justify-center scale-[0.85] sm:scale-100 lg:scale-100">
+        <div className="relative w-full max-w-[600px] aspect-square flex items-center justify-center scale-[0.85] sm:scale-100 lg:scale-[0.72] xl:scale-[0.9]">
           {/* Central Code Icon */}
-          <div className="relative z-30 h-16 w-16 sm:h-20 sm:w-20 lg:h-32 lg:w-32 flex items-center justify-center rounded-full bg-background border border-primary/20 shadow-[0_0_50px_-12px_rgba(var(--primary),0.3)] backdrop-blur-xl group">
+          <div className="relative z-30 h-16 w-16 sm:h-20 sm:w-20 lg:h-28 lg:w-28 flex items-center justify-center rounded-full bg-background border border-primary/20 shadow-[0_0_50px_-12px_rgba(var(--primary),0.3)] backdrop-blur-xl group">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -200,7 +200,7 @@ export function HeroSection() {
               strokeWidth="1.5"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="w-8 h-8 sm:w-10 sm:h-10 lg:w-16 lg:h-16 text-foreground transition-transform duration-300 group-hover:scale-110"
+              className="w-8 h-8 sm:w-10 sm:h-10 lg:w-14 lg:h-14 text-foreground transition-transform duration-300 group-hover:scale-110"
             >
               <polyline points="16 18 22 12 16 6" />
               <polyline points="8 6 2 12 8 18" />
@@ -209,27 +209,27 @@ export function HeroSection() {
           </div>
 
           {/* Concentric Design Rings — diameters = radius × 2 */}
-          <div className="absolute h-[380px] w-[380px] sm:h-[520px] sm:w-[520px] lg:h-[640px] lg:w-[640px] rounded-full border border-primary/30 pointer-events-none z-0" />
-          <div className="absolute h-[250px] w-[250px] sm:h-[380px] sm:w-[380px] lg:h-[470px] lg:w-[470px] rounded-full border border-primary/30 pointer-events-none z-0" />
-          <div className="absolute h-[130px] w-[130px] sm:h-[240px] sm:w-[240px] lg:h-[300px] lg:w-[300px] rounded-full border border-primary/30 pointer-events-none z-0" />
+          <div className="absolute h-[380px] w-[380px] sm:h-[520px] sm:w-[520px] lg:h-[560px] lg:w-[560px] rounded-full border border-primary/30 pointer-events-none z-0" />
+          <div className="absolute h-[250px] w-[250px] sm:h-[380px] sm:w-[380px] lg:h-[410px] lg:w-[410px] rounded-full border border-primary/30 pointer-events-none z-0" />
+          <div className="absolute h-[130px] w-[130px] sm:h-[240px] sm:w-[240px] lg:h-[260px] lg:w-[260px] rounded-full border border-primary/30 pointer-events-none z-0" />
 
           {/* Rings - Only render after mount to prevent hydration mismatch */}
           {mounted && (
             <div className="absolute inset-0 z-10 w-full h-full pointer-events-none">
               <Ring
                 icons={techStack.outer}
-                radius={getRadius(320, 260, 190)}
+                radius={getRadius(280, 260, 190)}
                 duration={40}
               />
               <Ring
                 icons={techStack.middle}
-                radius={getRadius(235, 190, 125)}
+                radius={getRadius(205, 190, 125)}
                 duration={30}
                 reverse
               />
               <Ring
                 icons={techStack.inner}
-                radius={getRadius(150, 120, 65)}
+                radius={getRadius(130, 120, 65)}
                 duration={20}
               />
             </div>

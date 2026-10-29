@@ -8,6 +8,11 @@ import {
   type SocialPlatform,
 } from "@/lib/social-links";
 import { cn } from "@/lib/utils";
+import {
+  CONTROL_FOCUS,
+  CONTROL_RADIUS,
+  CONTROL_TRANSITION,
+} from "@/components/ui/control-styles";
 
 const platformIcons: Record<
   SocialPlatform,
@@ -41,16 +46,19 @@ export function SocialButton({
   const sizeClasses =
     size === "sm"
       ? showLabel
-        ? "h-10 px-3.5 gap-2 text-xs rounded-xl"
-        : "w-10 h-10 rounded-xl"
+        ? "h-10 px-3.5 gap-2 text-xs"
+        : "w-10 h-10"
       : showLabel
-        ? "h-12 px-5 gap-2.5 text-sm rounded-2xl"
-        : "w-12 h-12 rounded-2xl";
+        ? "h-12 px-5 gap-2.5 text-sm"
+        : "w-12 h-12";
 
   const iconSizeClass = size === "sm" ? "w-4 h-4" : "w-5 h-5";
 
   const baseClasses = cn(
-    "inline-flex items-center justify-center font-medium bg-muted border border-border text-foreground/80 hover:text-primary hover:border-primary/50 hover:bg-card/60 transition-all duration-300 shadow-sm hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 shrink-0",
+    "inline-flex items-center justify-center font-medium bg-muted border border-border text-foreground/80 hover:text-primary hover:border-primary/50 hover:bg-card/60 shadow-sm hover:shadow-md shrink-0",
+    CONTROL_RADIUS,
+    CONTROL_FOCUS,
+    CONTROL_TRANSITION,
     sizeClasses,
     className
   );
